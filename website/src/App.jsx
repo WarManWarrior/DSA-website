@@ -1,8 +1,11 @@
+import Navbar from "./assets/navbar"
 function App() {
 
   return (
-    <div className='w-screen h-screen bg-red-400'>
-    </div>
+    <div className="bg-[url('/images/back.jpg')] bg-cover h-screen bg-top">
+  <Navbar />
+</div>
+
   )
 };
 
