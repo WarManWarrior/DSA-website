@@ -81,34 +81,34 @@ function Navbar() {
           id="mobileMenu"
           className="fixed inset-0 z-[9998] bg-black bg-opacity-90 text-white flex flex-col items-center justify-center gap-6"
         >
-          <ul className="flex flex-col items-center gap-6 text-lg">
+          <ul className="flex flex-col items-center gap-6 text-lg hover:text-yellow-400">
             <li>
-              <a href="#" className="hover:text-yellow-400">
+              <a href="#" className="">
                 Introduction
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-yellow-400">
+              <a href="#" className="">
                 Objective
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-yellow-400">
+              <a href="#" className="">
                 Target Audience
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-yellow-400">
+              <a href="#" className="">
                 List of Experiments
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-yellow-400">
+              <a href="#" className="">
                 Demo Code
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-yellow-400">
+              <a href="#" className="">
                 Practice Code
               </a>
             </li>
