@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of c4a5222 (Daisy ui added)
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
