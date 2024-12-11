@@ -41,18 +41,14 @@ const InsertionSortVisualizer = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-base-200">
-      <h1 className="text-3xl font-bold mb-6">Insertion Sort Visualization</h1>
-      <div className="flex items-end justify-center gap-2 w-full max-w-4xl mx-auto mb-6">
+    <div className="flex flex-col items-center p-6">
+      <h1 className="text-3xl font-bold mb-4">Insertion Sort Visualization</h1>
+      <div className="flex items-end gap-2 mb-6">
         {array.map((value, index) => (
           <div
             key={index}
-            className={`w-6 text-center text-white rounded ${
-              index === currentIndex
-                ? 'bg-error'
-                : index === comparingIndex
-                ? 'bg-warning'
-                : 'bg-primary'
+            className={`w-6 bg-blue-500 text-white text-xs text-center rounded transition-all ease-in-out duration-500 ${
+              index === currentIndex ? 'bg-red-500' : index === comparingIndex ? 'bg-yellow-500' : ''
             }`}
             style={{ height: `${value * 3}px` }}
           >
@@ -61,11 +57,21 @@ const InsertionSortVisualizer = () => {
         ))}
       </div>
       <div className="flex gap-4">
-        <button className="btn btn-primary" onClick={generateRandomArray}>Generate New Array</button>
-        <button className="btn btn-secondary" onClick={insertionSort}>Start Sorting</button>
+        <button 
+          onClick={generateRandomArray} 
+          className="btn btn-primary">
+          Generate New Array
+        </button>
+        <button 
+          onClick={insertionSort} 
+          className="btn btn-secondary">
+          Start Sorting
+        </button>
       </div>
     </div>
   );
 };
 
 export default InsertionSortVisualizer;
+
+// Tailwind CSS and DaisyUI utility classes are used for styling. Animations are applied via the `transition-all`, `ease-in-out`, and `duration-500` classes to animate the height and background color changes smoothly.
