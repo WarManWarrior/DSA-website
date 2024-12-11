@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link, BrowserRouter} from 'react-router-dom';
 
 function Banner() {
     return (<div class="flex items-center justify-center h-[calc(100vh-4rem)] overflow-hidden text-center">
@@ -9,8 +10,8 @@ function Banner() {
                 College of Engineering and Technology</h2>
             <h2 className="text-2xl">Data Structure and Algorithms Virtual Lab</h2>
             <div className="flex items-center justify-center gap-x-8 text-black">
-                <a href="" className="text-2xl bg-yellow-300 p-2 rounded-xl hover:bg-yellow-500">Introduction</a>
-                <a href="" className="text-2xl bg-yellow-300 p-2 rounded-xl hover:bg-yellow-500">List of Experiments</a>
+                <Link to="/" className="text-2xl bg-yellow-300 p-2 rounded-xl hover:bg-yellow-500">Introduction</Link>
+                <Link to="/insertion" className="text-2xl bg-yellow-300 p-2 rounded-xl hover:bg-yellow-500">List of Experiments</Link>
             </div>
         </div>
     </div>)
