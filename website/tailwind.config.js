@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of c4a5222 (Daisy ui added)
+import daisyui from './node_modules/daisyui'
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
