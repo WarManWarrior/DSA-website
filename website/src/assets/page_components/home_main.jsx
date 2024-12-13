@@ -8,7 +8,7 @@ function Banner() {
             <h2 className="text-2xl">Department of Computational Intelligence</h2>
             <h2 className="text-2xl">School of Computing,<br />
                 College of Engineering and Technology</h2>
-            <h2 className="text-2xl">Data Structure and Algorithms Virtual Lab</h2>
+            <h2 className="text-2xl">21CSC204J-DESIGN AND ANALYSIS OF ALGORITHMS VIRTUAL LAB</h2>
             <div className="flex items-center justify-center gap-x-8 text-black">
                 <Link to="/" className="text-2xl bg-yellow-300 p-2 rounded-xl hover:bg-yellow-500">Introduction</Link>
                 <Link to="/insertion" className="text-2xl bg-yellow-300 p-2 rounded-xl hover:bg-yellow-500">List of Experiments</Link>
