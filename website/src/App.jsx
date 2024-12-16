@@ -6,6 +6,7 @@ import BinarySearchVisualization from "./assets/algorithms/Binary_Search";
 import SortingVisualizer from "./assets/algorithms/Merge_sort";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LinearSearchApp from "./assets/algorithms/LinearSearchApp";
+import HuffmanTreeVisualization from "./assets/algorithms/Huffman";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/insertion" element={<InsertionSortVisualizer />} />
-          <Route path="/linearsearch" element={<SortingVisualizer />} />
+          <Route path="/linearsearch" element={<HuffmanTreeVisualization />} />
         </Routes>
       </Router>
     </div>
