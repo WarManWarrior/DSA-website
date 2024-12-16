@@ -7,6 +7,7 @@ import SortingVisualizer from "./assets/algorithms/Merge_sort";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import StrassenMatrixVisualization from "./assets/algorithms/Strassen_Matrix";
 import HuffmanCodingVisualization from "./assets/algorithms/Huffman_coding";
+import KnapsackVisualization from "./assets/algorithms/Kanpsack_Greedy";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/insertion" element={<InsertionSortVisualizer />} />
-          <Route path="/linearsearch" element={<HuffmanCodingVisualization />} />
+          <Route path="/linearsearch" element={<KnapsackVisualization />} />
         </Routes>
       </Router>
     </div>
