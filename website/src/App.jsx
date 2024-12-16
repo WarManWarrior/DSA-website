@@ -5,6 +5,8 @@ import BubbleSortVisualizer from "./assets/algorithms/bubble_sort";
 import BinarySearchVisualization from "./assets/algorithms/Binary_Search";
 import SortingVisualizer from "./assets/algorithms/Merge_sort";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import StrassenMatrixVisualization from "./assets/algorithms/Strassen_Matrix";
+import HuffmanCodingVisualization from "./assets/algorithms/Huffman_coding";
 
 function App() {
   return (
@@ -13,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/insertion" element={<InsertionSortVisualizer />} />
-          <Route path="/linearsearch" element={<SortingVisualizer />} />
+          <Route path="/linearsearch" element={<HuffmanCodingVisualization />} />
         </Routes>
       </Router>
     </div>
