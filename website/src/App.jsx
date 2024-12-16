@@ -5,6 +5,7 @@ import BubbleSortVisualizer from "./assets/algorithms/bubble_sort";
 import BinarySearchVisualization from "./assets/algorithms/Binary_Search";
 import SortingVisualizer from "./assets/algorithms/Merge_sort";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LinearSearchApp from "./assets/algorithms/LinearSearchApp";
 
 function App() {
   return (
