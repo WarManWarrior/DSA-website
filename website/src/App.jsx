@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/insertion" element={<InsertionSortVisualizer />} />
-          <Route path="/linearsearch" element={<KnapsackVisualization />} />
+          <Route path="/linearsearch" element={<HuffmanCodingVisualization />} />
         </Routes>
       </Router>
     </div>

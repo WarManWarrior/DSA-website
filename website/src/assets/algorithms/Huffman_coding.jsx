@@ -1,11 +1,14 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect, useRef } from "react";
 
 const HuffmanCodingVisualization = () => {
   const [input, setInput] = useState("");
   const [frequencyTable, setFrequencyTable] = useState([]);
   const [huffmanTree, setHuffmanTree] = useState(null);
   const [encodedResult, setEncodedResult] = useState("");
+  const [isVertical, setIsVertical] = useState(false);
+
+  const chartRef = useRef(null);
+  const treeRef = useRef(null);
 
   const buildFrequencyTable = (str) => {
     const freqMap = {};
@@ -73,14 +76,28 @@ const HuffmanCodingVisualization = () => {
     }
   };
 
+  const checkLayout = () => {
+    if (chartRef.current && treeRef.current) {
+      const chartWidth = chartRef.current.offsetWidth;
+      const treeWidth = treeRef.current.offsetWidth;
+
+      // Set vertical layout if tree takes more than twice the chart's width
+      setIsVertical(treeWidth > 2 * chartWidth);
+    }
+  };
+
+  useEffect(() => {
+    checkLayout();
+    window.addEventListener("resize", checkLayout);
+    return () => window.removeEventListener("resize", checkLayout);
+  }, [frequencyTable, huffmanTree]);
+
   const renderTree = (node) => {
     if (!node) return null;
 
     return (
       <div className="flex flex-col items-center">
-        <div
-          className={`p-2 m-1 border rounded-md text-center bg-primary text-primary-content animate-fade-in`}
-        >
+        <div className={`p-2 m-1 border rounded-md text-center bg-primary text-primary-content`}>
           {node.char ? `${node.char} (${node.freq})` : `${node.freq}`}
         </div>
         <div className="flex">
@@ -108,45 +125,50 @@ const HuffmanCodingVisualization = () => {
         />
       </div>
 
-      {frequencyTable.length > 0 && (
-        <div className="overflow-x-auto">
-          <h2 className="text-xl font-semibold text-center text-secondary">Frequency Table</h2>
-          <table className="table table-zebra w-full animate-fade-in">
-            <thead>
-              <tr>
-                <th>Character</th>
-                <th>Frequency</th>
-              </tr>
-            </thead>
-            <tbody>
-              {frequencyTable.map(({ char, freq }) => (
-                <tr key={char}>
-                  <td>{char}</td>
-                  <td>{freq}</td>
+      {/* Dynamic Layout */}
+      <div className={`flex ${isVertical ? "flex-col" : "flex-row"} space-y-4 lg:space-x-4`}>
+        {/* Frequency Table Section */}
+        {frequencyTable.length > 0 && (
+          <div ref={chartRef} className="flex-1 overflow-x-auto">
+            <h2 className="text-xl font-semibold text-center text-secondary">Frequency Table</h2>
+            <table className="table table-zebra w-full">
+              <thead>
+                <tr>
+                  <th>Character</th>
+                  <th>Frequency</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
-
-      {huffmanTree && (
-        <div>
-          <h2 className="text-xl font-semibold text-center text-secondary">Huffman Tree</h2>
-          <div className="flex justify-center mt-4 animate-fade-in">
-            {renderTree(huffmanTree)}
+              </thead>
+              <tbody>
+                {frequencyTable.map(({ char, freq }) => (
+                  <tr key={char}>
+                    <td>{char}</td>
+                    <td>{freq}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-        </div>
-      )}
+        )}
 
-      {encodedResult && (
-        <div className="text-center animate-fade-in">
-          <h2 className="text-xl font-semibold text-secondary">Encoded Result</h2>
-          <p className="p-2 mt-2 border rounded-md bg-accent text-accent-content">
-            {encodedResult}
-          </p>
+        {/* Tree and Encoded Result Section */}
+        <div ref={treeRef} className="flex-1 space-y-6">
+          {huffmanTree && (
+            <div>
+              <h2 className="text-xl font-semibold text-center text-secondary">Huffman Tree</h2>
+              <div className="flex justify-center mt-4">{renderTree(huffmanTree)}</div>
+            </div>
+          )}
+
+          {encodedResult && (
+            <div className="text-center">
+              <h2 className="text-xl font-semibold text-secondary">Encoded Result</h2>
+              <p className="p-2 mt-2 border rounded-md bg-accent text-accent-content">
+                {encodedResult}
+              </p>
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 };
