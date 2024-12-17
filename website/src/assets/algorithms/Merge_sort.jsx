@@ -1,157 +1,151 @@
 import React, { useState, useEffect } from 'react';
 
 const SortingVisualizer = () => {
-  const [array, setArray] = useState([]);
-  const [arrayColors, setArrayColors] = useState([]);
-  const [animationArray, setAnimationArray] = useState([]);
-  const [speed, setSpeed] = useState(50);
-  const [isSorting, setIsSorting] = useState(false);
+  const [blocks, setBlocks] = useState([]);
+  const [compare, setCompare] = useState([]);
+  const [sortedIndex, setSortedIndex] = useState([]);
+  const [sorting, setSorting] = useState(false);
+  const [completed, setCompleted] = useState(false);
+  const [speed, setSpeed] = useState(250);
 
-  const DEFAULT_COLOR = 'bg-green-400';
-  const COMPARE_COLOR = 'bg-red-400';
-  const SORTED_COLOR = 'bg-blue-400';
-
-  const generateArray = () => {
-    if (isSorting) return;
-    const newArray = Array.from({ length: 150 }, () => Math.floor(Math.random() * 100) + 1);
-    const newColors = Array(150).fill(DEFAULT_COLOR);
-    setArray(newArray);
-    setArrayColors(newColors);
-    setAnimationArray(Array(150).fill(0));
-  };
-
-  const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-  const mergeSort = async () => {
-    if (isSorting) return;
-    setIsSorting(true);
-
-    const auxArray = [...array];
-    await mergeSortHelper(array, 0, array.length - 1, auxArray);
-
-    setArrayColors(Array(array.length).fill(SORTED_COLOR));
-    setIsSorting(false);
-  };
-
-  const mergeSortHelper = async (mainArray, start, end, auxArray) => {
-    if (start >= end) return;
-
-    const mid = Math.floor((start + end) / 2);
-    await mergeSortHelper(auxArray, start, mid, mainArray);
-    await mergeSortHelper(auxArray, mid + 1, end, mainArray);
-    await merge(mainArray, start, mid, end, auxArray);
-  };
-
-  const merge = async (mainArray, start, mid, end, auxArray) => {
-    let i = start;
-    let j = mid + 1;
-    let k = start;
-
-    const newColors = [...arrayColors];
-
-    const targetPosition = (index, start, end) => {
-      return (index - start) * 100 / (end - start);
-    };
-
-    while (i <= mid && j <= end) {
-      newColors.fill(SORTED_COLOR, 0, start);
-      newColors.fill(DEFAULT_COLOR, start, end + 1);
-      newColors[i] = COMPARE_COLOR;
-      newColors[j] = COMPARE_COLOR;
-      setArrayColors([...newColors]);
-
-      const newAnimationArray = [...animationArray];
-      newAnimationArray[i] = targetPosition(i, start, end);
-      newAnimationArray[j] = targetPosition(j, start, end);
-      setAnimationArray(newAnimationArray);
-
-      await sleep(speed);
-
-      if (auxArray[i] <= auxArray[j]) {
-        mainArray[k++] = auxArray[i++];
-      } else {
-        mainArray[k++] = auxArray[j++];
-      }
-      setArray([...mainArray]);
+  // Helper to generate a random array
+  const generateRandomArray = (len = 30) => {
+    setCompleted(false);
+    setSorting(false);
+    setSortedIndex([]);
+    const randomArray = Array.from({ length: len }, (_, i) => i + 1);
+    for (let i = randomArray.length - 1; i > 0; i--) {
+      const randomIndex = Math.floor(Math.random() * i);
+      [randomArray[i], randomArray[randomIndex]] = [randomArray[randomIndex], randomArray[i]];
     }
-
-    while (i <= mid) {
-      newColors.fill(SORTED_COLOR, 0, start);
-      newColors.fill(DEFAULT_COLOR, start, end + 1);
-      newColors[i] = COMPARE_COLOR;
-      setArrayColors([...newColors]);
-
-      const newAnimationArray = [...animationArray];
-      newAnimationArray[i] = targetPosition(i, start, end);
-      setAnimationArray(newAnimationArray);
-
-      await sleep(speed);
-
-      mainArray[k++] = auxArray[i++];
-      setArray([...mainArray]);
-    }
-
-    while (j <= end) {
-      newColors.fill(SORTED_COLOR, 0, start);
-      newColors.fill(DEFAULT_COLOR, start, end + 1);
-      newColors[j] = COMPARE_COLOR;
-      setArrayColors([...newColors]);
-
-      const newAnimationArray = [...animationArray];
-      newAnimationArray[j] = targetPosition(j, start, end);
-      setAnimationArray(newAnimationArray);
-
-      await sleep(speed);
-
-      mainArray[k++] = auxArray[j++];
-      setArray([...mainArray]);
-    }
-
-    newColors.fill(SORTED_COLOR, start, end + 1);
-    setArrayColors([...newColors]);
+    setBlocks(randomArray);
   };
 
+  // Load a default array on component mount
   useEffect(() => {
-    generateArray();
+    generateRandomArray(30);
   }, []);
 
-  const maxVal = Math.max(...array);
+  // Merge Sort logic with animations
+  const mergeSort = () => {
+    const order = [];
+    const dupBlocks = blocks.slice();
+
+    const merge = (dupBlocks, l, mid, r) => {
+      let i = l,
+        j = mid + 1;
+      const temp = [];
+
+      while (i <= mid && j <= r) {
+        order.push([i, j, null, null]); // Compare indices
+        if (dupBlocks[i] <= dupBlocks[j]) {
+          temp.push(dupBlocks[i++]);
+        } else {
+          temp.push(dupBlocks[j++]);
+        }
+      }
+
+      while (i <= mid) {
+        order.push([i, null, null, null]);
+        temp.push(dupBlocks[i++]);
+      }
+
+      while (j <= r) {
+        order.push([null, j, null, null]);
+        temp.push(dupBlocks[j++]);
+      }
+
+      for (let k = l; k <= r; k++) {
+        dupBlocks[k] = temp[k - l];
+        order.push([k, null, dupBlocks.slice(), null]);
+      }
+    };
+
+    const mergeSortHelper = (dupBlocks, l, r) => {
+      if (l >= r) return;
+      const mid = Math.floor((l + r) / 2);
+      mergeSortHelper(dupBlocks, l, mid);
+      mergeSortHelper(dupBlocks, mid + 1, r);
+      merge(dupBlocks, l, mid, r);
+    };
+
+    mergeSortHelper(dupBlocks, 0, dupBlocks.length - 1);
+
+    for (let i = 0; i < dupBlocks.length; i++) {
+      order.push([null, null, null, i]); // Mark index as sorted
+    }
+
+    animateMergeSort(order);
+  };
+
+  const animateMergeSort = (order) => {
+    (function loop(i) {
+      setTimeout(() => {
+        if (i < order.length) {
+          const [j, k, arr, index] = order[i];
+          setCompare([j, k]);
+          if (arr) setBlocks(arr);
+          if (index !== null) setSortedIndex((prev) => [...prev, index]);
+          loop(i + 1);
+        } else {
+          setSorting(false);
+          setCompleted(true);
+        }
+      }, speed);
+    })(0);
+  };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10">
-      <h1 className="text-3xl font-bold mb-4">Sorting Visualizer</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-blue-50 to-blue-100">
+      <h1 className="text-4xl font-bold text-blue-700 mb-8">Sorting Visualizer</h1>
 
-      <div className="flex space-x-4 mb-6">
-        <button onClick={generateArray} className="btn btn-primary" disabled={isSorting}>
+      {/* Controls */}
+      <div className="flex flex-wrap gap-4 justify-center mb-8">
+        <button
+          onClick={() => generateRandomArray(30)}
+          disabled={sorting}
+          className={`px-6 py-3 rounded-lg text-white font-medium shadow-md ${
+            sorting ? 'bg-gray-400' : 'bg-blue-600 hover:bg-blue-700'
+          }`}
+        >
           Generate New Array
         </button>
-        <button onClick={mergeSort} className="btn btn-secondary" disabled={isSorting}>
-          Start Merge Sort
+        <button
+          onClick={mergeSort}
+          disabled={sorting || completed}
+          className={`px-6 py-3 rounded-lg text-white font-medium shadow-md ${
+            sorting || completed ? 'bg-gray-400' : 'bg-green-600 hover:bg-green-700'
+          }`}
+        >
+          Start Sorting
         </button>
+        <label className="flex items-center gap-2">
+          <span className="text-gray-700 font-medium">Speed:</span>
+          <input
+            type="range"
+            min="1"
+            max="100"
+            defaultValue="50"
+            onChange={(e) => setSpeed(400 / e.target.value)}
+            disabled={sorting}
+            className="cursor-pointer"
+          />
+        </label>
       </div>
 
-      <div className="flex items-center space-x-4 mb-6">
-        <label htmlFor="speed" className="text-lg font-medium">Speed:</label>
-        <input
-          id="speed"
-          type="range"
-          min="10"
-          max="200"
-          value={speed}
-          onChange={(e) => setSpeed(Number(e.target.value))}
-          className="range"
-        />
-      </div>
-
-      <div className="relative flex w-full max-w-4xl h-96 bg-white border rounded-lg shadow">
-        {array.map((value, index) => (
+      {/* Bars Display */}
+      <div className="flex items-end gap-1 w-11/12 max-w-4xl px-4 bg-white shadow-lg rounded-lg py-4">
+        {blocks.map((value, index) => (
           <div
             key={index}
-            className={`${arrayColors[index]} h-full`}
-            style={{
-              height: `${(value / maxVal) * 100}%`, // Map the value to the height percentage
-              width: `${100 / array.length}%`,
-            }}
+            className={`w-full max-w-[12px] transition-all duration-200 ${
+              compare.includes(index)
+                ? 'bg-yellow-400'
+                : sortedIndex.includes(index)
+                ? 'bg-green-500'
+                : 'bg-blue-500'
+            }`}
+            style={{ height: `${value * 5}px` }}
           ></div>
         ))}
       </div>
