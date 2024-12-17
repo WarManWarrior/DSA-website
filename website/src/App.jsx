@@ -9,6 +9,7 @@ import StrassenMatrixVisualization from "./assets/algorithms/Strassen_Matrix";
 import HuffmanCodingVisualization from "./assets/algorithms/Huffman_coding";
 import KnapsackVisualization from "./assets/algorithms/Kanpsack_Greedy";
 import CodeEditor from "./assets/page_components/CodeEditor";
+import ConvexHullVisualizer from "./assets/algorithms/ConvexHull";
 
 
 
@@ -20,7 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/insertion" element={<InsertionSortVisualizer />} />
-          <Route path="/linearsearch" element={<CodeEditor />} />
+          <Route path="/linearsearch" element={<ConvexHullVisualizer />} />
         </Routes>
       </Router>
     </div>
