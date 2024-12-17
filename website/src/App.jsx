@@ -11,6 +11,7 @@ import KnapsackVisualization from "./assets/algorithms/Kanpsack_Greedy";
 import CodeEditor from "./assets/page_components/CodeEditor";
 import ConvexHullVisualizer from "./assets/algorithms/ConvexHull";
 import QuickSort from "./assets/algorithms/quicksort";
+import LinearSearchApp from "./assets/algorithms/LinearSearchApp";
 
 
 
