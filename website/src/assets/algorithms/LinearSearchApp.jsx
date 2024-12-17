@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './style.css'; // Assuming your CSS is in style.css
+import 'tailwindcss/tailwind.css'; // Ensure Tailwind is set up in your project
 
 const LinearSearchApp = () => {
   const [array, setArray] = useState([]);
@@ -54,47 +54,50 @@ const LinearSearchApp = () => {
   }, []);
 
   return (
-    <div>
-      <br />
-      <p className="header">Linear Search</p>
-      
-      <div id="array">
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
+      <p className="text-4xl font-bold text-center mb-6">Linear Search</p>
+
+      <div
+        id="array"
+        className="bg-white border border-gray-300 rounded shadow-md h-[305px] w-[598px] mx-auto relative mt-8"
+      >
         {array.map((value, index) => (
-          <div 
-            key={index} 
-            className="block" 
-            style={{ height: `${value * 3}px`, backgroundColor: colors[index], position: 'absolute', bottom: '0', transition: '0.2s all ease', transform: `translate(${index * 30}px)` }}
+          <div
+            key={index}
+            className="absolute bottom-0 transition-transform"
+            style={{
+              height: `${value * 2.5}px`,
+              backgroundColor: colors[index],
+              width: '28px',
+              transform: `translateX(${index * 30}px)`,
+            }}
           >
-            <label className="block_id">{value}</label>
+            <label className="block text-center text-black -mt-5 w-full">{value}</label>
           </div>
         ))}
       </div>
-      
-      <br /><br />
 
-      <div style={{ textAlign: 'center' }}>
-        <label htmlFor="fname">Number to be Searched:</label>
-        <input 
-          type="text" 
-          id="fname" 
-          name="fname" 
-          value={searchValue} 
-          onChange={(e) => setSearchValue(e.target.value)} 
-           className="mt-2 p-2 w-full border border-gray-300 rounded bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+      <div className="text-center mt-8 space-y-4">
+        <label htmlFor="searchValue" className="block text-lg font-medium text-gray-700">
+          Number to be Searched:
+        </label>
+        <input
+          type="text"
+          id="searchValue"
+          name="searchValue"
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+          className="p-2 border border-gray-300 rounded w-64 bg-gray-200 text-gray-700 focus:ring-2 focus:ring-blue-400 focus:outline-none"
         />
-        <br /><br />
-        
-        <button
-            onClick={() => linearSearch(searchValue)}
-            className="bg-gray-300 text-black border border-gray-500 rounded px-4 py-2 hover:bg-gray-400 transition"
-            >
-            Search
-            </button>
 
-        
-        <br /><br />
-        
-        <div id="text">{resultMessage}</div>
+        <br />
+        <button
+          onClick={() => linearSearch(searchValue)}
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+        >
+          Search
+        </button>
+        <div className="text-xl font-semibold mt-4">{resultMessage}</div>
       </div>
     </div>
   );
