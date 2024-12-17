@@ -10,6 +10,7 @@ import HuffmanCodingVisualization from "./assets/algorithms/Huffman_coding";
 import KnapsackVisualization from "./assets/algorithms/Kanpsack_Greedy";
 import CodeEditor from "./assets/page_components/CodeEditor";
 import ConvexHullVisualizer from "./assets/algorithms/ConvexHull";
+import QuickSort from "./assets/algorithms/quicksort";
 
 
 
@@ -21,7 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/insertion" element={<InsertionSortVisualizer />} />
-          <Route path="/linearsearch" element={<ConvexHullVisualizer />} />
+          <Route path="/linearsearch" element={<QuickSort />} />
         </Routes>
       </Router>
     </div>
