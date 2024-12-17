@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 
-const SortingVisualizer = () => {
+const MergeSortVisualizer = () => {
   const [blocks, setBlocks] = useState([]);
   const [compare, setCompare] = useState([]);
   const [sortedIndex, setSortedIndex] = useState([]);
   const [sorting, setSorting] = useState(false);
   const [completed, setCompleted] = useState(false);
   const [speed, setSpeed] = useState(250);
+  const speedRef = useRef(speed); // Ref to hold the latest speed
 
   // Helper to generate a random array
   const generateRandomArray = (len = 30) => {
@@ -16,7 +17,10 @@ const SortingVisualizer = () => {
     const randomArray = Array.from({ length: len }, (_, i) => i + 1);
     for (let i = randomArray.length - 1; i > 0; i--) {
       const randomIndex = Math.floor(Math.random() * i);
-      [randomArray[i], randomArray[randomIndex]] = [randomArray[randomIndex], randomArray[i]];
+      [randomArray[i], randomArray[randomIndex]] = [
+        randomArray[randomIndex],
+        randomArray[i],
+      ];
     }
     setBlocks(randomArray);
   };
@@ -26,8 +30,14 @@ const SortingVisualizer = () => {
     generateRandomArray(30);
   }, []);
 
+  // Keep speedRef updated
+  useEffect(() => {
+    speedRef.current = speed;
+  }, [speed]);
+
   // Merge Sort logic with animations
   const mergeSort = () => {
+    setSorting(true);
     const order = [];
     const dupBlocks = blocks.slice();
 
@@ -79,25 +89,30 @@ const SortingVisualizer = () => {
   };
 
   const animateMergeSort = (order) => {
-    (function loop(i) {
-      setTimeout(() => {
-        if (i < order.length) {
-          const [j, k, arr, index] = order[i];
-          setCompare([j, k]);
-          if (arr) setBlocks(arr);
-          if (index !== null) setSortedIndex((prev) => [...prev, index]);
-          loop(i + 1);
-        } else {
-          setSorting(false);
-          setCompleted(true);
-        }
-      }, speed);
-    })(0);
+    let i = 0;
+
+    const loop = () => {
+      if (i < order.length) {
+        const [j, k, arr, index] = order[i];
+        setCompare([j, k]);
+        if (arr) setBlocks(arr);
+        if (index !== null)
+          setSortedIndex((prev) => (prev.includes(index) ? prev : [...prev, index]));
+
+        i++;
+        setTimeout(loop, speedRef.current); // Dynamically fetches the latest speed
+      } else {
+        setSorting(false);
+        setCompleted(true);
+      }
+    };
+
+    loop();
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-blue-50 to-blue-100">
-      <h1 className="text-4xl font-bold text-blue-700 mb-8">Sorting Visualizer</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-50 to-gray-200">
+      <h1 className="text-4xl font-bold text-gray-700 mb-8">Merge Sort Visualizer</h1>
 
       {/* Controls */}
       <div className="flex flex-wrap gap-4 justify-center mb-8">
@@ -105,7 +120,7 @@ const SortingVisualizer = () => {
           onClick={() => generateRandomArray(30)}
           disabled={sorting}
           className={`px-6 py-3 rounded-lg text-white font-medium shadow-md ${
-            sorting ? 'bg-gray-400' : 'bg-blue-600 hover:bg-blue-700'
+            sorting ? "bg-gray-400" : "bg-blue-600 hover:bg-blue-700"
           }`}
         >
           Generate New Array
@@ -114,7 +129,7 @@ const SortingVisualizer = () => {
           onClick={mergeSort}
           disabled={sorting || completed}
           className={`px-6 py-3 rounded-lg text-white font-medium shadow-md ${
-            sorting || completed ? 'bg-gray-400' : 'bg-green-600 hover:bg-green-700'
+            sorting || completed ? "bg-gray-400" : "bg-green-600 hover:bg-green-700"
           }`}
         >
           Start Sorting
@@ -127,25 +142,27 @@ const SortingVisualizer = () => {
             max="100"
             defaultValue="50"
             onChange={(e) => setSpeed(400 / e.target.value)}
-            disabled={sorting}
             className="cursor-pointer"
           />
         </label>
       </div>
 
       {/* Bars Display */}
-      <div className="flex items-end gap-1 w-11/12 max-w-4xl px-4 bg-white shadow-lg rounded-lg py-4">
+      <div className="flex items-end gap-1 w-full max-w-4xl px-4 bg-white shadow-lg rounded-lg py-4">
         {blocks.map((value, index) => (
           <div
             key={index}
-            className={`w-full max-w-[12px] transition-all duration-200 ${
+            className={`transition-all duration-300 ease-in-out ${
               compare.includes(index)
-                ? 'bg-yellow-400'
+                ? "bg-yellow-400"
                 : sortedIndex.includes(index)
-                ? 'bg-green-500'
-                : 'bg-blue-500'
+                ? "bg-green-500"
+                : "bg-blue-400"
             }`}
-            style={{ height: `${value * 5}px` }}
+            style={{
+              height: `${value * 5}px`,
+              width: `${100 / blocks.length - 0.5}%`,
+            }}
           ></div>
         ))}
       </div>
@@ -153,4 +170,4 @@ const SortingVisualizer = () => {
   );
 };
 
-export default SortingVisualizer;
+export default MergeSortVisualizer;
