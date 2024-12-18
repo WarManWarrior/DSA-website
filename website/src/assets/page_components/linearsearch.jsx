@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, Element } from "react-scroll";
+import LinearSearchApp from "../algorithms/LinearSearchApp";
 
 const sections = [
   { id: "intro", label: "Introduction", image: "./src/assets/img/intro.png" },
@@ -130,8 +131,7 @@ const LinearSearch = () => {
               )}
               {section.id === "working" && (
                 <>
-                  <h2 className="text-2xl font-semibold mt-4">Working of Linear Search</h2>
-                  <p>Here we demonstrate how Linear Search works:</p>
+                  <LinearSearchApp />
                 </>
               )}
               {section.id === "code" && (
@@ -139,13 +139,13 @@ const LinearSearch = () => {
                   <h2 className="text-2xl font-semibold mt-4">Linear Search Code</h2>
                   <pre className="bg-gray-200 p-4 rounded-md overflow-x-auto">
                     {`function linearSearch(arr, target) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === target) {
-      return i;
-    }
-  }
-  return -1;
-}`}
+                      for (let i = 0; i < arr.length; i++) {
+                        if (arr[i] === target) {
+                          return i;
+                        }
+                      }
+                      return -1;
+                    }`}
                   </pre>
                 </>
               )}
