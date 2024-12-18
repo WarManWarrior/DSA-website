@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, Element } from "react-scroll"; // Importing from react-scroll
+import { Link, Element } from "react-scroll";
 
 const sections = [
   { id: "intro", label: "Introduction", image: "./src/assets/img/intro.png" },
@@ -24,8 +24,9 @@ const LinearSearch = () => {
         {/* Toggle Button */}
         <img
           src="./src/assets/img/control.png"
-          className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
-           border-2 rounded-full ${!open && "rotate-180"}`}
+          className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple border-2 rounded-full ${
+            !open && "rotate-180"
+          }`}
           onClick={() => setOpen(!open)}
           alt="toggle"
         />
@@ -56,11 +57,10 @@ const LinearSearch = () => {
                 alt={`${section.label} icon`}
                 className="w-6 h-6"
               />
-              {/* Link to each section with smooth scrolling using react-scroll */}
               <Link
-                to={section.id}  // Use the section id as the link target
-                smooth={true}     // Enable smooth scroll
-                duration={500}    // Duration of the scroll animation
+                to={section.id}
+                smooth={true}
+                duration={500}
                 className={`text-gray-300 hover:text-white ${
                   !open && "hidden"
                 } origin-left duration-200`}
@@ -81,72 +81,50 @@ const LinearSearch = () => {
         {sections.map((section) => (
           <Element
             key={section.id}
-            id={section.id}  // Each section must have a unique ID
-            className="h-screen flex flex-col items-center justify-center bg-gray-100 border border-gray-300 p-8"
+            id={section.id}
+            className="h-screen flex flex-col items-center justify-center bg-gray-100 border border-gray-300 p-4 sm:p-8"
           >
             <div className="text-lg text-gray-700 text-center">
-              {/* Content for each section */}
               {section.id === "intro" && (
-                <>
-                  <div className="flex flex-col items-center">
-                    <img
-                      src="https://seeklogo.com/images/S/srm-university-logo-81BF9B8323-seeklogo.com.png"
-                      alt="SRM Logo"
-                      className="h-24 w-24 mb-4"
-                    />
-                    <h2 className="text-2xl font-bold">
-                      SRM Institute of Science and Technology
-                    </h2>
-                    <p className="text-lg">
-                      Department of Computational Intelligence
-                    </p>
-                    <p className="text-lg">
-                      Virtual Lab - Design and Analysis of Algorithms
-                    </p>
-                  </div>
-                  <p className="mt-8">
+                <div className="flex flex-col items-center">
+                  <img
+                    src="https://seeklogo.com/images/S/srm-university-logo-81BF9B8323-seeklogo.com.png"
+                    alt="SRM Logo"
+                    className="h-24 w-24 mb-4 max-w-full"
+                  />
+                  <h2 className="text-2xl font-bold">SRM Institute of Science and Technology</h2>
+                  <p className="text-lg">Department of Computational Intelligence</p>
+                  <p className="text-lg">Virtual Lab - Design and Analysis of Algorithms</p>
+                  <p className="mt-4 sm:mt-8">
                     Linear search is a simple search algorithm that checks every
-                    element in a list sequentially until the desired element is
-                    found or the list ends.
+                    element in a list sequentially until the desired element is found or the list ends.
                   </p>
-                  <p>
-                    It is one of the most straightforward searching techniques
-                    and is easy to implement.
-                  </p>
-                </>
+                </div>
               )}
               {section.id === "video" && (
                 <>
                   <h2 className="text-2xl font-semibold mt-4">Video Lecture</h2>
-                  <p>
-                    Watch our video lecture to understand linear search in detail.
-                  </p>
-                  <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allowFullScreen
-                  ></iframe>
+                  <p>Watch our video lecture to understand linear search in detail.</p>
+                  <div className="aspect-w-16 aspect-h-9 w-full max-w-4xl">
+                    <iframe
+                      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allowFullScreen
+                      className="w-full h-full"
+                    ></iframe>
+                  </div>
                 </>
               )}
               {section.id === "algorithm" && (
                 <>
                   <h2 className="text-2xl font-semibold mt-4">Algorithm</h2>
-                  <p>The linear search algorithm works as follows:</p>
                   <ol className="list-decimal list-inside mb-4">
                     <li>Start from the first element of the list.</li>
                     <li>Compare the current element with the target value.</li>
                     <li>If they match, return the index of the current element.</li>
-                    <li>
-                      If not, move to the next element and repeat until the end
-                      of the list.
-                    </li>
-                    <li>
-                      If the end is reached without finding the target, return -1
-                      (not found).
-                    </li>
+                    <li>If not, move to the next element and repeat until the end of the list.</li>
+                    <li>If the end is reached without finding the target, return -1.</li>
                   </ol>
                 </>
               )}
@@ -154,22 +132,19 @@ const LinearSearch = () => {
                 <>
                   <h2 className="text-2xl font-semibold mt-4">Working of Linear Search</h2>
                   <p>Here we demonstrate how Linear Search works:</p>
-                  {/* You can add code or demo here */}
                 </>
               )}
               {section.id === "code" && (
                 <>
-                  <h2 className="text-2xl font-semibold mt-4">
-                    Linear Search Code
-                  </h2>
+                  <h2 className="text-2xl font-semibold mt-4">Linear Search Code</h2>
                   <pre className="bg-gray-200 p-4 rounded-md overflow-x-auto">
                     {`function linearSearch(arr, target) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === target) {
-      return i; // Return index if found
+      return i;
     }
   }
-  return -1; // Return -1 if not found
+  return -1;
 }`}
                   </pre>
                 </>
@@ -179,13 +154,12 @@ const LinearSearch = () => {
                   <h2 className="text-2xl font-semibold mt-4">Analysis</h2>
                   <p>
                     The time complexity of linear search is O(n), where n is the
-                    number of elements in the array. This means that in the worst
-                    case, you may need to check every element in the array.
+                    number of elements in the array.
                   </p>
                   <p>
-                    While linear search is simple and effective for small
-                    datasets, it becomes inefficient for larger datasets compared
-                    to more advanced algorithms like binary search.
+                    While simple and effective for small datasets, it becomes
+                    inefficient for larger datasets compared to advanced
+                    algorithms.
                   </p>
                 </>
               )}

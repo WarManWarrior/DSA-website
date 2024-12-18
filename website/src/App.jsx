@@ -1,6 +1,6 @@
 import Home from "./assets/pages/home";
 import InsertionSortVisualizer from "./assets/algorithms/insertion_sort";
-import LinearSearch from "./assets/algorithms/linearsearch";
+import LinearSearch from "./assets/page_components/linearsearch";
 import BubbleSortVisualizer from "./assets/algorithms/bubble_sort";
 import BinarySearchVisualization from "./assets/algorithms/Binary_Search";
 import MergeSortVisualizer from "./assets/algorithms/Merge_sort";
