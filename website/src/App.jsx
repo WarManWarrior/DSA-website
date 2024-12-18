@@ -12,6 +12,7 @@ import CodeEditor from "./assets/page_components/CodeEditor";
 import ConvexHullVisualizer from "./assets/algorithms/ConvexHull";
 import QuickSort from "./assets/algorithms/quicksort";
 import LinearSearchApp from "./assets/algorithms/LinearSearchApp";
+import ExperimentsPage from "./assets/pages/Experiments";
 
 
 
@@ -23,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/insertion" element={<InsertionSortVisualizer />} />
-          <Route path="/linearsearch" element={<LinearSearch />} />
+          <Route path="/linearsearch" element={<CodeEditor />} />
         </Routes>
       </Router>
     </div>
