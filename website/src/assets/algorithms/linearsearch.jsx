@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link, Element } from "react-scroll"; // Importing from react-scroll
+import { Link, Element } from "react-scroll";
+import CodeEditor from "../page_components/CodeEditor"; // Import the CodeEditor component
 
 const sections = [
   { id: "intro", label: "Introduction", image: "./src/assets/img/intro.png" },
@@ -9,6 +10,79 @@ const sections = [
   { id: "code", label: "Linear Search Code", image: "./src/assets/img/code.png" },
   { id: "analysis", label: "Analysis", image: "./src/assets/img/analysis.png" },
 ];
+
+// Hardcoded experiment data
+const experiment = {
+  title: "Linear Search Code",
+  configs: {
+    python3: {
+      code: `def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return -1
+
+# Example
+arr = [2, 4, 6, 8, 10]
+print(linear_search(arr, 6))  # Output: 2`,
+      output: "2",
+    },
+    c: {
+      code: `#include <stdio.h>
+int linearSearch(int arr[], int n, int target) {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == target)
+            return i;
+    }
+    return -1;
+}
+int main() {
+    int arr[] = {2, 4, 6, 8, 10};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    printf("%d\\n", linearSearch(arr, n, 6));  // Output: 2
+    return 0;
+}`,
+      output: "2",
+    },
+    cpp: {
+      code: `#include <iostream>
+using namespace std;
+
+int linearSearch(int arr[], int n, int target) {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == target)
+            return i;
+    }
+    return -1;
+}
+
+int main() {
+    int arr[] = {2, 4, 6, 8, 10};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    cout << linearSearch(arr, n, 6) << endl;  // Output: 2
+    return 0;
+}`,
+      output: "2",
+    },
+    java: {
+      code: `public class LinearSearch {
+    public static int linearSearch(int[] arr, int target) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target)
+                return i;
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {2, 4, 6, 8, 10};
+        System.out.println(linearSearch(arr, 6));  // Output: 2
+    }
+}`,
+      output: "2",
+    },
+  },
+};
 
 const LinearSearch = () => {
   const [open, setOpen] = useState(true);
@@ -21,7 +95,6 @@ const LinearSearch = () => {
           open ? "w-72" : "w-20"
         } bg-gray-800 h-screen p-5 pt-8 fixed top-0 left-0 duration-300`}
       >
-        {/* Toggle Button */}
         <img
           src="./src/assets/img/control.png"
           className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
@@ -29,7 +102,6 @@ const LinearSearch = () => {
           onClick={() => setOpen(!open)}
           alt="toggle"
         />
-        {/* Logo and Title */}
         <div className="flex gap-x-4 items-center">
           <img
             src="./src/assets/img/logo.png"
@@ -44,7 +116,6 @@ const LinearSearch = () => {
             Linear Search
           </h1>
         </div>
-        {/* Sidebar Menu */}
         <ul className="pt-6">
           {sections.map((section) => (
             <li
@@ -56,11 +127,10 @@ const LinearSearch = () => {
                 alt={`${section.label} icon`}
                 className="w-6 h-6"
               />
-              {/* Link to each section with smooth scrolling using react-scroll */}
               <Link
-                to={section.id}  // Use the section id as the link target
-                smooth={true}     // Enable smooth scroll
-                duration={500}    // Duration of the scroll animation
+                to={section.id}
+                smooth={true}
+                duration={500}
                 className={`text-gray-300 hover:text-white ${
                   !open && "hidden"
                 } origin-left duration-200`}
@@ -81,11 +151,10 @@ const LinearSearch = () => {
         {sections.map((section) => (
           <Element
             key={section.id}
-            id={section.id}  // Each section must have a unique ID
+            id={section.id}
             className="h-screen flex flex-col items-center justify-center bg-gray-100 border border-gray-300 p-8"
           >
             <div className="text-lg text-gray-700 text-center">
-              {/* Content for each section */}
               {section.id === "intro" && (
                 <>
                   <div className="flex flex-col items-center">
@@ -154,25 +223,10 @@ const LinearSearch = () => {
                 <>
                   <h2 className="text-2xl font-semibold mt-4">Working of Linear Search</h2>
                   <p>Here we demonstrate how Linear Search works:</p>
-                  {/* You can add code or demo here */}
                 </>
               )}
               {section.id === "code" && (
-                <>
-                  <h2 className="text-2xl font-semibold mt-4">
-                    Linear Search Code
-                  </h2>
-                  <pre className="bg-gray-200 p-4 rounded-md overflow-x-auto">
-                    {`function linearSearch(arr, target) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === target) {
-      return i; // Return index if found
-    }
-  }
-  return -1; // Return -1 if not found
-}`}
-                  </pre>
-                </>
+                <CodeEditor experiment={experiment} />
               )}
               {section.id === "analysis" && (
                 <>
