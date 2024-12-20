@@ -13,6 +13,8 @@ import ConvexHullVisualizer from "./assets/algorithms/ConvexHull";
 import QuickSort from "./assets/algorithms/quicksort";
 import LinearSearchApp from "./assets/algorithms/LinearSearchApp";
 import ExperimentsPage from "./assets/pages/Experiments";
+import RandomizedQuickSort from "./assets/algorithms/randomizedquicksort";
+import TravellingSalesmanProblem from "./assets/algorithms/TravellingSalesmanProblem";
 
 
 
@@ -24,7 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/insertion" element={<InsertionSortVisualizer />} />
-          <Route path="/linearsearch" element={<LinearSearch />} />
+          <Route path="/linearsearch" element={<TravellingSalesmanProblem />} />
         </Routes>
       </Router>
     </div>
