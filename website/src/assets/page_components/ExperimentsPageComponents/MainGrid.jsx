@@ -1,65 +1,32 @@
-import React from 'react';
+
 import Card from './Card'; // Adjust the import path as necessary
+// src/App.js
 
-const cardData = [
-  {
-    image: 'https://via.placeholder.com/250x150?text=Image+1',
-    title: 'Card Title 1',
-    subtitle: 'Subtitle for Card 1',
-    description: 'Description for Card number one.'
-  },
-  
-  {
-    image: 'https://via.placeholder.com/250x150?text=Image+2',
-    title: 'Card Title 2',
-    subtitle: 'Subtitle for Card 2',
-    description: 'Description for Card number two.'
-  },
+import React, { useState } from 'react';
 
-  {
-    image: 'https://via.placeholder.com/250x150?text=Image+3',
-    title: 'Card Title 3',
-    subtitle: 'Subtitle for Card 3',
-    description: 'Description for Card number three.'
-  },
 
-   {
-     image: 'https://via.placeholder.com/250x150?text=Image+4',
-     title: 'Card Title 4',
-     subtitle: 'Subtitle for Card 4',
-     description: 'Description for Card number four.'
-   },
+const App = () => {
+  const [activeCard, setActiveCard] = useState(null);
 
-   {
-     image: 'https://via.placeholder.com/250x150?text=Image+5',
-     title: 'Card Title 5',
-     subtitle: 'Subtitle for Card 5',
-     description: 'Description for Card number five.'
-   },
+  const topics = [
+    { topic: 'React', subtopics: ['Hooks', 'Components', 'State Management'] },
+    { topic: 'JavaScript', subtopics: ['ES6', 'Promises', 'Async/Await'] },
+    { topic: 'CSS', subtopics: ['Flexbox', 'Grid', 'Animations'] },
+  ];
 
-   {
-     image: 'https://via.placeholder.com/250x150?text=Image+6',
-     title: 'Card Title 6',
-     subtitle: 'Subtitle for Card 6',
-     description: 'Description for Card number six.'
-   },
-];
+  return (
+    <div className="flex flex-wrap justify-center p-10">
+      {topics.map((item, index) => (
+        <Card
+          key={index}
+          topic={item.topic}
+          subtopics={item.subtopics}
+          isActive={activeCard === index}
+          onClick={() => setActiveCard(activeCard === index ? null : index)}
+        />
+      ))}
+    </div>
+  );
+};
 
-const CardList = () => {
- return (
-   <div style={{ display:'flex', flexWrap:'wrap', gap:'20px' }}>
-     {cardData.map((data, index) => (
-       <Card 
-         key={index}
-         image={data.image}
-         title={data.title}
-         subtitle={data.subtitle}
-         description={data.description}
-       />
-     ))}
-   </div>
- );
-}
-
-export default CardList;
-
+export default App;
