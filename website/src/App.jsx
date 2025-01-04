@@ -15,6 +15,7 @@ import LinearSearchApp from "./assets/algorithms/LinearSearchApp";
 import ExperimentsPage from "./assets/pages/Experiments";
 import RandomizedQuickSort from "./assets/algorithms/randomizedquicksort";
 import TravellingSalesmanProblem from "./assets/algorithms/TravellingSalesmanProblem";
+import NQueensVisualizer from "./assets/algorithms/NqueensProblem";
 
 
 
@@ -26,7 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/insertion" element={<InsertionSortVisualizer />} />
-          <Route path="/linearsearch" element={<ExperimentsPage/>} />
+          <Route path="/linearsearch" element={<StrassenMatrixVisualization />} />
         </Routes>
       </Router>
     </div>
