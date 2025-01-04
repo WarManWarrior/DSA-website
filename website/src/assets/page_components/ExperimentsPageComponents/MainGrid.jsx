@@ -1,36 +1,32 @@
-import React from "react";
-import Card from "./Card";
 
-const MainGrid = () => {
-  const cardTitles = [
-    "Simple Algorithm-Insertion sort",
-    "Bubble Sort",
-    "Linear search, Binary search",
-    "Merge sort",
-    "Quick sort",
-    "Strassen Matrix multiplication",
-    "Finding Maximum and Minimum in an array, Convex Hull problem",
-    "Huffman coding",
-    "Knapsack using greedy",
-    "Longest common subsequence",
-    "N queen’s problem",
-    "Travelling salesman problem",
-    "Randomized quick sort",
-    "String matching algorithms",
+import Card from './Card'; // Adjust the import path as necessary
+// src/App.js
+
+import React, { useState } from 'react';
+
+
+const App = () => {
+  const [activeCard, setActiveCard] = useState(null);
+
+  const topics = [
+    { topic: 'React', subtopics: ['Hooks', 'Components', 'State Management'] },
+    { topic: 'JavaScript', subtopics: ['ES6', 'Promises', 'Async/Await'] },
+    { topic: 'CSS', subtopics: ['Flexbox', 'Grid', 'Animations'] },
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-6">
-      {cardTitles.map((title, index) => (
+    <div className="flex flex-wrap justify-center p-10">
+      {topics.map((item, index) => (
         <Card
           key={index}
-          title={title}
-          onLearnClick={() => alert(`Learn: ${title}`)}
-          onVisualizeClick={() => alert(`Visualize: ${title}`)}
+          topic={item.topic}
+          subtopics={item.subtopics}
+          isActive={activeCard === index}
+          onClick={() => setActiveCard(activeCard === index ? null : index)}
         />
       ))}
     </div>
   );
 };
 
-export default MainGrid;
+export default App;

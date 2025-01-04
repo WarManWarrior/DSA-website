@@ -1,25 +1,28 @@
-import React from "react";
+// src/components/Card.js
 
-const Card = ({ title, onLearnClick, onVisualizeClick }) => {
+import React, { useState } from 'react';
+
+const Card = ({ topic, subtopics, isActive, onClick }) => {
   return (
-    <div className="bg-purple-500 p-6 rounded-2xl shadow-lg shadow-blue-700 hover:scale-105 transform transition">
-      <h3 className="text-xl font-bold mb-4 text-white">{title}</h3>
-      <div className="flex gap-4">
-        <button
-          className="bg-yellow-400 text-gray-800 px-4 py-2 rounded hover:bg-yellow-500"
-          onClick={onLearnClick}
-        >
-          Learn
-        </button>
-        <button
-          className="bg-yellow-400 text-gray-800 px-4 py-2 rounded hover:bg-yellow-500"
-          onClick={onVisualizeClick}
-        >
-          Visualize
-        </button>
-      </div>
+    <div
+      className={`p-4 m-2 rounded-lg shadow-lg transition-all duration-300 
+                  ${isActive ? 'bg-blue-500 text-white glow' : 'bg-white text-black'}
+                  ${isActive ? 'scale-105' : 'scale-100'}`}
+      onClick={onClick}
+    >
+      <h2 className="text-xl font-bold">{topic}</h2>
+      {isActive && (
+        <ul className="mt-2">
+          {subtopics.map((subtopic, index) => (
+            <li key={index} className="ml-4 text-sm">
+              {subtopic}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
+
 
 export default Card;

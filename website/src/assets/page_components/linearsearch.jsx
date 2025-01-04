@@ -159,7 +159,7 @@ const LinearSearch = () => {
               {section.id === "intro" && (
                 <div className="flex flex-col items-center">
                   <img
-                    src="https://seeklogo.com/images/S/srm-university-logo-81BF9B8323-seeklogo.com.png"
+                    src="https://d23qowwaqkh3fj.cloudfront.net/wp-content/uploads/2022/01/srm-logo-white.svg.gzip"
                     alt="SRM Logo"
                     className="h-24 w-24 mb-4 max-w-full"
                   />
