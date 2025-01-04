@@ -25,8 +25,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/insertion" element={<InsertionSortVisualizer />} />
-          <Route path="/linearsearch" element={<TravellingSalesmanProblem />} />
+          <Route path="/linearsearch" element={<ExperimentsPage />} />
         </Routes>
       </Router>
     </div>

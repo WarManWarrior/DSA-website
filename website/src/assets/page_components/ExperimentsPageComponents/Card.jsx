@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = ({ title, onLearnClick, onVisualizeClick }) => {
   return (
-    <div className="bg-purple-500 p-6 rounded-lg shadow-md hover:scale-105 transform transition">
+    <div className="bg-purple-500 p-6 rounded-2xl shadow-lg shadow-blue-700 hover:scale-105 transform transition">
       <h3 className="text-xl font-bold mb-4 text-white">{title}</h3>
       <div className="flex gap-4">
         <button
