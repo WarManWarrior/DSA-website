@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 
-const App = () => {
+const TravellingSalesmanProblem = () => {
   const [cities, setCities] = useState([]);
   const [selectedAlgorithm, setSelectedAlgorithm] = useState("");
   const [edges, setEdges] = useState([]);
@@ -446,4 +446,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default TravellingSalesmanProblem;
