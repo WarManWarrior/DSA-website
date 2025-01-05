@@ -16,6 +16,7 @@ import ExperimentsPage from "./assets/pages/Experiments";
 import RandomizedQuickSort from "./assets/algorithms/randomizedquicksort";
 import TravellingSalesmanProblem from "./assets/algorithms/TravellingSalesmanProblem";
 import NQueensVisualizer from "./assets/algorithms/NqueensProblem";
+import LCSVisualizer from "./assets/algorithms/LCS";
 
 
 
@@ -27,7 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/insertion" element={<InsertionSortVisualizer />} />
-          <Route path="/linearsearch" element={<NQueensVisualizer />} />
+          <Route path="/linearsearch" element={<LCSVisualizer />} />
         </Routes>
       </Router>
     </div>
