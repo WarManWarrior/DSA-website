@@ -17,6 +17,7 @@ import RandomizedQuickSort from "./assets/algorithms/randomizedquicksort";
 import TravellingSalesmanProblem from "./assets/algorithms/TravellingSalesmanProblem";
 import NQueensVisualizer from "./assets/algorithms/NqueensProblem";
 import LCSVisualizer from "./assets/algorithms/LCS";
+import StringMatchingVisualizer from "./assets/algorithms/StringMatching";
 
 
 
@@ -28,7 +29,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/insertion" element={<InsertionSortVisualizer />} />
-          <Route path="/linearsearch" element={<LCSVisualizer />} />
+          <Route path="/linearsearch" element={<StringMatchingVisualizer />} />
         </Routes>
       </Router>
     </div>
