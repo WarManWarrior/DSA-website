@@ -120,7 +120,7 @@ const NQueensVisualizer = () => {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <h1 className="text-3xl font-bold mb-4 text-gray-800">N-Queens Problem Visualizer</h1>
 
-      <div className="flex space-x-4 mb-4">
+      <div className="flex space-x-4 mb-4 items-center">
         <label className="text-gray-700 font-medium">Board Size:</label>
         <input
           type="number"
@@ -134,13 +134,19 @@ const NQueensVisualizer = () => {
           className="w-16 text-center border border-gray-400 rounded px-2 py-1"
         />
 
-        <label className="text-gray-700 font-medium">Speed (ms):</label>
-        <input
-          type="number"
-          value={speed}
-          onChange={e => setSpeed(Math.max(100, parseInt(e.target.value) || 500))}
-          className="w-16 text-center border border-gray-400 rounded px-2 py-1"
-        />
+        <label className="text-gray-700 font-medium">Speed:</label>
+        <div className="flex items-center space-x-2">
+          <input
+            type="range"
+            min="100"
+            max="2000"
+            step="100"
+            value={speed}
+            onChange={e => setSpeed(parseInt(e.target.value))}
+            className="w-32"
+          />
+          <span className="text-gray-700">{`${speed} ms`}</span>
+        </div>
       </div>
 
       <div className="grid gap-1" style={{ gridTemplateColumns: `repeat(${N}, minmax(0, 1fr))`, width: `calc(${N} * 3rem)` }}>
