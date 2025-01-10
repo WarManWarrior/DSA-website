@@ -15,7 +15,7 @@ const App = () => {
   ];
 
   return (
-    <div className="flex flex-wrap justify-center p-10">
+    <div className="flex flex-wrap flex-col min-h-screen justify-center p-10 ">
       {topics.map((item, index) => (
         <Card
           key={index}
