@@ -16,6 +16,8 @@ import ExperimentsPage from "./assets/pages/Experiments";
 import RandomizedQuickSort from "./assets/algorithms/randomizedquicksort";
 import TravellingSalesmanProblem from "./assets/algorithms/TravellingSalesmanProblem";
 import NQueensVisualizer from "./assets/algorithms/NqueensProblem";
+import LCSVisualizer from "./assets/algorithms/LCS";
+import StringMatchingVisualizer from "./assets/algorithms/StringMatching";
 
 
 
