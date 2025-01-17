@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-
 const BinarySearchVisualization = () => {
-  const generateNewArray = () => Array.from({ length: 30 }, () => Math.floor(Math.random() * 100) + 1).sort((a, b) => a - b);
+  const generateNewArray = () =>
+    Array.from({ length: 30 }, () => Math.floor(Math.random() * 100) + 1).sort((a, b) => a - b);
 
   const [array, setArray] = useState(generateNewArray());
   const [target, setTarget] = useState(50);
@@ -22,7 +22,6 @@ const BinarySearchVisualization = () => {
   };
 
   const binarySearch = () => {
-    // Reset only the state variables for the search logic, not the array
     setLow(0);
     setHigh(array.length - 1);
     setCurrent(null);
@@ -34,7 +33,7 @@ const BinarySearchVisualization = () => {
     const searchStep = () => {
       if (lowIdx > highIdx) {
         setCurrent(null);
-        setResultIndex(null);
+        setResultIndex(-1);
         return;
       }
 
@@ -72,37 +71,15 @@ const BinarySearchVisualization = () => {
           className="input input-bordered input-primary w-20"
           placeholder="Target"
         />
-        <button onClick={binarySearch} className="btn btn-primary">Start Search</button>
-        <button onClick={resetVisualization} className="btn btn-secondary">Reset</button>
+        <button onClick={binarySearch} className="btn btn-primary">
+          Start Search
+        </button>
+        <button onClick={resetVisualization} className="btn btn-secondary">
+          Reset
+        </button>
       </div>
 
-      <div className="w-full max-w-4xl flex flex-col items-center space-y-2 mb-6">
-        <div className="w-full flex items-end space-x-2">
-          {array.map((num, idx) => (
-            <div
-              key={idx}
-              className={`flex-1 relative rounded-md transition-all animate-ease-in-out duration-500
-                ${idx === current ? "bg-yellow-500" : idx === low || idx === high ? "bg-purple-500" : "bg-blue-500"}
-              `}
-              style={{ height: `${num * 3}px` }}
-            >
-              <span className="absolute top-1 left-1/2 transform -translate-x-1/2 text-white text-sm font-bold">{num}</span>
-            </div>
-          ))}
-        </div>
-        <div className="w-full flex justify-between text-sm font-bold text-gray-700">
-          {array.map((_, idx) => (
-            <div
-              key={idx}
-              className={`flex-1 text-center ${idx === current ? "text-yellow-500" : idx === low || idx === high ? "text-purple-500" : ""}`}
-            >
-              {idx}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center mb-4">
         <label className="mb-2 font-semibold">Animation Speed</label>
         <input
           type="range"
@@ -115,9 +92,67 @@ const BinarySearchVisualization = () => {
         <span>{speed}x</span>
       </div>
 
+      <div className="w-full max-w-4xl flex flex-col items-center space-y-2 mb-6">
+        <div className="w-full flex items-end space-x-2">
+          {array.map((num, idx) => (
+            <div
+              key={idx}
+              className={`flex-1 relative rounded-md transition-all animate-ease-in-out duration-500 ${
+                idx === current
+                  ? "bg-yellow-500"
+                  : idx === low || idx === high
+                  ? "bg-purple-500"
+                  : "bg-blue-500"
+              }`}
+              style={{ height: `${num * 3}px` }}
+            >
+              <span className="absolute top-1 left-1/2 transform -translate-x-1/2 text-white text-sm font-bold">
+                {num}
+              </span>
+            </div>
+          ))}
+        </div>
+        <div className="w-full flex justify-between text-sm font-bold text-gray-700">
+          {array.map((_, idx) => (
+            <div
+              key={idx}
+              className={`flex-1 text-center ${
+                idx === current
+                  ? "text-yellow-500"
+                  : idx === low || idx === high
+                  ? "text-purple-500"
+                  : ""
+              }`}
+            >
+              {idx}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-6">
+        <h2 className="text-lg font-semibold mb-4">Legend</h2>
+        <div className="flex flex-col space-y-2 text-left">
+          <div className="flex items-center">
+            <div className="w-6 h-6 bg-yellow-500 mr-2"></div>
+            <span>Current Element</span>
+          </div>
+          <div className="flex items-center">
+            <div className="w-6 h-6 bg-purple-500 mr-2"></div>
+            <span>Boundary Elements (Low or High)</span>
+          </div>
+          <div className="flex items-center">
+            <div className="w-6 h-6 bg-blue-500 mr-2"></div>
+            <span>Default State</span>
+          </div>
+        </div>
+      </div>
+
       {resultIndex !== null && (
         <div className="mt-4 text-lg font-bold text-green-600">
-          Target found at index: {resultIndex}
+          {resultIndex === -1
+            ? "Target not found"
+            : `Target found at index: ${resultIndex}`}
         </div>
       )}
     </div>

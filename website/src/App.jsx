@@ -29,7 +29,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/insertion" element={<InsertionSortVisualizer />} />
-          <Route path="/linearsearch" element={<BubbleSortVisualizer />} />
+          <Route path="/linearsearch" element={<BinarySearchVisualization />} />
         </Routes>
       </Router>
     </div>
