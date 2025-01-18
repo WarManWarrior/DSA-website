@@ -1,0 +1,20 @@
+{
+    "sections": [
+      { "id": "intro", "label": "Introduction", "image": "./src/assets/img/intro.png" },
+      { "id": "video", "label": "Video Lecture", "image": "./src/assets/img/video.png" },
+      { "id": "algorithm", "label": "Algorithm", "image": "./src/assets/img/algorithm.png" },
+      { "id": "working", "label": "Working", "image": "./src/assets/img/working.png" },
+      { "id": "code", "label": "Linear Search Code", "image": "./src/assets/img/code.png" },
+      { "id": "analysis", "label": "Analysis", "image": "./src/assets/img/analysis.png" }
+    ],
+    "experiment": {
+      "title": "Linear Search Code",
+      "configs": {
+        "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
+        "c": { "code": "#include <stdio.h>...", "output": "2" },
+        "cpp": { "code": "#include <iostream>...", "output": "2" },
+        "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+      }
+    }
+  }
+  
