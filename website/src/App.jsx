@@ -30,7 +30,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/insertion" element={<InsertionSortVisualizer />} />
-          <Route path="/linearsearch" element={<MergeSortVisualizer/>} />
+          <Route path="/linearsearch" element={<NQueensVisualizer/>} />
         </Routes>
       </Router>
     </div>
