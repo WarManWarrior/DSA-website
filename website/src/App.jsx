@@ -18,7 +18,7 @@ import TravellingSalesmanProblem from "./assets/algorithms/TravellingSalesmanPro
 import NQueensVisualizer from "./assets/algorithms/NqueensProblem";
 import LCSVisualizer from "./assets/algorithms/LCS";
 import StringMatchingVisualizer from "./assets/algorithms/StringMatching";
-import HuffmanTreeVisualization from "./assets/algorithms/Huffman";
+
 
 
 
@@ -30,7 +30,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/insertion" element={<InsertionSortVisualizer />} />
-          <Route path="/linearsearch" element={<HuffmanCodingVisualization/>} />
+          <Route path="/linearsearch" element={<InsertionSortVisualizer/>} />
         </Routes>
       </Router>
     </div>
