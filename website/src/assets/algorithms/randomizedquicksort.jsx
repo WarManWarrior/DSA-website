@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const RandomizedQuickSort = () => {
   const [array, setArray] = useState([]);
   const [isSorting, setIsSorting] = useState(false);
-  const [arraySize, setArraySize] = useState(30);
+  const [arraySize] = useState(20);
   const [animationSpeed, setAnimationSpeed] = useState(300);
   const [pivotIndex, setPivotIndex] = useState(null);
+
+  useEffect(() => {
+    generateRandomArray();
+  }, []);
 
   const generateRandomArray = () => {
     const newArray = Array.from({ length: arraySize }, () =>
@@ -55,32 +59,16 @@ const RandomizedQuickSort = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-b from-blue-100 to-blue-300 min-h-screen">
-      <h1 className="text-4xl font-bold text-blue-900 mb-6">
+    <div className="flex flex-col items-center justify-center p-6 bg-gray-900 min-h-screen text-white">
+      <h1 className="text-4xl font-bold text-yellow-400 mb-6">
         Randomized Quick Sort Visualization
       </h1>
 
       {/* Controls Section */}
-      <div className="w-full max-w-4xl p-4 bg-white shadow-lg rounded-lg mb-8">
+      <div className="w-full max-w-4xl p-4 bg-gray-800 shadow-lg rounded-lg mb-8">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="flex items-center space-x-2">
-            <label htmlFor="arraySize" className="font-medium text-gray-700">
-              Array Size:
-            </label>
-            <input
-              id="arraySize"
-              type="range"
-              min="10"
-              max="100"
-              value={arraySize}
-              onChange={(e) => setArraySize(Number(e.target.value))}
-              disabled={isSorting}
-              className="w-32"
-            />
-            <span>{arraySize}</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <label htmlFor="speed" className="font-medium text-gray-700">
+            <label htmlFor="speed" className="font-medium text-gray-400">
               Speed (ms):
             </label>
             <input
@@ -102,7 +90,7 @@ const RandomizedQuickSort = () => {
               disabled={isSorting}
               className={`px-4 py-2 rounded-md font-medium text-white ${
                 isSorting
-                  ? "bg-gray-400 cursor-not-allowed"
+                  ? "bg-gray-600 cursor-not-allowed"
                   : "bg-blue-700 hover:bg-blue-800"
               }`}
             >
@@ -113,7 +101,7 @@ const RandomizedQuickSort = () => {
               disabled={isSorting || array.length === 0}
               className={`px-4 py-2 rounded-md font-medium text-white ${
                 isSorting || array.length === 0
-                  ? "bg-gray-400 cursor-not-allowed"
+                  ? "bg-gray-600 cursor-not-allowed"
                   : "bg-green-600 hover:bg-green-700"
               }`}
             >
@@ -123,22 +111,33 @@ const RandomizedQuickSort = () => {
         </div>
       </div>
 
+      {/* Color Labels */}
+      <div className="flex space-x-6 mb-4">
+        <div className="flex items-center space-x-2">
+          <div className="w-6 h-6 bg-blue-400"></div>
+          <span>Unsorted Element</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <div className="w-6 h-6 bg-red-500"></div>
+          <span>Pivot Element</span>
+        </div>
+      </div>
+
       {/* Visualization Section */}
-      <div className="relative flex items-end justify-center w-full max-w-5xl h-80 bg-white rounded-lg shadow-lg p-4 border-t-4 border-blue-700">
+      <div className="relative flex items-end justify-center w-full max-w-5xl min-h-80 overflow-hidden">
         {array.map((value, index) => (
           <div
             key={index}
-            className={`${
-              index === pivotIndex ? "bg-red-600" : "bg-blue-500"
-            } mx-[2px] transition-all ease-in-out`}
+            className={`relative text-center text-white ${
+              index === pivotIndex ? "bg-red-500" : "bg-blue-400"
+            } mx-1 transition-all ease-in-out`}
             style={{
-              height: `${value * 2.5}px`,
-              width: `${Math.max(
-                2,
-                Math.floor(200 / arraySize)
-              )}px`, // Dynamic width based on array size
+              height: `${Math.min(value * 3, 300)}px`,
+              width: `${Math.max(25, Math.floor(800 / arraySize))}px`,
             }}
-          ></div>
+          >
+            <span className="absolute top-[-20px] w-full text-sm">{value}</span>
+          </div>
         ))}
       </div>
     </div>
@@ -146,4 +145,3 @@ const RandomizedQuickSort = () => {
 };
 
 export default RandomizedQuickSort;
-

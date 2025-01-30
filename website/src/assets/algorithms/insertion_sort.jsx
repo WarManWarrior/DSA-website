@@ -25,12 +25,12 @@ const InsertionSortVisualizer = () => {
       let key = arr[i];
       let j = i - 1;
 
-      setCurrentIndex(i); // The key element (current element to be sorted)
+      setCurrentIndex(i); // The key element (current element to be sorted) - Yellow
       setActiveIndices([i]);
 
       // Start the comparison process
       while (j >= 0 && arr[j] > key) {
-        setCurrentCompare(j); // The element being compared with the key
+        setCurrentCompare(j); // The element being compared with the key - Purple
 
         // Swap the current element with the one being compared
         const tempArray = [...arr];
@@ -40,7 +40,7 @@ const InsertionSortVisualizer = () => {
 
         await new Promise((resolve) => setTimeout(resolve, animationSpeed));
 
-        // After swap, the previously compared element is highlighted in purple
+        // After swap, the previously compared element is highlighted in Purple
         setCurrentIndex(j);
         setCurrentCompare(j - 1);
 
@@ -97,8 +97,8 @@ const InsertionSortVisualizer = () => {
             key={index}
             className={`
               w-10 rounded-md transition-all transform duration-500
-              ${index === currentIndex ? 'bg-yellow-500 scale-105' : 'bg-accent'}
-              ${index === currentCompare ? 'bg-purple-500' : ''}
+              ${index === currentIndex ? 'bg-yellow-500 scale-105' : 'bg-accent'} // Yellow - Current key element
+              ${index === currentCompare ? 'bg-purple-500' : ''} // Purple - Currently compared element
               ${activeIndices.includes(index) && index !== currentIndex && index !== currentCompare ? '' : ''}
             `}
             style={{ height: `${value * 3}px` }}
@@ -106,6 +106,21 @@ const InsertionSortVisualizer = () => {
             <span className="block text-center text-xs text-white">{value}</span>
           </div>
         ))}
+      </div>
+      <div className="mt-6 p-4 bg-gray-800 text-white rounded-lg">
+        <h2 className="text-lg font-bold mb-2">Legend</h2>
+        <div className="flex items-center mb-1">
+          <div className="w-4 h-4 bg-yellow-500 mr-2"></div>
+          <span>Current Key Element (Yellow)</span>
+        </div>
+        <div className="flex items-center mb-1">
+          <div className="w-4 h-4 bg-purple-500 mr-2"></div>
+          <span>Currently Compared Element (Purple)</span>
+        </div>
+        <div className="flex items-center">
+          <div className="w-4 h-4 bg-accent mr-2"></div>
+          <span>Unsorted Elements (Default Color)</span>
+        </div>
       </div>
     </div>
   );

@@ -51,6 +51,7 @@ const BubbleSortVisualizer = () => {
   return (
     <div className="flex flex-col items-center min-h-screen bg-base-200">
       <h1 className="text-4xl font-bold text-primary my-5">Bubble Sort Visualizer</h1>
+
       <div className="flex space-x-4 mb-6">
         <button
           className="btn btn-primary"
@@ -67,6 +68,7 @@ const BubbleSortVisualizer = () => {
           Start Sorting
         </button>
       </div>
+
       <div className="mb-6">
         <label className="mr-4">Animation Speed:</label>
         <input
@@ -79,23 +81,42 @@ const BubbleSortVisualizer = () => {
           disabled={sorting}
         />
       </div>
-      <div className="flex space-x-2 items-end">
+
+      <div className="flex space-x-2 items-end mb-4">
         {array.map((value, index) => (
-          <div
-            key={index}
-            className={`
-              w-10 rounded-md text-center text-xs text-white
-              ${index === currentIndex ? "bg-yellow-500" : ""}
-              ${index === currentCompare ? "bg-purple-500" : "bg-accent"}
-            `}
-            style={{
-              height: `${value * 3}px`,
-              transition: `height ${animationSpeed}ms ease, background-color 0.2s`,
-            }}
-          >
-            {value}
+          <div key={index} className="flex flex-col items-center">
+            <div
+              className={`
+                w-10 rounded-md text-center text-xs text-white
+                ${index === currentIndex ? "bg-yellow-500" : ""}
+                ${index === currentCompare ? "bg-purple-500" : "bg-accent"}
+              `}
+              style={{
+                height: `${value * 3}px`,
+                transition: `height ${animationSpeed}ms ease, background-color 0.2s`,
+              }}
+            ></div>
+            <span className="text-white mt-1">{value}</span>
           </div>
         ))}
+      </div>
+
+      <div className="mt-6">
+        <h2 className="text-xl font-semibold mb-4">Legend</h2>
+        <div className="flex flex-col space-y-2 text-left">
+          <div className="flex items-center">
+            <div className="w-6 h-6 bg-yellow-500 mr-2"></div>
+            <span>Current Element</span>
+          </div>
+          <div className="flex items-center">
+            <div className="w-6 h-6 bg-purple-500 mr-2"></div>
+            <span>Element Being Compared</span>
+          </div>
+          <div className="flex items-center">
+            <div className="w-6 h-6 bg-accent mr-2"></div>
+            <span>Default State</span>
+          </div>
+        </div>
       </div>
     </div>
   );
