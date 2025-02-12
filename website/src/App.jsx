@@ -29,8 +29,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/insertion" element={<InsertionSortVisualizer />} />
-          <Route path="/linearsearch" element={<LinearSearch/>} />
+          <Route path="/insertion" element={<LinearSearch />} />
+          <Route path="/listofexp" element={<ExperimentsPage/>} />
         </Routes>
       </Router>
     </div>
