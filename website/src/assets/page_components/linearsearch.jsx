@@ -10,12 +10,17 @@ import CodeEditor from "./components/CodeEditor.jsx";
 import data from "./data.json";
 
 const LinearSearch = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(true); // Sidebar state
+
+  const toggleSidebar = () => {
+    setOpen((prev) => !prev); // Toggle open/close state
+  };
+
   const { sections, experiment } = data;
 
   return (
     <div className="flex bg-white min-h-screen">
-      <Sidebar sections={sections} open={open} setOpen={setOpen} />
+      <Sidebar sections={sections} open={open} toggleSidebar={toggleSidebar} />
       <div className={`flex-1 transition-all duration-300 ${open ? "ml-72" : "ml-20"}`}>
         {sections.map((section) => (
           <Section key={section.id} id={section.id}>
@@ -31,7 +36,5 @@ const LinearSearch = () => {
     </div>
   );
 };
-
-
 
 export default LinearSearch;
