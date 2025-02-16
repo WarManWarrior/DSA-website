@@ -20,7 +20,7 @@ const LinearSearch = () => {
   const { sections, experiment } = data;
 
   return (
-    <div className="flex flex-col bg-white min-h-screen">
+    <div className="flex flex-col bg-white min-h-screen text-black">
       <Navbar /> {/* Add the Navbar here */}
       <div className="flex flex-1">
         <Sidebar sections={sections} open={open} toggleSidebar={toggleSidebar} />
@@ -42,3 +42,4 @@ const LinearSearch = () => {
 };
 
 export default LinearSearch;
+
