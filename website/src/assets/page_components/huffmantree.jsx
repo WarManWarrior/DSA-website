@@ -41,4 +41,4 @@ const LinearSearch = () => {
   );
 };
 
-export default Binarysearch;
+export default Huffmantree;
