@@ -36,7 +36,7 @@ const Sidebar = ({ open, toggleSidebar, sections }) => {
           transition={{ duration: 0.6, ease: "easeInOut" }} // ✅ Smooth animation
         />
         <h1 className={`text-white text-xl font-medium transition-all ${!open && "hidden"}`}>
-          Linear Search
+          
         </h1>
       </div>
 
