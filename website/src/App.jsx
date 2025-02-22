@@ -20,6 +20,7 @@ import StringMatchingVisualizer from "./assets/algorithms/StringMatching";
 import Nqueen from "./assets/page_components/nqueen";
 import Binarysearch from "./assets/page_components/binarysearch";
 import Bubblesort from "./assets/page_components/bubblesort";
+import Factionalknapsack from "./assets/page_components/factionalknapsack";
 
 
 
@@ -43,7 +44,7 @@ function App() {
           <Route path="/divide-conquer/largest-subarray-sum" element={<LinearSearch />} />
           <Route path="/divide-conquer/find-max-min" element={<LinearSearch />} />
           <Route path="/greedy/huffman-tree" element={<LinearSearch />} />
-          <Route path="/greedy/fractional-knapsack" element={<LinearSearch />} />
+          <Route path="/greedy/fractional-knapsack" element={<Factionalknapsack />} />
           <Route path="/greedy/prims-algorithm" element={<LinearSearch />} />
           <Route path="/greedy/kruskals-algorithm" element={<LinearSearch />} />
           <Route path="/dynamic-programming/lcs" element={<LinearSearch />} />
