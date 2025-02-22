@@ -104,7 +104,7 @@
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://www.example.com/linear_search_video"
+        "videoUrl": "https://www.youtube.com/embed/rzS0V77lQ90"
       },
       {
         "id": "algorithm",
