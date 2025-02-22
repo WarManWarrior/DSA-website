@@ -18,7 +18,7 @@ const Nqueen = () => {
     setOpen((prev) => !prev);
   };
 
-  const { title, sections, experiment } = data.n_queen;
+  const { title, sections, experiment } = data.N_Queens_Problem_using_Backtracking;
 
   return (
     <div className="flex flex-col bg-white min-h-screen text-black">
