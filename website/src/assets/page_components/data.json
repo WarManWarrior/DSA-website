@@ -1,5 +1,5 @@
 {
-  "linear_search": {
+  "Insertion_Sort": {
     "title": "Linear Search",
     "sections": [
       {
@@ -45,7 +45,7 @@
       }
     ]
   },
-  "n_queen": {
+  "Bubble_Sort": {
     "title": "n queen",
     "sections": [
       {
@@ -88,6 +88,512 @@
         "id": "analysis",
         "label": "Analysis",
         "content": "Time Complexity: O(log n) in the worst case. Space Complexity: O(1)."
+      }
+    ]
+  },
+  "Linear_Search": {
+    "title": "Linear Search",
+    "sections": [
+      {
+        "id": "intro",
+        "label": "Introduction",
+        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "image": "./src/assets/img/linear_intro.png"
+      },
+      {
+        "id": "video",
+        "label": "Video Lecture",
+        "content": "Watch this video to understand Linear Search in depth.",
+        "videoUrl": "https://www.example.com/linear_search_video"
+      },
+      {
+        "id": "algorithm",
+        "label": "Algorithm",
+        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+      },
+      {
+        "id": "working",
+        "label": "Working",
+        "content": "Linear Search iterates through the list and compares each element with the target value."
+      },
+      {
+        "id": "code",
+        "label": "Code",
+        "content": "Here is the implementation of Linear Search in different languages.",
+        "experiment": {
+          "title": "Code",
+          "configs": {
+            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
+            "c": { "code": "#include <stdio.h>...", "output": "2" },
+            "cpp": { "code": "#include <iostream>...", "output": "2" },
+            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+          }
+        }
+      },
+      {
+        "id": "analysis",
+        "label": "Analysis",
+        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+      }
+    ]
+  },
+  "Binary_Search": {
+    "title": "Linear Search",
+    "sections": [
+      {
+        "id": "intro",
+        "label": "Introduction",
+        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "image": "./src/assets/img/linear_intro.png"
+      },
+      {
+        "id": "video",
+        "label": "Video Lecture",
+        "content": "Watch this video to understand Linear Search in depth.",
+        "videoUrl": "https://www.example.com/linear_search_video"
+      },
+      {
+        "id": "algorithm",
+        "label": "Algorithm",
+        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+      },
+      {
+        "id": "working",
+        "label": "Working",
+        "content": "Linear Search iterates through the list and compares each element with the target value."
+      },
+      {
+        "id": "code",
+        "label": "Code",
+        "content": "Here is the implementation of Linear Search in different languages.",
+        "experiment": {
+          "title": "Code",
+          "configs": {
+            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
+            "c": { "code": "#include <stdio.h>...", "output": "2" },
+            "cpp": { "code": "#include <iostream>...", "output": "2" },
+            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+          }
+        }
+      },
+      {
+        "id": "analysis",
+        "label": "Analysis",
+        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+      }
+    ]
+  },
+  "Merge_Sort": {
+    "title": "Linear Search",
+    "sections": [
+      {
+        "id": "intro",
+        "label": "Introduction",
+        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "image": "./src/assets/img/linear_intro.png"
+      },
+      {
+        "id": "video",
+        "label": "Video Lecture",
+        "content": "Watch this video to understand Linear Search in depth.",
+        "videoUrl": "https://www.example.com/linear_search_video"
+      },
+      {
+        "id": "algorithm",
+        "label": "Algorithm",
+        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+      },
+      {
+        "id": "working",
+        "label": "Working",
+        "content": "Linear Search iterates through the list and compares each element with the target value."
+      },
+      {
+        "id": "code",
+        "label": "Code",
+        "content": "Here is the implementation of Linear Search in different languages.",
+        "experiment": {
+          "title": "Code",
+          "configs": {
+            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
+            "c": { "code": "#include <stdio.h>...", "output": "2" },
+            "cpp": { "code": "#include <iostream>...", "output": "2" },
+            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+          }
+        }
+      },
+      {
+        "id": "analysis",
+        "label": "Analysis",
+        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+      }
+    ]
+  },
+  "Quick_Sort": {
+    "title": "Linear Search",
+    "sections": [
+      {
+        "id": "intro",
+        "label": "Introduction",
+        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "image": "./src/assets/img/linear_intro.png"
+      },
+      {
+        "id": "video",
+        "label": "Video Lecture",
+        "content": "Watch this video to understand Linear Search in depth.",
+        "videoUrl": "https://www.example.com/linear_search_video"
+      },
+      {
+        "id": "algorithm",
+        "label": "Algorithm",
+        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+      },
+      {
+        "id": "working",
+        "label": "Working",
+        "content": "Linear Search iterates through the list and compares each element with the target value."
+      },
+      {
+        "id": "code",
+        "label": "Code",
+        "content": "Here is the implementation of Linear Search in different languages.",
+        "experiment": {
+          "title": "Code",
+          "configs": {
+            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
+            "c": { "code": "#include <stdio.h>...", "output": "2" },
+            "cpp": { "code": "#include <iostream>...", "output": "2" },
+            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+          }
+        }
+      },
+      {
+        "id": "analysis",
+        "label": "Analysis",
+        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+      }
+    ]
+  },
+  "Strassen’s_Matrix_Multiplication": {
+    "title": "Linear Search",
+    "sections": [
+      {
+        "id": "intro",
+        "label": "Introduction",
+        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "image": "./src/assets/img/linear_intro.png"
+      },
+      {
+        "id": "video",
+        "label": "Video Lecture",
+        "content": "Watch this video to understand Linear Search in depth.",
+        "videoUrl": "https://www.example.com/linear_search_video"
+      },
+      {
+        "id": "algorithm",
+        "label": "Algorithm",
+        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+      },
+      {
+        "id": "working",
+        "label": "Working",
+        "content": "Linear Search iterates through the list and compares each element with the target value."
+      },
+      {
+        "id": "code",
+        "label": "Code",
+        "content": "Here is the implementation of Linear Search in different languages.",
+        "experiment": {
+          "title": "Code",
+          "configs": {
+            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
+            "c": { "code": "#include <stdio.h>...", "output": "2" },
+            "cpp": { "code": "#include <iostream>...", "output": "2" },
+            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+          }
+        }
+      },
+      {
+        "id": "analysis",
+        "label": "Analysis",
+        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+      }
+    ]
+  },
+  "Largest_Sub_ArraySum_using_Divide_and_Conquer_Approach": {
+    "title": "Linear Search",
+    "sections": [
+      {
+        "id": "intro",
+        "label": "Introduction",
+        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "image": "./src/assets/img/linear_intro.png"
+      },
+      {
+        "id": "video",
+        "label": "Video Lecture",
+        "content": "Watch this video to understand Linear Search in depth.",
+        "videoUrl": "https://www.example.com/linear_search_video"
+      },
+      {
+        "id": "algorithm",
+        "label": "Algorithm",
+        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+      },
+      {
+        "id": "working",
+        "label": "Working",
+        "content": "Linear Search iterates through the list and compares each element with the target value."
+      },
+      {
+        "id": "code",
+        "label": "Code",
+        "content": "Here is the implementation of Linear Search in different languages.",
+        "experiment": {
+          "title": "Code",
+          "configs": {
+            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
+            "c": { "code": "#include <stdio.h>...", "output": "2" },
+            "cpp": { "code": "#include <iostream>...", "output": "2" },
+            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+          }
+        }
+      },
+      {
+        "id": "analysis",
+        "label": "Analysis",
+        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+      }
+    ]
+  },
+  "Finding_Maximum_and_Minimum_using_Divide_and_Conquer_Approach": {
+    "title": "Linear Search",
+    "sections": [
+      {
+        "id": "intro",
+        "label": "Introduction",
+        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "image": "./src/assets/img/linear_intro.png"
+      },
+      {
+        "id": "video",
+        "label": "Video Lecture",
+        "content": "Watch this video to understand Linear Search in depth.",
+        "videoUrl": "https://www.example.com/linear_search_video"
+      },
+      {
+        "id": "algorithm",
+        "label": "Algorithm",
+        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+      },
+      {
+        "id": "working",
+        "label": "Working",
+        "content": "Linear Search iterates through the list and compares each element with the target value."
+      },
+      {
+        "id": "code",
+        "label": "Code",
+        "content": "Here is the implementation of Linear Search in different languages.",
+        "experiment": {
+          "title": "Code",
+          "configs": {
+            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
+            "c": { "code": "#include <stdio.h>...", "output": "2" },
+            "cpp": { "code": "#include <iostream>...", "output": "2" },
+            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+          }
+        }
+      },
+      {
+        "id": "analysis",
+        "label": "Analysis",
+        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+      }
+    ]
+  },
+  "Huffman_Tree": {
+    "title": "Linear Search",
+    "sections": [
+      {
+        "id": "intro",
+        "label": "Introduction",
+        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "image": "./src/assets/img/linear_intro.png"
+      },
+      {
+        "id": "video",
+        "label": "Video Lecture",
+        "content": "Watch this video to understand Linear Search in depth.",
+        "videoUrl": "https://www.example.com/linear_search_video"
+      },
+      {
+        "id": "algorithm",
+        "label": "Algorithm",
+        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+      },
+      {
+        "id": "working",
+        "label": "Working",
+        "content": "Linear Search iterates through the list and compares each element with the target value."
+      },
+      {
+        "id": "code",
+        "label": "Code",
+        "content": "Here is the implementation of Linear Search in different languages.",
+        "experiment": {
+          "title": "Code",
+          "configs": {
+            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
+            "c": { "code": "#include <stdio.h>...", "output": "2" },
+            "cpp": { "code": "#include <iostream>...", "output": "2" },
+            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+          }
+        }
+      },
+      {
+        "id": "analysis",
+        "label": "Analysis",
+        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+      }
+    ]
+  },
+  "Fractional_Knapsack_Problem_using_Greedy_Approach": {
+    "title": "Linear Search",
+    "sections": [
+      {
+        "id": "intro",
+        "label": "Introduction",
+        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "image": "./src/assets/img/linear_intro.png"
+      },
+      {
+        "id": "video",
+        "label": "Video Lecture",
+        "content": "Watch this video to understand Linear Search in depth.",
+        "videoUrl": "https://www.example.com/linear_search_video"
+      },
+      {
+        "id": "algorithm",
+        "label": "Algorithm",
+        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+      },
+      {
+        "id": "working",
+        "label": "Working",
+        "content": "Linear Search iterates through the list and compares each element with the target value."
+      },
+      {
+        "id": "code",
+        "label": "Code",
+        "content": "Here is the implementation of Linear Search in different languages.",
+        "experiment": {
+          "title": "Code",
+          "configs": {
+            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
+            "c": { "code": "#include <stdio.h>...", "output": "2" },
+            "cpp": { "code": "#include <iostream>...", "output": "2" },
+            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+          }
+        }
+      },
+      {
+        "id": "analysis",
+        "label": "Analysis",
+        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+      }
+    ]
+  },
+  "Largest_Common_Subsequence_using_Dynamic_Approach": {
+    "title": "Linear Search",
+    "sections": [
+      {
+        "id": "intro",
+        "label": "Introduction",
+        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "image": "./src/assets/img/linear_intro.png"
+      },
+      {
+        "id": "video",
+        "label": "Video Lecture",
+        "content": "Watch this video to understand Linear Search in depth.",
+        "videoUrl": "https://www.example.com/linear_search_video"
+      },
+      {
+        "id": "algorithm",
+        "label": "Algorithm",
+        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+      },
+      {
+        "id": "working",
+        "label": "Working",
+        "content": "Linear Search iterates through the list and compares each element with the target value."
+      },
+      {
+        "id": "code",
+        "label": "Code",
+        "content": "Here is the implementation of Linear Search in different languages.",
+        "experiment": {
+          "title": "Code",
+          "configs": {
+            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
+            "c": { "code": "#include <stdio.h>...", "output": "2" },
+            "cpp": { "code": "#include <iostream>...", "output": "2" },
+            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+          }
+        }
+      },
+      {
+        "id": "analysis",
+        "label": "Analysis",
+        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+      }
+    ]
+  },
+  "N_Queens_Problem_using_Backtracking": {
+    "title": "Linear Search",
+    "sections": [
+      {
+        "id": "intro",
+        "label": "Introduction",
+        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "image": "./src/assets/img/linear_intro.png"
+      },
+      {
+        "id": "video",
+        "label": "Video Lecture",
+        "content": "Watch this video to understand Linear Search in depth.",
+        "videoUrl": "https://www.example.com/linear_search_video"
+      },
+      {
+        "id": "algorithm",
+        "label": "Algorithm",
+        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+      },
+      {
+        "id": "working",
+        "label": "Working",
+        "content": "Linear Search iterates through the list and compares each element with the target value."
+      },
+      {
+        "id": "code",
+        "label": "Code",
+        "content": "Here is the implementation of Linear Search in different languages.",
+        "experiment": {
+          "title": "Code",
+          "configs": {
+            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
+            "c": { "code": "#include <stdio.h>...", "output": "2" },
+            "cpp": { "code": "#include <iostream>...", "output": "2" },
+            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+          }
+        }
+      },
+      {
+        "id": "analysis",
+        "label": "Analysis",
+        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
       }
     ]
   }
