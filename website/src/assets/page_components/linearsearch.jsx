@@ -17,18 +17,20 @@ const LinearSearch = () => {
     setOpen((prev) => !prev);
   };
 
-  const { title, sections, experiment } = data.linear_search;
+  const { title, sections, experiment } = data.Linear_Search;
 
   return (
     <div className="flex flex-col bg-white min-h-screen text-black">
-      <Navbar /> {/* Add the Navbar here */}
+      <Navbar />
       <div className="flex flex-1">
         <Sidebar sections={sections} open={open} toggleSidebar={toggleSidebar} />
-        <div className={`flex-1 transition-all duration-300 ${open ? "ml-72" : "ml-20"}`}>
-        {title && <h1 className="text-3xl font-bold text-center mb-6">{title}</h1>}
-        {sections.map((section) => (
+        <div className={`flex-1 transition-all duration-300 ${open ? "ml-72" : "ml-20"} p-4`}>
+          {/* Title */}
+          {title && <h1 className="text-3xl font-bold text-center mb-6">{title}</h1>}
+          
+          {/* Render Sections */}
+          {sections.map((section) => (
             <Section key={section.id} id={section.id}>
-              
               {/* Subheading */}
               <h2 className="text-xl font-semibold mb-2">{section.label}</h2>
 
@@ -48,4 +50,3 @@ const LinearSearch = () => {
 };
 
 export default LinearSearch;
-

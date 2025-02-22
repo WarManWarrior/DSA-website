@@ -109,12 +109,12 @@
       {
         "id": "algorithm",
         "label": "Algorithm",
-        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+        "content": "**Step 1:** Start from the first element.\n Step 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
       },
       {
         "id": "working",
         "label": "Working",
-        "content": "Linear Search iterates through the list and compares each element with the target value."
+        "content": "Linear Search iterates through \n the list and compares each element with the target value."
       },
       {
         "id": "code",
@@ -133,7 +133,7 @@
       {
         "id": "analysis",
         "label": "Analysis",
-        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+        "content": "**Time Complexity:** O(n) in the worst case. Space Complexity: O(1)."
       }
     ]
   },
