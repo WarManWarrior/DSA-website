@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const NQueensVisualizer = () => {
+const NQueens = () => {
   const [N, setN] = useState(4);
   const [board, setBoard] = useState(Array(4).fill().map(() => Array(4).fill(false)));
   const [speed, setSpeed] = useState(500);
@@ -116,4 +116,4 @@ const NQueensVisualizer = () => {
   );
 };
 
-export default NQueensVisualizer;
+export default NQueens;

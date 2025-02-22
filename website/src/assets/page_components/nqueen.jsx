@@ -8,6 +8,7 @@ import Algorithm from "./components/Algorithm.jsx";
 import Analysis from "./components/Analysis.jsx";
 import Working from "./components/Working.jsx";
 import CodeEditor from "./components/CodeEditor.jsx";
+import NQueens from "../algorithms/NqueensProblem.jsx";
 import data from "./data.json";
 
 const Nqueen = () => {
@@ -37,7 +38,12 @@ const Nqueen = () => {
               {section.id === "intro" && <Intro content={section.content} />}
               {section.id === "video" && <VideoLecture videoUrl={section.videoUrl} />}
               {section.id === "algorithm" && <Algorithm content={section.content} />}
-              {section.id === "working" && <Working content={section.content} />}
+              {section.id === "working" && (
+                <>
+                  <Working content={section.content} />
+                  <NQueens />
+                </>
+              )}
               {section.id === "code" && <CodeEditor experiment={experiment} />}
               {section.id === "analysis" && <Analysis content={section.content} />}
             </Section>

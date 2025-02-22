@@ -8,6 +8,7 @@ import Algorithm from "./components/Algorithm.jsx";
 import Analysis from "./components/Analysis.jsx";
 import Working from "./components/Working.jsx";
 import CodeEditor from "./components/CodeEditor.jsx";
+import Huffman_coding from "../algorithms/Huffman_coding.jsx"
 import data from "./data.json";
 
 const Huffmantree = () => {
@@ -38,7 +39,12 @@ const Huffmantree = () => {
               {section.id === "intro" && <Intro content={section.content} />}
               {section.id === "video" && <VideoLecture videoUrl={section.videoUrl} />}
               {section.id === "algorithm" && <Algorithm content={section.content} />}
-              {section.id === "working" && <Working content={section.content} />}
+              {section.id === "working" && (
+                <>
+                  <Working content={section.content} />
+                  <Huffman_coding />
+                </>
+              )}
               {section.id === "code" && <CodeEditor experiment={experiment} />}
               {section.id === "analysis" && <Analysis content={section.content} />}
             </Section>

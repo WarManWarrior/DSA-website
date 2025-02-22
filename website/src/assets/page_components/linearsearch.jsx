@@ -8,6 +8,7 @@ import Algorithm from "./components/Algorithm.jsx";
 import Analysis from "./components/Analysis.jsx";
 import Working from "./components/Working.jsx";
 import CodeEditor from "./components/CodeEditor.jsx";
+import LinearSearchApp from "../algorithms/LinearSearchApp.jsx";
 import data from "./data.json";
 
 const LinearSearch = () => {
@@ -27,7 +28,7 @@ const LinearSearch = () => {
         <div className={`flex-1 transition-all duration-300 ${open ? "ml-72" : "ml-20"} p-4`}>
           {/* Title */}
           {title && <h1 className="text-3xl font-bold text-center mb-6">{title}</h1>}
-          
+
           {/* Render Sections */}
           {sections.map((section) => (
             <Section key={section.id} id={section.id}>
@@ -38,7 +39,12 @@ const LinearSearch = () => {
               {section.id === "intro" && <Intro content={section.content} />}
               {section.id === "video" && <VideoLecture videoUrl={section.videoUrl} />}
               {section.id === "algorithm" && <Algorithm content={section.content} />}
-              {section.id === "working" && <Working content={section.content} />}
+              {section.id === "working" && (
+                <>
+                  <Working content={section.content} />
+                  <LinearSearchApp />
+                </>
+              )}
               {section.id === "code" && <CodeEditor experiment={experiment} />}
               {section.id === "analysis" && <Analysis content={section.content} />}
             </Section>
