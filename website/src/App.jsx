@@ -24,6 +24,7 @@ import Factionalknapsack from "./assets/page_components/factionalknapsack";
 import Findingmaxandmin from "./assets/page_components/findingmaxandmin";
 import Huffmantree from "./assets/page_components/huffmantree";
 import Insertionsort from "./assets/page_components/insertionsort";
+import Largestcommonsubs from "./assets/page_components/largestcommonsubs";
 
 
 
@@ -49,7 +50,7 @@ function App() {
           <Route path="/greedy/fractional-knapsack" element={<Factionalknapsack />} />
           <Route path="/greedy/prims-algorithm" element={<LinearSearch />} />
           <Route path="/greedy/kruskals-algorithm" element={<LinearSearch />} />
-          <Route path="/dynamic-programming/lcs" element={<LinearSearch />} />
+          <Route path="/dynamic-programming/lcs" element={<Largestcommonsubs />} />
           <Route path="/backtracking/n-queens" element={<LinearSearch />} />
         </Routes>
       </Router>
