@@ -21,6 +21,7 @@ import Nqueen from "./assets/page_components/nqueen";
 import Binarysearch from "./assets/page_components/binarysearch";
 import Bubblesort from "./assets/page_components/bubblesort";
 import Factionalknapsack from "./assets/page_components/factionalknapsack";
+import Findingmaxandmin from "./assets/page_components/findingmaxandmin";
 
 
 
@@ -42,7 +43,7 @@ function App() {
           <Route path="/divide-conquer/quick-sort" element={<LinearSearch />} />
           <Route path="/divide-conquer/strassen-matrix" element={<LinearSearch />} />
           <Route path="/divide-conquer/largest-subarray-sum" element={<LinearSearch />} />
-          <Route path="/divide-conquer/find-max-min" element={<LinearSearch />} />
+          <Route path="/divide-conquer/find-max-min" element={<Findingmaxandmin />} />
           <Route path="/greedy/huffman-tree" element={<LinearSearch />} />
           <Route path="/greedy/fractional-knapsack" element={<Factionalknapsack />} />
           <Route path="/greedy/prims-algorithm" element={<LinearSearch />} />
