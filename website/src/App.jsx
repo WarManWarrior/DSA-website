@@ -22,7 +22,8 @@ import Binarysearch from "./assets/page_components/binarysearch";
 import Bubblesort from "./assets/page_components/bubblesort";
 import Factionalknapsack from "./assets/page_components/factionalknapsack";
 import Findingmaxandmin from "./assets/page_components/findingmaxandmin";
-
+import Huffmantree from "./assets/page_components/huffmantree";
+import Insertionsort from "./assets/page_components/insertionsort";
 
 
 
@@ -35,7 +36,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/introduction" element={<Nqueen />} />
           <Route path="/explist" element={<ExperimentsPage/>} />
-          <Route path="/sorting/insertion-sort" element={<LinearSearch />} />
+          <Route path="/sorting/insertion-sort" element={<Insertionsort />} />
           <Route path="/sorting/bubble-sort" element={<Bubblesort />} />
           <Route path="/searching/linear-search" element={<LinearSearch />} />
           <Route path="/searching/binary-search" element={<Binarysearch />} />
@@ -44,7 +45,7 @@ function App() {
           <Route path="/divide-conquer/strassen-matrix" element={<LinearSearch />} />
           <Route path="/divide-conquer/largest-subarray-sum" element={<LinearSearch />} />
           <Route path="/divide-conquer/find-max-min" element={<Findingmaxandmin />} />
-          <Route path="/greedy/huffman-tree" element={<LinearSearch />} />
+          <Route path="/greedy/huffman-tree" element={<Huffmantree />} />
           <Route path="/greedy/fractional-knapsack" element={<Factionalknapsack />} />
           <Route path="/greedy/prims-algorithm" element={<LinearSearch />} />
           <Route path="/greedy/kruskals-algorithm" element={<LinearSearch />} />
