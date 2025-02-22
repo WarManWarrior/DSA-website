@@ -10,7 +10,7 @@ import Working from "./components/Working.jsx";
 import CodeEditor from "./components/CodeEditor.jsx";
 import data from "./data.json";
 
-const LinearSearch = () => {
+const Binarysearch = () => {
   const [open, setOpen] = useState(true);
 
   const toggleSidebar = () => {
