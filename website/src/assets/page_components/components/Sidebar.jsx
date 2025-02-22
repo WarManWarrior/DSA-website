@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion"; // ✅ Import Framer Motion
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
 const Sidebar = ({ open, toggleSidebar, sections }) => {
   return (
     <div

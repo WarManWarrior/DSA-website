@@ -1,10 +1,9 @@
 import React from "react";
 
-const Intro = (props) => (
-  <div className="flex flex-col items-center">
-    <p className="mt-4 sm:mt-8 text-lg">
-      {props.intro}
-    </p>
+const Intro = ({ heading, content }) => (
+  <div className="p-4">
+    <h2 className="text-xl font-semibold">{heading}</h2>
+    <p className="mt-2 text-lg">{content}</p>
   </div>
 );
 

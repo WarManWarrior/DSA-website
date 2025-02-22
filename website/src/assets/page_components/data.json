@@ -1,20 +1,94 @@
 {
+  "linear_search": {
+    "title": "Linear Search",
     "sections": [
-      { "id": "intro", "label": "Introduction", "image": "./src/assets/img/intro.png" },
-      { "id": "video", "label": "Video Lecture", "image": "./src/assets/img/video.png" },
-      { "id": "algorithm", "label": "Algorithm", "image": "./src/assets/img/algorithm.png" },
-      { "id": "working", "label": "Working", "image": "./src/assets/img/working.png" },
-      { "id": "code", "label": "Code", "image": "./src/assets/img/code.png" },
-      { "id": "analysis", "label": "Analysis", "image": "./src/assets/img/analysis.png" }
-    ],
-    "experiment": {
-      "title": "Code",
-      "configs": {
-        "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
-        "c": { "code": "#include <stdio.h>...", "output": "2" },
-        "cpp": { "code": "#include <iostream>...", "output": "2" },
-        "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+      {
+        "id": "intro",
+        "label": "Introduction",
+        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "image": "./src/assets/img/linear_intro.png"
+      },
+      {
+        "id": "video",
+        "label": "Video Lecture",
+        "content": "Watch this video to understand Linear Search in depth.",
+        "videoUrl": "https://www.example.com/linear_search_video"
+      },
+      {
+        "id": "algorithm",
+        "label": "Algorithm",
+        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+      },
+      {
+        "id": "working",
+        "label": "Working",
+        "content": "Linear Search iterates through the list and compares each element with the target value."
+      },
+      {
+        "id": "code",
+        "label": "Code",
+        "content": "Here is the implementation of Linear Search in different languages.",
+        "experiment": {
+          "title": "Code",
+          "configs": {
+            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
+            "c": { "code": "#include <stdio.h>...", "output": "2" },
+            "cpp": { "code": "#include <iostream>...", "output": "2" },
+            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+          }
+        }
+      },
+      {
+        "id": "analysis",
+        "label": "Analysis",
+        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
       }
-    }
+    ]
+  },
+  "n_queen": {
+    "title": "n queen",
+    "sections": [
+      {
+        "id": "intro",
+        "label": "Introduction",
+        "content": "n queen is an efficient algorithm for finding an item in a sorted array.",
+        "image": "./src/assets/img/binary_intro.png"
+      },
+      {
+        "id": "video",
+        "label": "Video Lecture",
+        "content": "Watch this video to understand Binary Search in depth.",
+        "videoUrl": "https://www.example.com/binary_search_video"
+      },
+      {
+        "id": "algorithm",
+        "label": "Algorithm",
+        "content": "Step 1: Find the middle element.\nStep 2: If the middle element is the target, return index.\nStep 3: If target is smaller, search in the left half; otherwise, search in the right half."
+      },
+      {
+        "id": "working",
+        "label": "Working",
+        "content": "Binary Search repeatedly divides the array in half to find the target."
+      },
+      {
+        "id": "code",
+        "label": "Code",
+        "content": "Here is the implementation of Binary Search in different languages.",
+        "experiment": {
+          "title": "Code",
+          "configs": {
+            "python3": { "code": "def binary_search(arr, target): ...", "output": "4" },
+            "c": { "code": "#include <stdio.h>...", "output": "4" },
+            "cpp": { "code": "#include <iostream>...", "output": "4" },
+            "java": { "code": "public class BinarySearch { ... }", "output": "4" }
+          }
+        }
+      },
+      {
+        "id": "analysis",
+        "label": "Analysis",
+        "content": "Time Complexity: O(log n) in the worst case. Space Complexity: O(1)."
+      }
+    ]
   }
-  
+}

@@ -39,8 +39,6 @@ const CodeEditor = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-6">
-      <h1 className="text-3xl font-bold mb-4">⚡ Interactive Code Editor</h1>
-
       {/* Language Selector + Buttons */}
       <div className="flex w-full max-w-3xl mb-2 items-center space-x-2">
         <select

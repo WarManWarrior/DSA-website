@@ -30,8 +30,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/insertion" element={<InsertionSortVisualizer />} />
-          <Route path="/nqueen" element={<Nqueen/>} />
+          <Route path="/nqueen" element={<Nqueen />} />
+          <Route path="/linearsearch" element={<LinearSearch/>} />
         </Routes>
       </Router>
     </div>
