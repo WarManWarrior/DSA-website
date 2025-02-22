@@ -19,6 +19,7 @@ import LCSVisualizer from "./assets/algorithms/LCS";
 import StringMatchingVisualizer from "./assets/algorithms/StringMatching";
 import Nqueen from "./assets/page_components/nqueen";
 import Binarysearch from "./assets/page_components/binarysearch";
+import Bubblesort from "./assets/page_components/bubblesort";
 
 
 
@@ -33,7 +34,7 @@ function App() {
           <Route path="/introduction" element={<Nqueen />} />
           <Route path="/explist" element={<ExperimentsPage/>} />
           <Route path="/sorting/insertion-sort" element={<LinearSearch />} />
-          <Route path="/sorting/bubble-sort" element={<LinearSearch />} />
+          <Route path="/sorting/bubble-sort" element={<Bubblesort />} />
           <Route path="/searching/linear-search" element={<LinearSearch />} />
           <Route path="/searching/binary-search" element={<Binarysearch />} />
           <Route path="/divide-conquer/merge-sort" element={<LinearSearch />} />
