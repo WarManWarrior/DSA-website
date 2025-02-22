@@ -17,7 +17,6 @@ import TravellingSalesmanProblem from "./assets/algorithms/TravellingSalesmanPro
 import NQueensVisualizer from "./assets/algorithms/NqueensProblem";
 import LCSVisualizer from "./assets/algorithms/LCS";
 import StringMatchingVisualizer from "./assets/algorithms/StringMatching";
-import Insertionsort from "./assets/pages/understanding/insertionsort";
 import Nqueen from "./assets/page_components/nqueen";
 
 
@@ -30,8 +29,23 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/nqueen" element={<Nqueen />} />
-          <Route path="/linearsearch" element={<LinearSearch/>} />
+          <Route path="/introduction" element={<Nqueen />} />
+          <Route path="/explist" element={<ExperimentsPage/>} />
+          <Route path="/sorting/insertion-sort" element={<LinearSearch />} />
+          <Route path="/sorting/bubble-sort" element={<LinearSearch />} />
+          <Route path="/searching/linear-search" element={<LinearSearch />} />
+          <Route path="/searching/binary-search" element={<LinearSearch />} />
+          <Route path="/divide-conquer/merge-sort" element={<LinearSearch />} />
+          <Route path="/divide-conquer/quick-sort" element={<LinearSearch />} />
+          <Route path="/divide-conquer/strassen-matrix" element={<LinearSearch />} />
+          <Route path="/divide-conquer/largest-subarray-sum" element={<LinearSearch />} />
+          <Route path="/divide-conquer/find-max-min" element={<LinearSearch />} />
+          <Route path="/greedy/huffman-tree" element={<LinearSearch />} />
+          <Route path="/greedy/fractional-knapsack" element={<LinearSearch />} />
+          <Route path="/greedy/prims-algorithm" element={<LinearSearch />} />
+          <Route path="/greedy/kruskals-algorithm" element={<LinearSearch />} />
+          <Route path="/dynamic-programming/lcs" element={<LinearSearch />} />
+          <Route path="/backtracking/n-queens" element={<LinearSearch />} />
         </Routes>
       </Router>
     </div>

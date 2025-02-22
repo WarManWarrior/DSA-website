@@ -75,7 +75,7 @@ const ExperimentsPage = () => {
           Close
         </button>
         <ul className="mt-16 space-y-4 p-6">
-          <li className="hover:bg-blue-600 p-2 rounded">Home</li>
+          <li><Link to="/" className="hover:bg-blue-600 p-2 rounded">Home</Link></li>
           <li className="hover:bg-blue-600 p-2 rounded">About</li>
           <li className="hover:bg-blue-600 p-2 rounded">Contact Us</li>
         </ul>
