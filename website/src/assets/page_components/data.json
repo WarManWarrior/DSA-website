@@ -1,23 +1,23 @@
 {
   "Insertion_Sort": {
-    "title": "Linear Search",
+    "title": "Insertion Sort",
     "sections": [
       {
         "id": "intro",
         "label": "Introduction",
-        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "content": "Insertion sort is a very simple method to sort numbers in an ascending or descending order. This method follows the incremental method. It can be compared with the technique how cards are sorted at the time of playing a game.\n  This is an in-place comparison-based sorting algorithm. Here, a sub-list is maintained which is always sorted. For example, the lower part of an array is maintained to be sorted. An element which is to be 'inserted' in this sorted sub-list, has to find its appropriate place and then it has to be inserted there. Hence the name, **insertion sort**.\n  The array is searched sequentially and unsorted items are moved and inserted into the sorted sub-list (in the same array). This algorithm is not suitable for large data sets as its average and worst case complexity are of Ο(n^2), where n is the number of items.",
         "image": "./src/assets/img/linear_intro.png"
       },
       {
         "id": "video",
         "label": "Video Lecture",
-        "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://www.example.com/linear_search_video"
+        "content": "Watch this video to understand Insertion Sort in depth.",
+        "videoUrl": "https://youtu.be/hcfsrhh2zRc"
       },
       {
         "id": "algorithm",
         "label": "Algorithm",
-        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+        "content": "**Step 1 -** If it is the first element, it is already sorted. return 1; \n **Step 2 -** Pick next element. \n **Step 3 -** Compare with all elements in the sorted sub-list. \n **Step 4 -** Shift all the elements in the sorted sub-list that is greater than the value to be sorted. \n **Step 5 -** Insert the value. \n **Step 6 -** Repeat until list is sorted."
       },
       {
         "id": "working",
@@ -41,29 +41,29 @@
       {
         "id": "analysis",
         "label": "Analysis",
-        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+        "content": "Run time of this algorithm is very much dependent on the given input.\n  If the given numbers are sorted, this algorithm runs in **O(n)** time. If the given numbers are in reverse order, the algorithm runs in **O(n^2)** time."
       }
     ]
   },
   "Bubble_Sort": {
-    "title": "n queen",
+    "title": "Bubble Sort",
     "sections": [
       {
         "id": "intro",
         "label": "Introduction",
-        "content": "n queen is an efficient algorithm for finding an item in a sorted array.",
+        "content": "Bubble sort is a simple sorting algorithm. This sorting algorithm is comparison-based algorithm in which each pair of adjacent elements is compared and the elements are swapped if they are not in order. This algorithm is not suitable for large data sets as its average and worst case complexity are of O(n^2) where **n** is the number of items.",
         "image": "./src/assets/img/binary_intro.png"
       },
       {
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Binary Search in depth.",
-        "videoUrl": "https://www.example.com/binary_search_video"
+        "videoUrl": "https://youtu.be/hcfsrhh2zRc"
       },
       {
         "id": "algorithm",
         "label": "Algorithm",
-        "content": "Step 1: Find the middle element.\nStep 2: If the middle element is the target, return index.\nStep 3: If target is smaller, search in the left half; otherwise, search in the right half."
+        "content": "**Step 1 -** Check if the first element in the input array is greater than the next element in the array.\n **Step 2 -** If it is greater, swap the two elements; otherwise move the pointer forward in the array.\n **Step 3 -** Repeat Step 2 until we reach the end of the array.\n **Step 4 -** Check if the elements are sorted; if not, repeat the same process (Step 1 to Step 3) from the last element of the array to the first.\n **Step 5 -** The final output achieved is the sorted array."
       },
       {
         "id": "working",
@@ -87,7 +87,7 @@
       {
         "id": "analysis",
         "label": "Analysis",
-        "content": "Time Complexity: O(log n) in the worst case. Space Complexity: O(1)."
+        "content": "Here, the number of comparisons are \n **1 + 2 + 3 + ... + (n - 1) = n(n - 1)/2 = O(n^2)** \n Clearly, the graph shows the **n^2** nature of the bubble sort. \n In this algorithm, the number of comparison is irrespective of the data set, i.e. whether the provided input elements are in sorted order or in reverse order or at random."
       }
     ]
   },
@@ -97,19 +97,19 @@
       {
         "id": "intro",
         "label": "Introduction",
-        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "content": "Linear search is a type of sequential searching algorithm. In this method, every element within the input array is traversed and compared with the key element to be found. If a match is found in the array the search is said to be successful; if there is no match found the search is said to be unsuccessful and gives the worst-case time complexity.",
         "image": "./src/assets/img/linear_intro.png"
       },
       {
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://www.example.com/linear_search_video"
+        "videoUrl": "https://youtu.be/OCfDaT_GyfM"
       },
       {
         "id": "algorithm",
         "label": "Algorithm",
-        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+        "content": "**Step 1 -** Start from the 0th index of the input array, compare the key value with the value present in the 0th index.\n **Step 2 -** If the value matches with the key, return the position at which the value was found. \n**Step 3 -** If the value does not match with the key, compare the next element in the array.\n **Step 4 -** Repeat Step 3 until there is a match found. Return the position at which the match was found.\n **Step 5 -** If it is an unsuccessful search, print that the element is not present in the array and exit the program."
       },
       {
         "id": "working",
@@ -133,29 +133,29 @@
       {
         "id": "analysis",
         "label": "Analysis",
-        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+        "content": "Linear search traverses through every element sequentially therefore, the best case is when the element is found in the very first iteration. The best-case time complexity would be **O(1)**.\n However, the worst case of the linear search method would be an unsuccessful search that does not find the key value in the array, it performs n iterations. Therefore, the worst-case time complexity of the linear search algorithm would be **O(n)**."
       }
     ]
   },
   "Binary_Search": {
-    "title": "Linear Search",
+    "title": "Binary Search",
     "sections": [
       {
         "id": "intro",
         "label": "Introduction",
-        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "content": "Binary search is a fast search algorithm with run-time complexity of Ο(log n). This search algorithm works on the principle of divide and conquer, since it divides the array into half before searching. For this algorithm to work properly, the data collection should be in the sorted form.\n Binary search looks for a particular key value by comparing the middle most item of the collection. If a match occurs, then the index of item is returned. But if the middle item has a value greater than the key value, the right sub-array of the middle item is searched. Otherwise, the left sub-array is searched. This process continues recursively until the size of a subarray reduces to zero.",
         "image": "./src/assets/img/linear_intro.png"
       },
       {
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://www.example.com/linear_search_video"
+        "videoUrl": "https://youtu.be/LrV_LPR8avI"
       },
       {
         "id": "algorithm",
         "label": "Algorithm",
-        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+        "content": "**Step 1 -** Select the middle item in the array and compare it with the key value to be searched. If it is matched, return the position of the median.\n **Step 2 -** If it does not match the key value, check if the key value is either greater than or less than the median value.\n **Step 3 -** If the key is greater, perform the search in the right sub-array; but if the key is lower than the median value, perform the search in the left sub-array.\n **Step 4 -** Repeat Steps 1, 2 and 3 iteratively, until the size of sub-array becomes 1.\n **Step 5 -** If the key value does not exist in the array, then the algorithm returns an unsuccessful search."
       },
       {
         "id": "working",
@@ -179,29 +179,29 @@
       {
         "id": "analysis",
         "label": "Analysis",
-        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+        "content": "Since the binary search algorithm performs searching iteratively, calculating the time complexity is not as easy as the linear search algorithm.\n The input array is searched iteratively by dividing into multiple sub-arrays after every unsuccessful iteration. Therefore, the recurrence relation formed would be of a dividing function.\n To explain it in simpler terms,\n **1.** During the first iteration, the element is searched in the entire array. Therefore, length of the array = n.\n **2.** In the second iteration, only half of the original array is searched. Hence, length of the array = n/2.\n **3.** In the third iteration, half of the previous sub-array is searched. Here, length of the array will be = n/4.\n **4.** Similarly, in the ith iteration, the length of the array will become n/2i.\n To achieve a successful search, after the last iteration the length of array must be 1. Hence,\n **n/2i = 1** \n That gives us - \n **n = 2i** \n Applying log on both sides, **log n = log 2i**\n **log n = i. log 2**\n **i = log n** \n The time complexity of the binary search algorithm is **O(log n)**"
       }
     ]
   },
   "Merge_Sort": {
-    "title": "Linear Search",
+    "title": "Merge Sort",
     "sections": [
       {
         "id": "intro",
         "label": "Introduction",
-        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "content": "Merge sort is a sorting technique based on divide and conquer technique. With worst-case time complexity being Ο(n log n), it is one of the most used and approached algorithms.\n Merge sort first divides the array into equal halves and then combines them in a sorted manner.",
         "image": "./src/assets/img/linear_intro.png"
       },
       {
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://www.example.com/linear_search_video"
+        "videoUrl": "https://youtu.be/zWydudNfLJg"
       },
       {
         "id": "algorithm",
         "label": "Algorithm",
-        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+        "content": "**Step 1 -** If it is only one element in the list, consider it already sorted, so return.\n **Step 2 -** Divide the list recursively into two halves until it can no more be divided.\n **Step 3 -** Merge the smaller lists into new list in sorted order."
       },
       {
         "id": "working",
@@ -225,29 +225,29 @@
       {
         "id": "analysis",
         "label": "Analysis",
-        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+        "content": "The running time of the Merge-Sort algorithm follows a specific pattern based on its recursive nature. If the input size is small (i.e., 1 or less), the algorithm completes in constant time. However, for larger inputs, it divides the problem into two smaller subproblems, solves them recursively, and then combines the results. This process leads to a time complexity of O(n log n), meaning that as the input size increases, the algorithm grows at a rate proportional to n log n. This makes Merge-Sort more efficient than simpler sorting algorithms like Bubble Sort or Insertion Sort, which have a higher time complexity of O(n^2)."
       }
     ]
   },
   "Quick_Sort": {
-    "title": "Linear Search",
+    "title": "Quick Sort",
     "sections": [
       {
         "id": "intro",
         "label": "Introduction",
-        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "content": "Quick sort is a highly efficient sorting algorithm and is based on partitioning of array of data into smaller arrays. A large array is partitioned into two arrays one of which holds values smaller than the specified value, say pivot, based on which the partition is made and another array holds values greater than the pivot value.\n Quicksort partitions an array and then calls itself recursively twice to sort the two resulting subarrays. This algorithm is quite efficient for large-sized data sets as its average and worst-case complexity are O(n2), respectively.",
         "image": "./src/assets/img/linear_intro.png"
       },
       {
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://www.example.com/linear_search_video"
+        "videoUrl": "https://youtu.be/ZqiqJlG9rRI"
       },
       {
         "id": "algorithm",
         "label": "Algorithm",
-        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+        "content": "**Step 1 -** Choose the highest index value has pivot.\n **Step 2 -** Take two variables to point left and right of the list excluding pivot.\n **Step 3 -** Left points to the low index.\n **Step 4 -** Right points to the high.\n **Step 5 - ** While value at left is less than pivot move right./n **Step 6 -** While value at right is greater than pivot move left.\n **Step 7 - ** If both step 5 and step 6 does not match swap left and right.\n **Step 8 - ** If left ≥ right, the point where they met is new pivot."
       },
       {
         "id": "working",
@@ -271,29 +271,29 @@
       {
         "id": "analysis",
         "label": "Analysis",
-        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+        "content": "The worst case complexity of Quick-Sort algorithm is **O(n^2)**. However, using this technique, in average cases generally we get the output in **O (n log n)** time."
       }
     ]
   },
   "Strassen’s_Matrix_Multiplication": {
-    "title": "Linear Search",
+    "title": "Strassen Matrix Multiplication",
     "sections": [
       {
         "id": "intro",
         "label": "Introduction",
-        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "content": "Strassen's Matrix Multiplication is the divide and conquer approach to solve the matrix multiplication problems. The usual matrix multiplication method multiplies each row with each column to achieve the product matrix. The time complexity taken by this approach is O(n^3), since it takes two loops to multiply. Strassen’s method was introduced to reduce the time complexity from O(n^3) to O(n^log 7).",
         "image": "./src/assets/img/linear_intro.png"
       },
       {
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://www.example.com/linear_search_video"
+        "videoUrl": "https://youtu.be/QI0AiVP0hww"
       },
       {
         "id": "algorithm",
         "label": "Algorithm",
-        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+        "content": "**Step 1 -** Take two n*n matrices A and B as input. \n**Step 2 -** If n is not a power of 2, pad the matrices with zeros to make them 2^m * 2^m. \n**Step 3 -** Divide A and B into equal n/2 * n/2 submatrices. \n**Step 4 -** Compute all intermediate matrix products. \n**Step 5 -** Compute the submatrices of the result matrix . \n**Step 6 -** If the sub,atrices are of size 1*1, perform direct multiplication. \n**Step 7 -** Recursively apply Strassen's algorithm to compute the matrix multiplications. \n**Step 8 -** Combine the computed submatrices to form the final result matrix."
       },
       {
         "id": "working",
@@ -317,29 +317,29 @@
       {
         "id": "analysis",
         "label": "Analysis",
-        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+        "content": "Strassen’s matrix multiplication algorithm improves efficiency by reducing the number of multiplications, resulting in a time complexity of **O(n^2.81)** compared to the traditional **O(n^3)**. While it is faster than the standard method, it requires additional space and introduces recursive overhead, making it less practical for very large matrices."
       }
     ]
   },
   "Largest_Sub_ArraySum_using_Divide_and_Conquer_Approach": {
-    "title": "Linear Search",
+    "title": "Largest Sub Array Sum using Divide and Conquer Approach",
     "sections": [
       {
         "id": "intro",
         "label": "Introduction",
-        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "content": "The problem of finding the largest subarray sum, also known as the Maximum Subarray Problem, involves determining a contiguous subarray within a given array that has the maximum possible sum. The naive approach uses a brute-force method with O(n^2) or O(n^3) complexity, but using Divide and Conquer, we can achieve a more efficient solution with O(n log n) complexity. This approach recursively divides the array into two halves, computes the maximum sum for each half, and considers the maximum sum crossing the midpoint.",
         "image": "./src/assets/img/linear_intro.png"
       },
       {
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://www.example.com/linear_search_video"
+        "videoUrl": "https://youtu.be/lCllz_e4GOQ"
       },
       {
         "id": "algorithm",
         "label": "Algorithm",
-        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+        "content": "**Step 1 -** If the array contains only one element, return that element as the maximum sum. \n**Step 2 -** Split the array into two halves: left and right. \n**Step 3 -** Recursively find the maximum subarray sum for both halves. \n**Step 4 -** Find the maximum sum subarray that crosses the midpoint, considering elements from both halves. \n**Step 5 -** The final result is the maximum of the left sum, right sum, or the crossing sum."
       },
       {
         "id": "working",
@@ -363,29 +363,29 @@
       {
         "id": "analysis",
         "label": "Analysis",
-        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+        "content": "Using the Master Theorem, this simplifies to O(n log n).\n **1.** The **divide step** takes O(1) time. \n**2.** The **conquer step** involves two recursive calls, each on half the array. \n**3.** The **combine step** (finding the crossing sum) takes **O(n)** time. \nThus, the overall complexity is O(n log n), making it more efficient than the brute-force method but slower than **Kadane’s algorithm**, which runs in **O(n)**."
       }
     ]
   },
   "Finding_Maximum_and_Minimum_using_Divide_and_Conquer_Approach": {
-    "title": "Linear Search",
+    "title": "Finding Maximum and Minimum using Divide and Conquer Approach",
     "sections": [
       {
         "id": "intro",
         "label": "Introduction",
-        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "content": "The problem of finding the maximum and minimum elements in an array can be solved using a simple linear search in **O(n)** time. However, using the **Divide and Conquer** approach, we can optimize the process by reducing the number of comparisons. Instead of scanning all elements sequentially, the array is recursively divided into smaller parts, and the maximum and minimum values are determined from these subarrays. This approach efficiently finds both values in **O(n)** time but with fewer comparisons than a brute-force method.",
         "image": "./src/assets/img/linear_intro.png"
       },
       {
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://www.example.com/linear_search_video"
+        "videoUrl": "https://youtu.be/7hZLCzbbY30"
       },
       {
         "id": "algorithm",
         "label": "Algorithm",
-        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+        "content": "**Step 1 -** If the array has only one element, return it as both maximum and minimum. \n**Step 2 -** If there are two elements, return the larger as maximum and the smaller as minimum. \n**Step 3 -** Split the array into two halves using the middle index. \n**Step 4 -** Recursively find the maximum and minimum in the left half. \n**Step 5 -** Recursively find the maximum and minimum in the right half. \n**Step 6 -** Compare the maximum values from both halves and store the larger one. \n**Step 7 -** Compare the minimum values from both halves and store the smaller one. \n**Step 8 -** Return the final maximum and minimum values."
       },
       {
         "id": "working",
@@ -409,29 +409,29 @@
       {
         "id": "analysis",
         "label": "Analysis",
-        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+        "content": "Using the Master Theorem, this simplifies to O(n), meaning the time complexity is linear, just like the brute-force approach. \nHowever, the number of comparisons is reduced: \n**1.**Brute-force requires 2(n - 1) comparisons. \n**2.**The Divide and Conquer approach requires approximately 3n/2 comparisons, making it more efficient. \nThis method is particularly useful for large datasets, where reducing comparisons can improve performance."
       }
     ]
   },
   "Huffman_Tree": {
-    "title": "Linear Search",
+    "title": "Huffman Tree",
     "sections": [
       {
         "id": "intro",
         "label": "Introduction",
-        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "content": "Huffman coding is a lossless data compression algorithm that assigns variable-length binary codes to characters based on their frequency. Characters appearing more frequently get shorter codes, while less frequent characters get longer codes, ensuring optimal compression. The Huffman tree is constructed using a greedy approach, where the smallest frequency nodes are merged step by step to form the final tree. This method efficiently reduces the average length of encoded data and is widely used in file compression formats like ZIP and image compression techniques like JPEG.",
         "image": "./src/assets/img/linear_intro.png"
       },
       {
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://www.example.com/linear_search_video"
+        "videoUrl": "https://youtu.be/L0MDzEhJvEo"
       },
       {
         "id": "algorithm",
         "label": "Algorithm",
-        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+        "content": "**Step 1 -** Start with a set of characters and their corresponding frequencies. \n**Step 2 -** Create a priority queue (min-heap) and insert all characters as leaf nodes. \n**Step 3 -** Remove the two nodes with the lowest frequencies from the heap. \n**Step 4 -** Create a new node with these two nodes as children, and its frequency as their sum. \n**Step 5 -** Insert the new merged node back into the priority queue. \n**Step 6 -** Repeat steps 3–5 until only one node remains in the heap. \n**Step 7 -** The remaining node is the root of the Huffman tree. \n**Step 8 -** Traverse the tree to assign binary codes (left = 0, right = 1) to each character. \n**Step 9 -** Replace each character in the input with its corresponding Huffman code. \n**Step 10 -**  Return the Huffman tree and the encoded data."
       },
       {
         "id": "working",
@@ -455,29 +455,29 @@
       {
         "id": "analysis",
         "label": "Analysis",
-        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+        "content": "The primary operations in Huffman coding involve building the priority queue, extracting the two smallest elements, and inserting the merged node back. \n**1.**Heap operations (insertion & deletion) take **O(log n)** time. \n**2.**Since we perform these operations n - 1 times, the total complexity is **O(n log n)**. \n**3.**The final traversal for code assignment takes **O(n)**. \nThus, the overall time complexity of constructing a Huffman tree is **O(n log n)**, making it an efficient algorithm for text compression."
       }
     ]
   },
   "Fractional_Knapsack_Problem_using_Greedy_Approach": {
-    "title": "Linear Search",
+    "title": "Fractional Knapsack Problem using Greedy Approach",
     "sections": [
       {
         "id": "intro",
         "label": "Introduction",
-        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "content": "The Fractional Knapsack Problem is a classic optimization problem in which we aim to maximize the total value of items placed in a knapsack with a fixed capacity. Unlike the 0/1 Knapsack Problem, where items can either be taken or left entirely, the fractional knapsack allows items to be divided, meaning we can take fractions of items. The greedy approach sorts items based on their value-to-weight ratio (profit per unit weight) and selects items in descending order of this ratio until the knapsack is full. This ensures the maximum value is obtained efficiently.",
         "image": "./src/assets/img/linear_intro.png"
       },
       {
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://www.example.com/linear_search_video"
+        "videoUrl": "https://youtu.be/dEmlqSvchJs"
       },
       {
         "id": "algorithm",
         "label": "Algorithm",
-        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+        "content": "**Step 1 -** Given a set of items, each with a specific weight and value. \n**Step 2 -** Compute the ratio (value/weight) for each item. \n**Step 3 -** Sort all items in descending order based on their value-to-weight ratio. \n**Step 4 -** Set the current knapsack weight to zero and total value to zero. \n**Step 5 -** If the item fits completely, add it to the knapsack. \n**Step 6 -** If the item doesn’t fit completely, take the maximum possible fraction. \n**Step 7 -** Update the knapsack weight and total value accordingly. \n**Step 8 -** Repeat until the knapsack reaches full capacity. \n**Step 9 -** The final accumulated value is the optimal solution."
       },
       {
         "id": "working",
@@ -501,29 +501,29 @@
       {
         "id": "analysis",
         "label": "Analysis",
-        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+        "content": "The greedy approach involves sorting the items based on their value-to-weight ratio, which takes **O(n log n)**. After sorting, we iterate through the list, selecting items in **O(n)** time. \nThus, the total time complexity is **O(n log n)**, making it highly efficient for large datasets. Unlike the **0/1 Knapsack Problem**, which requires dynamic programming with **O(nW)** complexity, the fractional knapsack provides an optimal solution in logarithmic time using a greedy strategy."
       }
     ]
   },
   "Largest_Common_Subsequence_using_Dynamic_Approach": {
-    "title": "Linear Search",
+    "title": "Largest Common Subsequence using Dynamic Approach",
     "sections": [
       {
         "id": "intro",
         "label": "Introduction",
-        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "content": "The **Longest Common Subsequence (LCS)** problem is a classic **dynamic programming** problem that finds the longest sequence that appears in the same order in two given strings but not necessarily consecutively. Unlike substring problems, where continuity is required, subsequence problems allow skipping characters while maintaining order. LCS is widely used in **DNA sequencing, text comparison, and version control systems.**",
         "image": "./src/assets/img/linear_intro.png"
       },
       {
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://www.example.com/linear_search_video"
+        "videoUrl": "https://youtu.be/_nWtZFRRCLE"
       },
       {
         "id": "algorithm",
         "label": "Algorithm",
-        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+        "content": "**Step 1 -** Given two strings X of length m and Y of length n. \n**Step 2 -** Create a 2D table dp[m+1][n+1], where dp[i][j] stores the LCS length of X[0...i-1] and Y[0...j-1]. \n**Step 3 -** Set dp[i][0] = 0 and dp[0][j] = 0 for all i, j, since an LCS with an empty string is always 0. \n**Step 4 -** If X[i-1] == Y[j-1], set dp[i][j] = dp[i-1][j-1] + 1 (extend previous LCS). \n**Step 5 -** Else, set dp[i][j] = max(dp[i-1][j], dp[i][j-1]) (ignore one character at a time). \n**Step 6 -** The value at dp[m][n] gives the length of the longest common subsequence. \n**Step 7 -** Start from dp[m][n] and trace back to reconstruct the LCS string. \n**Step 8 -** Output the LCS length and the LCS string if needed."
       },
       {
         "id": "working",
@@ -547,29 +547,29 @@
       {
         "id": "analysis",
         "label": "Analysis",
-        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+        "content": "The algorithm involves filling an m × n table, where each entry takes O(1) time. \n**1.**Table construction: O(m × n). \n**2.**Backtracking (if needed): O(m + n). \nThus, the overall time complexity is O(m × n), making it efficient for moderate-sized inputs. However, for very large strings, space optimization techniques like rolling arrays or recursive memoization can be used to reduce memory usage."
       }
     ]
   },
   "N_Queens_Problem_using_Backtracking": {
-    "title": "Linear Search",
+    "title": "N Queens Problem using Backtracking",
     "sections": [
       {
         "id": "intro",
         "label": "Introduction",
-        "content": "Linear Search is a simple searching algorithm that checks each element one by one.",
+        "content": "The N-Queens Problem is a classic combinatorial problem where we must place N queens on an N × N chessboard so that no two queens attack each other. A queen can move horizontally, vertically, and diagonally, so our solution must ensure that no two queens share the same row, column, or diagonal. Backtracking is an efficient way to explore possible placements while eliminating incorrect configurations early, reducing unnecessary computations.",
         "image": "./src/assets/img/linear_intro.png"
       },
       {
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://www.example.com/linear_search_video"
+        "videoUrl": "https://youtu.be/7zNKVfDWPs8"
       },
       {
         "id": "algorithm",
         "label": "Algorithm",
-        "content": "Step 1: Start from the first element.\nStep 2: Compare each element with the target.\nStep 3: If found, return index. Otherwise, return -1."
+        "content": "**Step 1 -** Given an integer N, representing the size of the chessboard. \n**Step 2 -** Create an N × N chessboard initialized with empty cells. \n**Step 3 -** Check if placing a queen at (row, col) is valid by ensuring no queen is in the same column, upper diagonal, or lower diagonal. \n**Step 4 -** Start placing queens row by row. \n**Step 5 -** For each row, iterate through all columns and check if placing a queen is safe. \n**Step 6 -** If a queen is placed successfully, move to the next row and repeat. \n**Step 7 -** If no valid position is found in a row, remove the previous queen (backtrack) and try the next possibility. \n**Step 8 -** If N queens are placed successfully, print/store the board configuration. \n**Step 9 -** The algorithm continues to find all possible solutions or stops at the first valid solution, depending on the requirement."
       },
       {
         "id": "working",
@@ -593,7 +593,145 @@
       {
         "id": "analysis",
         "label": "Analysis",
-        "content": "Time Complexity: O(n) in the worst case. Space Complexity: O(1)."
+        "content": "Backtracking explores multiple possible placements, leading to an exponential time complexity: \n**1.**In the worst case, we explore all positions recursively, leading to **O(N!)** time complexity. \n**2.**Optimizations like pruning invalid positions (using boolean arrays for columns and diagonals) can significantly reduce the number of computations. \nDespite its exponential growth, backtracking remains a practical approach for small-to-moderate values of N and is widely used for constraint satisfaction problems like Sudoku, Graph Coloring, and Hamiltonian Paths."
+      }
+    ]
+  },
+  "Travelling_salesman_problem": {
+    "title": "Travelling Salesman Problem",
+    "sections": [
+      {
+        "id": "intro",
+        "label": "Introduction",
+        "content": "The Travelling Salesman Problem (TSP) is a classic combinatorial optimization problem where a salesman must visit N cities exactly once and return to the starting city while minimizing the total travel cost. The problem is NP-hard, meaning no efficient algorithm is known for large inputs. Various approaches like Brute Force, Dynamic Programming (Held-Karp), and Approximation Algorithms are used to solve it.",
+        "image": "./src/assets/img/linear_intro.png"
+      },
+      {
+        "id": "video",
+        "label": "Video Lecture",
+        "content": "Watch this video to understand Linear Search in depth.",
+        "videoUrl": "https://youtu.be/cY4HiiFHO1o?si=xNNK4gzFpGgvm-Wx"
+      },
+      {
+        "id": "algorithm",
+        "label": "Algorithm",
+        "content": "**Step 1 -** Start from a Random City. \n**Step 2 -** Choose the Nearest Unvisited City: Move to the closest city greedily. \n**Step 3 -** Repeat Until All Cities Are Visited. \n**Step 4 -** Return to the Starting City."
+      },
+      {
+        "id": "working",
+        "label": "Working",
+        "content": "Linear Search iterates through the list and compares each element with the target value."
+      },
+      {
+        "id": "code",
+        "label": "Code",
+        "content": "Here is the implementation of Linear Search in different languages.",
+        "experiment": {
+          "title": "Code",
+          "configs": {
+            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
+            "c": { "code": "#include <stdio.h>...", "output": "2" },
+            "cpp": { "code": "#include <iostream>...", "output": "2" },
+            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+          }
+        }
+      },
+      {
+        "id": "analysis",
+        "label": "Analysis",
+        "content": "Time Complexity: O(N²) (fast but not always optimal). Used in practical applications like Google Maps."
+      }
+    ]
+  },
+  "Randomized_Quick_Sort": {
+    "title": "Randomized Quick Sort",
+    "sections": [
+      {
+        "id": "intro",
+        "label": "Introduction",
+        "content": "Randomized QuickSort is a variation of the classic QuickSort algorithm that randomly selects a pivot to improve performance and reduce the chances of worst-case time complexity (O(n²)). By choosing a random pivot instead of always selecting the first or last element, we balance the partitioning process, leading to better average-case performance. This makes it highly efficient and practical for large datasets.",
+        "image": "./src/assets/img/linear_intro.png"
+      },
+      {
+        "id": "video",
+        "label": "Video Lecture",
+        "content": "Watch this video to understand Linear Search in depth.",
+        "videoUrl": "https://youtu.be/aFswaBnWKLk?si=FoCCZNnvbcfNXI6C"
+      },
+      {
+        "id": "algorithm",
+        "label": "Algorithm",
+        "content": "**Step 1 -** Input: An unsorted array A of size n. \n**Step 2 -** Base Case: If the array has 0 or 1 elements, return it (already sorted). \n**Step 3 -** Choose a Random Pivot: Select a random index between the start and end of the array and swap it with the last element. \n**Step 4 -** Partition the Array: Elements smaller than the pivot go to left and greater go to right. \n**Step 5 -** Recursive Calls: Apply Randomized Quicksort on the left and right subarray. \n**Step 6 -** Combine Results: The final sorted array is obtained after all recursive calls."
+      },
+      {
+        "id": "working",
+        "label": "Working",
+        "content": "Linear Search iterates through the list and compares each element with the target value."
+      },
+      {
+        "id": "code",
+        "label": "Code",
+        "content": "Here is the implementation of Linear Search in different languages.",
+        "experiment": {
+          "title": "Code",
+          "configs": {
+            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
+            "c": { "code": "#include <stdio.h>...", "output": "2" },
+            "cpp": { "code": "#include <iostream>...", "output": "2" },
+            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+          }
+        }
+      },
+      {
+        "id": "analysis",
+        "label": "Analysis",
+        "content": "Randomized QuickSort improves performance by avoiding worst-case scenarios where the pivot always results in an unbalanced partition. \n**1.**Best & Average Case: O(n log n) (when the pivot divides the array into roughly equal halves). \n**2.**Worst Case: O(n²) (rare, occurs when partitions are highly unbalanced). \nBy randomizing the pivot, the chances of worst-case complexity are significantly reduced, making O(n log n) the expected time complexity in most cases. It is widely used in practical applications due to its in-place sorting and fast execution compared to other sorting algorithms like MergeSort."
+      }
+    ]
+  },
+  "String_Matching_Algorithms": {
+    "title": "String Matching Algorithms",
+    "sections": [
+      {
+        "id": "intro",
+        "label": "Introduction",
+        "content": "String Matching Algorithms are used to find occurrences of a pattern within a text. These algorithms are widely used in search engines, DNA sequence analysis, plagiarism detection, and text processing. Different algorithms optimize for different scenarios, such as brute force (simple but slow), efficient pattern preprocessing (KMP), and hashing-based techniques (Rabin-Karp).",
+        "image": "./src/assets/img/linear_intro.png"
+      },
+      {
+        "id": "video",
+        "label": "Video Lecture",
+        "content": "Watch this video to understand Linear Search in depth.",
+        "videoUrl": "https://youtu.be/V5-7GzOfADQ?si=UQdDCIVa24rNqF_-"
+      },
+      {
+        "id": "algorithm",
+        "label": "Algorithm",
+        "content": "**Step 1 -** Compute the hash value of the pattern and the first window of the text. \n**Step 2 -** Slide the window and compare hash values (instead of character-by-character). \n**Step 3 -** If the hash values match, verify by comparing characters."
+      },
+      {
+        "id": "working",
+        "label": "Working",
+        "content": "Linear Search iterates through the list and compares each element with the target value."
+      },
+      {
+        "id": "code",
+        "label": "Code",
+        "content": "Here is the implementation of Linear Search in different languages.",
+        "experiment": {
+          "title": "Code",
+          "configs": {
+            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
+            "c": { "code": "#include <stdio.h>...", "output": "2" },
+            "cpp": { "code": "#include <iostream>...", "output": "2" },
+            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+          }
+        }
+      },
+      {
+        "id": "analysis",
+        "label": "Analysis",
+        "content": "The **Naïve String Matching Algorithm** has a time complexity of **O(m × n)** in both the best and worst cases, making it inefficient for large texts. The **Knuth-Morris-Pratt (KMP) Algorithm** improves efficiency by preprocessing the pattern, achieving a time complexity of **O(n + m)** in all cases. The **Rabin-Karp Algorithm** has an average-case complexity of **O(n + m)** but can degrade to **O(m × n)** in the worst case due to hash collisions. The **Boyer-Moore Algorithm** is highly efficient, with a best-case complexity of **O(n/m)** when skipping large sections of the text, but in the worst case, it can still be **O(m × n)**. Among these, **KMP is the most consistent**, **Boyer-Moore is the fastest for long patterns**, and **Rabin-Karp is suitable for multiple pattern searches**."
       }
     ]
   }
