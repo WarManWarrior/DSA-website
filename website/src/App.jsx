@@ -18,6 +18,7 @@ import NQueensVisualizer from "./assets/algorithms/NqueensProblem";
 import LCSVisualizer from "./assets/algorithms/LCS";
 import StringMatchingVisualizer from "./assets/algorithms/StringMatching";
 import Insertionsort from "./assets/pages/understanding/insertionsort";
+import Nqueen from "./assets/page_components/nqueen";
 
 
 
@@ -29,9 +30,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/introduction" element={<LinearSearch />} />
-          <Route path="/explist" element={<ExperimentsPage/>} />
-          <Route path="/sorting/insertion-sort" element={<Insertionsort/>} />
+          <Route path="/insertion" element={<InsertionSortVisualizer />} />
+          <Route path="/nqueen" element={<Nqueen/>} />
         </Routes>
       </Router>
     </div>
