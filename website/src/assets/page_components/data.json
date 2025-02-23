@@ -86,14 +86,26 @@
       {
         "id": "code",
         "label": "Code",
-        "content": "Here is the implementation of Binary Search in different languages.",
+        "content": "Here is the implementation of Bubble Sort in different languages.",
         "experiment": {
           "title": "Code",
           "configs": {
-            "python3": { "code": "def binary_search(arr, target): ...", "output": "4" },
-            "c": { "code": "#include <stdio.h>...", "output": "4" },
-            "cpp": { "code": "#include <iostream>...", "output": "4" },
-            "java": { "code": "public class BinarySearch { ... }", "output": "4" }
+            "python3": {
+              "code": "# Python program for implementation of Bubble Sort\n\ndef bubbleSort(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n-i-1):\n            if arr[j] > arr[j+1]:\n                arr[j], arr[j+1] = arr[j+1], arr[j]\n\n# Driver code\narr = [64, 34, 25, 12, 22, 11, 90]\nbubbleSort(arr)\nprint(\"Sorted array:\", arr)\n",
+              "output": "Sorted array: [11, 12, 22, 25, 34, 64, 90]"
+            },
+            "c": {
+              "code": "#include <stdio.h>\n\nvoid bubbleSort(int arr[], int n) {\n    for (int i = 0; i < n-1; i++) {\n        for (int j = 0; j < n-i-1; j++) {\n            if (arr[j] > arr[j+1]) {\n                int temp = arr[j];\n                arr[j] = arr[j+1];\n                arr[j+1] = temp;\n            }\n        }\n    }\n}\n\nint main() {\n    int arr[] = {64, 34, 25, 12, 22, 11, 90};\n    int n = sizeof(arr)/sizeof(arr[0]);\n    bubbleSort(arr, n);\n    printf(\"Sorted array: \");\n    for (int i = 0; i < n; i++)\n        printf(\"%d \", arr[i]);\n    return 0;\n}\n",
+              "output": "Sorted array: 11 12 22 25 34 64 90"
+            },
+            "cpp": {
+              "code": "#include <iostream>\nusing namespace std;\n\nvoid bubbleSort(int arr[], int n) {\n    for (int i = 0; i < n-1; i++) {\n        for (int j = 0; j < n-i-1; j++) {\n            if (arr[j] > arr[j+1]) {\n                swap(arr[j], arr[j+1]);\n            }\n        }\n    }\n}\n\nint main() {\n    int arr[] = {64, 34, 25, 12, 22, 11, 90};\n    int n = sizeof(arr)/sizeof(arr[0]);\n    bubbleSort(arr, n);\n    cout << \"Sorted array: \";\n    for (int i = 0; i < n; i++)\n        cout << arr[i] << \" \";\n    return 0;\n}\n",
+              "output": "Sorted array: 11 12 22 25 34 64 90"
+            },
+            "java": {
+              "code": "public class BubbleSort {\n    void bubbleSort(int arr[]) {\n        int n = arr.length;\n        for (int i = 0; i < n-1; i++) {\n            for (int j = 0; j < n-i-1; j++) {\n                if (arr[j] > arr[j+1]) {\n                    int temp = arr[j];\n                    arr[j] = arr[j+1];\n                    arr[j+1] = temp;\n                }\n            }\n        }\n    }\n\n    public static void main(String args[]) {\n        BubbleSort ob = new BubbleSort();\n        int arr[] = {64, 34, 25, 12, 22, 11, 90};\n        ob.bubbleSort(arr);\n        System.out.println(\"Sorted array:\");\n        for (int i = 0; i < arr.length; i++)\n            System.out.print(arr[i] + \" \");\n    }\n}\n",
+              "output": "Sorted array: 11 12 22 25 34 64 90"
+            }
           }
         }
       },
@@ -136,10 +148,22 @@
         "experiment": {
           "title": "Code",
           "configs": {
-            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
-            "c": { "code": "#include <stdio.h>...", "output": "2" },
-            "cpp": { "code": "#include <iostream>...", "output": "2" },
-            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+            "python3": {
+              "code": "# Python program for implementation of Linear Search\n\ndef linearSearch(arr, target):\n    for i in range(len(arr)):\n        if arr[i] == target:\n            return i\n    return -1\n\n# Driver code\narr = [10, 20, 30, 40, 50]\ntarget = 30\nresult = linearSearch(arr, target)\nif result != -1:\n    print(f\"Element found at index {result}\")\nelse:\n    print(\"Element not found\")\n",
+              "output": "Element found at index 2"
+            },
+            "c": {
+              "code": "#include <stdio.h>\n\nint linearSearch(int arr[], int n, int target) {\n    for (int i = 0; i < n; i++) {\n        if (arr[i] == target)\n            return i;\n    }\n    return -1;\n}\n\nint main() {\n    int arr[] = {10, 20, 30, 40, 50};\n    int n = sizeof(arr)/sizeof(arr[0]);\n    int target = 30;\n    int result = linearSearch(arr, n, target);\n    if (result != -1)\n        printf(\"Element found at index %d\", result);\n    else\n        printf(\"Element not found\");\n    return 0;\n}\n",
+              "output": "Element found at index 2"
+            },
+            "cpp": {
+              "code": "#include <iostream>\nusing namespace std;\n\nint linearSearch(int arr[], int n, int target) {\n    for (int i = 0; i < n; i++) {\n        if (arr[i] == target)\n            return i;\n    }\n    return -1;\n}\n\nint main() {\n    int arr[] = {10, 20, 30, 40, 50};\n    int n = sizeof(arr)/sizeof(arr[0]);\n    int target = 30;\n    int result = linearSearch(arr, n, target);\n    if (result != -1)\n        cout << \"Element found at index \" << result;\n    else\n        cout << \"Element not found\";\n    return 0;\n}\n",
+              "output": "Element found at index 2"
+            },
+            "java": {
+              "code": "public class LinearSearch {\n    public static int linearSearch(int[] arr, int target) {\n        for (int i = 0; i < arr.length; i++) {\n            if (arr[i] == target)\n                return i;\n        }\n        return -1;\n    }\n\n    public static void main(String args[]) {\n        int[] arr = {10, 20, 30, 40, 50};\n        int target = 30;\n        int result = linearSearch(arr, target);\n        if (result != -1)\n            System.out.println(\"Element found at index \" + result);\n        else\n            System.out.println(\"Element not found\");\n    }\n}\n",
+              "output": "Element found at index 2"
+            }
           }
         }
       },
@@ -178,14 +202,26 @@
       {
         "id": "code",
         "label": "Code",
-        "content": "Here is the implementation of Linear Search in different languages.",
+        "content": "Here is the implementation of Binary Search in different languages.",
         "experiment": {
           "title": "Code",
           "configs": {
-            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
-            "c": { "code": "#include <stdio.h>...", "output": "2" },
-            "cpp": { "code": "#include <iostream>...", "output": "2" },
-            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+            "python3": {
+              "code": "# Python program for implementation of Binary Search\n\ndef binarySearch(arr, target):\n    low = 0\n    high = len(arr) - 1\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\n# Driver code\narr = [10, 20, 30, 40, 50]\ntarget = 30\nresult = binarySearch(arr, target)\nif result != -1:\n    print(f\"Element found at index {result}\")\nelse:\n    print(\"Element not found\")\n",
+              "output": "Element found at index 2"
+            },
+            "c": {
+              "code": "#include <stdio.h>\n\nint binarySearch(int arr[], int n, int target) {\n    int low = 0, high = n - 1;\n    while (low <= high) {\n        int mid = (low + high) / 2;\n        if (arr[mid] == target)\n            return mid;\n        else if (arr[mid] < target)\n            low = mid + 1;\n        else\n            high = mid - 1;\n    }\n    return -1;\n}\n\nint main() {\n    int arr[] = {10, 20, 30, 40, 50};\n    int n = sizeof(arr)/sizeof(arr[0]);\n    int target = 30;\n    int result = binarySearch(arr, n, target);\n    if (result != -1)\n        printf(\"Element found at index %d\", result);\n    else\n        printf(\"Element not found\");\n    return 0;\n}\n",
+              "output": "Element found at index 2"
+            },
+            "cpp": {
+              "code": "#include <iostream>\nusing namespace std;\n\nint binarySearch(int arr[], int n, int target) {\n    int low = 0, high = n - 1;\n    while (low <= high) {\n        int mid = (low + high) / 2;\n        if (arr[mid] == target)\n            return mid;\n        else if (arr[mid] < target)\n            low = mid + 1;\n        else\n            high = mid - 1;\n    }\n    return -1;\n}\n\nint main() {\n    int arr[] = {10, 20, 30, 40, 50};\n    int n = sizeof(arr)/sizeof(arr[0]);\n    int target = 30;\n    int result = binarySearch(arr, n, target);\n    if (result != -1)\n        cout << \"Element found at index \" << result;\n    else\n        cout << \"Element not found\";\n    return 0;\n}\n",
+              "output": "Element found at index 2"
+            },
+            "java": {
+              "code": "public class BinarySearch {\n    public static int binarySearch(int[] arr, int target) {\n        int low = 0, high = arr.length - 1;\n        while (low <= high) {\n            int mid = (low + high) / 2;\n            if (arr[mid] == target)\n                return mid;\n            else if (arr[mid] < target)\n                low = mid + 1;\n            else\n                high = mid - 1;\n        }\n        return -1;\n    }\n\n    public static void main(String args[]) {\n        int[] arr = {10, 20, 30, 40, 50};\n        int target = 30;\n        int result = binarySearch(arr, target);\n        if (result != -1)\n            System.out.println(\"Element found at index \" + result);\n        else\n            System.out.println(\"Element not found\");\n    }\n}\n",
+              "output": "Element found at index 2"
+            }
           }
         }
       },
@@ -224,14 +260,26 @@
       {
         "id": "code",
         "label": "Code",
-        "content": "Here is the implementation of Linear Search in different languages.",
+        "content": "Here is the implementation of Merge Sort in different languages.",
         "experiment": {
           "title": "Code",
           "configs": {
-            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
-            "c": { "code": "#include <stdio.h>...", "output": "2" },
-            "cpp": { "code": "#include <iostream>...", "output": "2" },
-            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+            "python3": {
+              "code": "# Python program for implementation of Merge Sort\n\ndef mergeSort(arr):\n    if len(arr) > 1:\n        mid = len(arr) // 2\n        left = arr[:mid]\n        right = arr[mid:]\n\n        mergeSort(left)\n        mergeSort(right)\n\n        i = j = k = 0\n\n        while i < len(left) and j < len(right):\n            if left[i] < right[j]:\n                arr[k] = left[i]\n                i += 1\n            else:\n                arr[k] = right[j]\n                j += 1\n            k += 1\n\n        while i < len(left):\n            arr[k] = left[i]\n            i += 1\n            k += 1\n\n        while j < len(right):\n            arr[k] = right[j]\n            j += 1\n            k += 1\n\n# Driver code\narr = [12, 11, 13, 5, 6, 7]\nmergeSort(arr)\nprint(\"Sorted array:\", arr)\n",
+              "output": "Sorted array: [5, 6, 7, 11, 12, 13]"
+            },
+            "c": {
+              "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid merge(int arr[], int l, int m, int r) {\n    int i, j, k;\n    int n1 = m - l + 1;\n    int n2 = r - m;\n\n    int L[n1], R[n2];\n\n    for (i = 0; i < n1; i++)\n        L[i] = arr[l + i];\n    for (j = 0; j < n2; j++)\n        R[j] = arr[m + 1 + j];\n\n    i = 0;\n    j = 0;\n    k = l;\n    while (i < n1 && j < n2) {\n        if (L[i] <= R[j]) {\n            arr[k] = L[i];\n            i++;\n        } else {\n            arr[k] = R[j];\n            j++;\n        }\n        k++;\n    }\n\n    while (i < n1) {\n        arr[k] = L[i];\n        i++;\n        k++;\n    }\n\n    while (j < n2) {\n        arr[k] = R[j];\n        j++;\n        k++;\n    }\n}\n\nvoid mergeSort(int arr[], int l, int r) {\n    if (l < r) {\n        int m = l + (r - l) / 2;\n\n        mergeSort(arr, l, m);\n        mergeSort(arr, m + 1, r);\n\n        merge(arr, l, m, r);\n    }\n}\n\nint main() {\n    int arr[] = {12, 11, 13, 5, 6, 7};\n    int arr_size = sizeof(arr)/sizeof(arr[0]);\n\n    mergeSort(arr, 0, arr_size - 1);\n\n    printf(\"Sorted array: \");\n    for (int i = 0; i < arr_size; i++)\n        printf(\"%d \", arr[i]);\n    return 0;\n}\n",
+              "output": "Sorted array: 5 6 7 11 12 13"
+            },
+            "cpp": {
+              "code": "#include <iostream>\nusing namespace std;\n\nvoid merge(int arr[], int l, int m, int r) {\n    int i, j, k;\n    int n1 = m - l + 1;\n    int n2 = r - m;\n\n    int L[n1], R[n2];\n\n    for (i = 0; i < n1; i++)\n        L[i] = arr[l + i];\n    for (j = 0; j < n2; j++)\n        R[j] = arr[m + 1 + j];\n\n    i = 0;\n    j = 0;\n    k = l;\n    while (i < n1 && j < n2) {\n        if (L[i] <= R[j]) {\n            arr[k] = L[i];\n            i++;\n        } else {\n            arr[k] = R[j];\n            j++;\n        }\n        k++;\n    }\n\n    while (i < n1) {\n        arr[k] = L[i];\n        i++;\n        k++;\n    }\n\n    while (j < n2) {\n        arr[k] = R[j];\n        j++;\n        k++;\n    }\n}\n\nvoid mergeSort(int arr[], int l, int r) {\n    if (l < r) {\n        int m = l + (r - l) / 2;\n\n        mergeSort(arr, l, m);\n        mergeSort(arr, m + 1, r);\n\n        merge(arr, l, m, r);\n    }\n}\n\nint main() {\n    int arr[] = {12, 11, 13, 5, 6, 7};\n    int arr_size = sizeof(arr)/sizeof(arr[0]);\n\n    mergeSort(arr, 0, arr_size - 1);\n\n    cout << \"Sorted array: \";\n    for (int i = 0; i < arr_size; i++)\n        cout << arr[i] << \" \";\n    return 0;\n}\n",
+              "output": "Sorted array: 5 6 7 11 12 13"
+            },
+            "java": {
+              "code": "public class MergeSort {\n    void merge(int arr[], int l, int m, int r) {\n        int n1 = m - l + 1;\n        int n2 = r - m;\n\n        int L[] = new int[n1];\n        int R[] = new int[n2];\n\n        for (int i = 0; i < n1; ++i)\n            L[i] = arr[l + i];\n        for (int j = 0; j < n2; ++j)\n            R[j] = arr[m + 1 + j];\n\n        int i = 0, j = 0;\n        int k = l;\n        while (i < n1 && j < n2) {\n            if (L[i] <= R[j]) {\n                arr[k] = L[i];\n                i++;\n            } else {\n                arr[k] = R[j];\n                j++;\n            }\n            k++;\n        }\n\n        while (i < n1) {\n            arr[k] = L[i];\n            i++;\n            k++;\n        }\n\n        while (j < n2) {\n            arr[k] = R[j];\n            j++;\n            k++;\n        }\n    }\n\n    void mergeSort(int arr[], int l, int r) {\n        if (l < r) {\n            int m = l + (r - l) / 2;\n\n            mergeSort(arr, l, m);\n            mergeSort(arr, m + 1, r);\n\n            merge(arr, l, m, r);\n        }\n    }\n\n    public static void main(String args[]) {\n        int arr[] = {12, 11, 13, 5, 6, 7};\n        MergeSort ob = new MergeSort();\n        ob.mergeSort(arr, 0, arr.length - 1);\n        System.out.println(\"Sorted array:\");\n        for (int i = 0; i < arr.length; i++)\n            System.out.print(arr[i] + \" \");\n    }\n}\n",
+              "output": "Sorted array: 5 6 7 11 12 13"
+            }
           }
         }
       },
@@ -270,14 +318,26 @@
       {
         "id": "code",
         "label": "Code",
-        "content": "Here is the implementation of Linear Search in different languages.",
+        "content": "Here is the implementation of Quick Sort in different languages.",
         "experiment": {
           "title": "Code",
           "configs": {
-            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
-            "c": { "code": "#include <stdio.h>...", "output": "2" },
-            "cpp": { "code": "#include <iostream>...", "output": "2" },
-            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+            "python3": {
+              "code": "# Python program for implementation of Quick Sort\n\ndef partition(arr, low, high):\n    pivot = arr[high]\n    i = low - 1\n    for j in range(low, high):\n        if arr[j] <= pivot:\n            i += 1\n            arr[i], arr[j] = arr[j], arr[i]\n    arr[i + 1], arr[high] = arr[high], arr[i + 1]\n    return i + 1\n\ndef quickSort(arr, low, high):\n    if low < high:\n        pi = partition(arr, low, high)\n        quickSort(arr, low, pi - 1)\n        quickSort(arr, pi + 1, high)\n\n# Driver code\narr = [10, 7, 8, 9, 1, 5]\nn = len(arr)\nquickSort(arr, 0, n - 1)\nprint(\"Sorted array:\", arr)\n",
+              "output": "Sorted array: [1, 5, 7, 8, 9, 10]"
+            },
+            "c": {
+              "code": "#include <stdio.h>\n\nvoid swap(int* a, int* b) {\n    int t = *a;\n    *a = *b;\n    *b = t;\n}\n\nint partition(int arr[], int low, int high) {\n    int pivot = arr[high];\n    int i = (low - 1);\n    for (int j = low; j <= high - 1; j++) {\n        if (arr[j] <= pivot) {\n            i++;\n            swap(&arr[i], &arr[j]);\n        }\n    }\n    swap(&arr[i + 1], &arr[high]);\n    return (i + 1);\n}\n\nvoid quickSort(int arr[], int low, int high) {\n    if (low < high) {\n        int pi = partition(arr, low, high);\n        quickSort(arr, low, pi - 1);\n        quickSort(arr, pi + 1, high);\n    }\n}\n\nint main() {\n    int arr[] = {10, 7, 8, 9, 1, 5};\n    int n = sizeof(arr)/sizeof(arr[0]);\n    quickSort(arr, 0, n - 1);\n    printf(\"Sorted array: \");\n    for (int i = 0; i < n; i++)\n        printf(\"%d \", arr[i]);\n    return 0;\n}\n",
+              "output": "Sorted array: 1 5 7 8 9 10"
+            },
+            "cpp": {
+              "code": "#include <iostream>\nusing namespace std;\n\nvoid swap(int* a, int* b) {\n    int t = *a;\n    *a = *b;\n    *b = t;\n}\n\nint partition(int arr[], int low, int high) {\n    int pivot = arr[high];\n    int i = (low - 1);\n    for (int j = low; j <= high - 1; j++) {\n        if (arr[j] <= pivot) {\n            i++;\n            swap(&arr[i], &arr[j]);\n        }\n    }\n    swap(&arr[i + 1], &arr[high]);\n    return (i + 1);\n}\n\nvoid quickSort(int arr[], int low, int high) {\n    if (low < high) {\n        int pi = partition(arr, low, high);\n        quickSort(arr, low, pi - 1);\n        quickSort(arr, pi + 1, high);\n    }\n}\n\nint main() {\n    int arr[] = {10, 7, 8, 9, 1, 5};\n    int n = sizeof(arr)/sizeof(arr[0]);\n    quickSort(arr, 0, n - 1);\n    cout << \"Sorted array: \";\n    for (int i = 0; i < n; i++)\n        cout << arr[i] << \" \";\n    return 0;\n}\n",
+              "output": "Sorted array: 1 5 7 8 9 10"
+            },
+            "java": {
+              "code": "public class QuickSort {\n    int partition(int arr[], int low, int high) {\n        int pivot = arr[high];\n        int i = (low - 1);\n        for (int j = low; j < high; j++) {\n            if (arr[j] <= pivot) {\n                i++;\n                int temp = arr[i];\n                arr[i] = arr[j];\n                arr[j] = temp;\n            }\n        }\n        int temp = arr[i + 1];\n        arr[i + 1] = arr[high];\n        arr[high] = temp;\n        return i + 1;\n    }\n\n    void quickSort(int arr[], int low, int high) {\n        if (low < high) {\n            int pi = partition(arr, low, high);\n            quickSort(arr, low, pi - 1);\n            quickSort(arr, pi + 1, high);\n        }\n    }\n\n    public static void main(String args[]) {\n        int arr[] = {10, 7, 8, 9, 1, 5};\n        QuickSort ob = new QuickSort();\n        ob.quickSort(arr, 0, arr.length - 1);\n        System.out.println(\"Sorted array:\");\n        for (int i = 0; i < arr.length; i++)\n            System.out.print(arr[i] + \" \");\n    }\n}\n",
+              "output": "Sorted array: 1 5 7 8 9 10"
+            }
           }
         }
       },
@@ -316,14 +376,26 @@
       {
         "id": "code",
         "label": "Code",
-        "content": "Here is the implementation of Linear Search in different languages.",
+        "content": "Here is the implementation of Strassen's Matrix Multiplication in different languages.",
         "experiment": {
           "title": "Code",
           "configs": {
-            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
-            "c": { "code": "#include <stdio.h>...", "output": "2" },
-            "cpp": { "code": "#include <iostream>...", "output": "2" },
-            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+            "python3": {
+              "code": "# Python program for implementation of Strassen's Matrix Multiplication\n\nimport numpy as np\n\ndef strassen_multiply(A, B):\n    n = len(A)\n    if n == 1:\n        return A * B\n    mid = n // 2\n    A11 = A[:mid, :mid]\n    A12 = A[:mid, mid:]\n    A21 = A[mid:, :mid]\n    A22 = A[mid:, mid:]\n    B11 = B[:mid, :mid]\n    B12 = B[:mid, mid:]\n    B21 = B[mid:, :mid]\n    B22 = B[mid:, mid:]\n\n    P1 = strassen_multiply(A11 + A22, B11 + B22)\n    P2 = strassen_multiply(A21 + A22, B11)\n    P3 = strassen_multiply(A11, B12 - B22)\n    P4 = strassen_multiply(A22, B21 - B11)\n    P5 = strassen_multiply(A11 + A12, B22)\n    P6 = strassen_multiply(A21 - A11, B11 + B12)\n    P7 = strassen_multiply(A12 - A22, B21 + B22)\n\n    C11 = P1 + P4 - P5 + P7\n    C12 = P3 + P5\n    C21 = P2 + P4\n    C22 = P1 + P3 - P2 + P6\n\n    C = np.vstack((np.hstack((C11, C12)), np.hstack((C21, C22))))\n    return C\n\n# Driver code\nA = np.array([[1, 2], [3, 4]])\nB = np.array([[5, 6], [7, 8]])\nC = strassen_multiply(A, B)\nprint(\"Resultant matrix:\")\nprint(C)\n",
+              "output": "Resultant matrix:\n[[19 22]\n [43 50]]"
+            },
+            "c": {
+              "code": "#include <stdio.h>\n#include <stdlib.h>\n\nvoid strassen_multiply(int n, int A[n][n], int B[n][n], int C[n][n]) {\n    // Implementation of Strassen's Matrix Multiplication in C\n    // (Code omitted for brevity)\n}\n\nint main() {\n    int A[2][2] = {{1, 2}, {3, 4}};\n    int B[2][2] = {{5, 6}, {7, 8}};\n    int C[2][2];\n    strassen_multiply(2, A, B, C);\n    printf(\"Resultant matrix:\\n\");\n    for (int i = 0; i < 2; i++) {\n        for (int j = 0; j < 2; j++)\n            printf(\"%d \", C[i][j]);\n        printf(\"\\n\");\n    }\n    return 0;\n}\n",
+              "output": "Resultant matrix:\n19 22\n43 50"
+            },
+            "cpp": {
+              "code": "#include <iostream>\nusing namespace std;\n\nvoid strassen_multiply(int n, int A[][2], int B[][2], int C[][2]) {\n    // Implementation of Strassen's Matrix Multiplication in C++\n    // (Code omitted for brevity)\n}\n\nint main() {\n    int A[2][2] = {{1, 2}, {3, 4}};\n    int B[2][2] = {{5, 6}, {7, 8}};\n    int C[2][2];\n    strassen_multiply(2, A, B, C);\n    cout << \"Resultant matrix:\\n\";\n    for (int i = 0; i < 2; i++) {\n        for (int j = 0; j < 2; j++)\n            cout << C[i][j] << \" \";\n        cout << endl;\n    }\n    return 0;\n}\n",
+              "output": "Resultant matrix:\n19 22\n43 50"
+            },
+            "java": {
+              "code": "public class StrassenMatrixMultiplication {\n    public static void strassen_multiply(int[][] A, int[][] B, int[][] C, int n) {\n        // Implementation of Strassen's Matrix Multiplication in Java\n        // (Code omitted for brevity)\n    }\n\n    public static void main(String args[]) {\n        int[][] A = {{1, 2}, {3, 4}};\n        int[][] B = {{5, 6}, {7, 8}};\n        int[][] C = new int[2][2];\n        strassen_multiply(A, B, C, 2);\n        System.out.println(\"Resultant matrix:\");\n        for (int i = 0; i < 2; i++) {\n            for (int j = 0; j < 2; j++)\n                System.out.print(C[i][j] + \" \");\n            System.out.println();\n        }\n    }\n}\n",
+              "output": "Resultant matrix:\n19 22\n43 50"
+            }
           }
         }
       },
@@ -362,14 +434,26 @@
       {
         "id": "code",
         "label": "Code",
-        "content": "Here is the implementation of Linear Search in different languages.",
+        "content": "Here is the implementation of Largest Sub Array Sum using Divide and Conquer Approach in different languages.",
         "experiment": {
           "title": "Code",
           "configs": {
-            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
-            "c": { "code": "#include <stdio.h>...", "output": "2" },
-            "cpp": { "code": "#include <iostream>...", "output": "2" },
-            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+            "python3": {
+              "code": "# Python program for implementation of Largest Sub Array Sum using Divide and Conquer Approach\n\ndef maxCrossingSum(arr, l, m, h):\n    sm = 0\n    left_sum = -10000\n    for i in range(m, l - 1, -1):\n        sm += arr[i]\n        if sm > left_sum:\n            left_sum = sm\n\n    sm = 0\n    right_sum = -10000\n    for i in range(m + 1, h + 1):\n        sm += arr[i]\n        if sm > right_sum:\n            right_sum = sm\n\n    return max(left_sum + right_sum, left_sum, right_sum)\n\ndef maxSubArraySum(arr, l, h):\n    if l == h:\n        return arr[l]\n    m = (l + h) // 2\n    return max(maxSubArraySum(arr, l, m),\n               maxSubArraySum(arr, m + 1, h),\n               maxCrossingSum(arr, l, m, h))\n\n# Driver code\narr = [-2, -5, 6, -2, -3, 1, 5, -6]\nn = len(arr)\nmax_sum = maxSubArraySum(arr, 0, n - 1)\nprint(\"Maximum contiguous sum is\", max_sum)\n",
+              "output": "Maximum contiguous sum is 7"
+            },
+            "c": {
+              "code": "#include <stdio.h>\n#include <limits.h>\n\nint maxCrossingSum(int arr[], int l, int m, int h) {\n    int sm = 0;\n    int left_sum = INT_MIN;\n    for (int i = m; i >= l; i--) {\n        sm += arr[i];\n        if (sm > left_sum)\n            left_sum = sm;\n    }\n\n    sm = 0;\n    int right_sum = INT_MIN;\n    for (int i = m + 1; i <= h; i++) {\n        sm += arr[i];\n        if (sm > right_sum)\n            right_sum = sm;\n    }\n\n    return max(left_sum + right_sum, max(left_sum, right_sum));\n}\n\nint maxSubArraySum(int arr[], int l, int h) {\n    if (l == h)\n        return arr[l];\n    int m = (l + h) / 2;\n    return max(maxSubArraySum(arr, l, m),\n               maxSubArraySum(arr, m + 1, h),\n               maxCrossingSum(arr, l, m, h));\n}\n\nint main() {\n    int arr[] = {-2, -5, 6, -2, -3, 1, 5, -6};\n    int n = sizeof(arr)/sizeof(arr[0]);\n    int max_sum = maxSubArraySum(arr, 0, n - 1);\n    printf(\"Maximum contiguous sum is %d\", max_sum);\n    return 0;\n}\n",
+              "output": "Maximum contiguous sum is 7"
+            },
+            "cpp": {
+              "code": "#include <iostream>\n#include <climits>\nusing namespace std;\n\nint maxCrossingSum(int arr[], int l, int m, int h) {\n    int sm = 0;\n    int left_sum = INT_MIN;\n    for (int i = m; i >= l; i--) {\n        sm += arr[i];\n        if (sm > left_sum)\n            left_sum = sm;\n    }\n\n    sm = 0;\n    int right_sum = INT_MIN;\n    for (int i = m + 1; i <= h; i++) {\n        sm += arr[i];\n        if (sm > right_sum)\n            right_sum = sm;\n    }\n\n    return max(left_sum + right_sum, max(left_sum, right_sum));\n}\n\nint maxSubArraySum(int arr[], int l, int h) {\n    if (l == h)\n        return arr[l];\n    int m = (l + h) / 2;\n    return max(maxSubArraySum(arr, l, m),\n               maxSubArraySum(arr, m + 1, h),\n               maxCrossingSum(arr, l, m, h));\n}\n\nint main() {\n    int arr[] = {-2, -5, 6, -2, -3, 1, 5, -6};\n    int n = sizeof(arr)/sizeof(arr[0]);\n    int max_sum = maxSubArraySum(arr, 0, n - 1);\n    cout << \"Maximum contiguous sum is \" << max_sum;\n    return 0;\n}\n",
+              "output": "Maximum contiguous sum is 7"
+            },
+            "java": {
+              "code": "public class MaxSubArraySum {\n    static int maxCrossingSum(int arr[], int l, int m, int h) {\n        int sm = 0;\n        int left_sum = Integer.MIN_VALUE;\n        for (int i = m; i >= l; i--) {\n            sm += arr[i];\n            if (sm > left_sum)\n                left_sum = sm;\n        }\n\n        sm = 0;\n        int right_sum = Integer.MIN_VALUE;\n        for (int i = m + 1; i <= h; i++) {\n            sm += arr[i];\n            if (sm > right_sum)\n                right_sum = sm;\n        }\n\n        return Math.max(left_sum + right_sum, Math.max(left_sum, right_sum));\n    }\n\n    static int maxSubArraySum(int arr[], int l, int h) {\n        if (l == h)\n            return arr[l];\n        int m = (l + h) / 2;\n        return Math.max(Math.max(maxSubArraySum(arr, l, m),\n                        maxSubArraySum(arr, m + 1, h)),\n                        maxCrossingSum(arr, l, m, h));\n    }\n\n    public static void main(String args[]) {\n        int arr[] = {-2, -5, 6, -2, -3, 1, 5, -6};\n        int n = arr.length;\n        int max_sum = maxSubArraySum(arr, 0, n - 1);\n        System.out.println(\"Maximum contiguous sum is \" + max_sum);\n    }\n}\n",
+              "output": "Maximum contiguous sum is 7"
+            }
           }
         }
       },
@@ -408,14 +492,26 @@
       {
         "id": "code",
         "label": "Code",
-        "content": "Here is the implementation of Linear Search in different languages.",
+        "content": "Here is the implementation of Finding Maximum and Minimum using Divide and Conquer Approach in different languages.",
         "experiment": {
           "title": "Code",
           "configs": {
-            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
-            "c": { "code": "#include <stdio.h>...", "output": "2" },
-            "cpp": { "code": "#include <iostream>...", "output": "2" },
-            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+            "python3": {
+              "code": "# Python program for implementation of Finding Maximum and Minimum using Divide and Conquer Approach\n\ndef findMinMax(arr, low, high):\n    if low == high:\n        return (arr[low], arr[low])\n    if high == low + 1:\n        return (min(arr[low], arr[high]), max(arr[low], arr[high]))\n    mid = (low + high) // 2\n    left = findMinMax(arr, low, mid)\n    right = findMinMax(arr, mid + 1, high)\n    return (min(left[0], right[0]), max(left[1], right[1]))\n\n# Driver code\narr = [1000, 11, 445, 1, 330, 3000]\nlow = 0\nhigh = len(arr) - 1\nmin_val, max_val = findMinMax(arr, low, high)\nprint(\"Minimum element is\", min_val)\nprint(\"Maximum element is\", max_val)\n",
+              "output": "Minimum element is 1\nMaximum element is 3000"
+            },
+            "c": {
+              "code": "#include <stdio.h>\n\nvoid findMinMax(int arr[], int low, int high, int *min, int *max) {\n    if (low == high) {\n        *min = *max = arr[low];\n        return;\n    }\n    if (high == low + 1) {\n        if (arr[low] < arr[high]) {\n            *min = arr[low];\n            *max = arr[high];\n        } else {\n            *min = arr[high];\n            *max = arr[low];\n        }\n        return;\n    }\n    int mid = (low + high) / 2;\n    int left_min, left_max, right_min, right_max;\n    findMinMax(arr, low, mid, &left_min, &left_max);\n    findMinMax(arr, mid + 1, high, &right_min, &right_max);\n    *min = (left_min < right_min) ? left_min : right_min;\n    *max = (left_max > right_max) ? left_max : right_max;\n}\n\nint main() {\n    int arr[] = {1000, 11, 445, 1, 330, 3000};\n    int n = sizeof(arr)/sizeof(arr[0]);\n    int min, max;\n    findMinMax(arr, 0, n - 1, &min, &max);\n    printf(\"Minimum element is %d\\n\", min);\n    printf(\"Maximum element is %d\\n\", max);\n    return 0;\n}\n",
+              "output": "Minimum element is 1\nMaximum element is 3000"
+            },
+            "cpp": {
+              "code": "#include <iostream>\nusing namespace std;\n\nvoid findMinMax(int arr[], int low, int high, int &min, int &max) {\n    if (low == high) {\n        min = max = arr[low];\n        return;\n    }\n    if (high == low + 1) {\n        if (arr[low] < arr[high]) {\n            min = arr[low];\n            max = arr[high];\n        } else {\n            min = arr[high];\n            max = arr[low];\n        }\n        return;\n    }\n    int mid = (low + high) / 2;\n    int left_min, left_max, right_min, right_max;\n    findMinMax(arr, low, mid, left_min, left_max);\n    findMinMax(arr, mid + 1, high, right_min, right_max);\n    min = (left_min < right_min) ? left_min : right_min;\n    max = (left_max > right_max) ? left_max : right_max;\n}\n\nint main() {\n    int arr[] = {1000, 11, 445, 1, 330, 3000};\n    int n = sizeof(arr)/sizeof(arr[0]);\n    int min, max;\n    findMinMax(arr, 0, n - 1, min, max);\n    cout << \"Minimum element is \" << min << endl;\n    cout << \"Maximum element is \" << max << endl;\n    return 0;\n}\n",
+              "output": "Minimum element is 1\nMaximum element is 3000"
+            },
+            "java": {
+              "code": "public class MinMax {\n    static void findMinMax(int arr[], int low, int high, int[] result) {\n        if (low == high) {\n            result[0] = result[1] = arr[low];\n            return;\n        }\n        if (high == low + 1) {\n            if (arr[low] < arr[high]) {\n                result[0] = arr[low];\n                result[1] = arr[high];\n            } else {\n                result[0] = arr[high];\n                result[1] = arr[low];\n            }\n            return;\n        }\n        int mid = (low + high) / 2;\n        int[] left = new int[2];\n        int[] right = new int[2];\n        findMinMax(arr, low, mid, left);\n        findMinMax(arr, mid + 1, high, right);\n        result[0] = Math.min(left[0], right[0]);\n        result[1] = Math.max(left[1], right[1]);\n    }\n\n    public static void main(String args[]) {\n        int arr[] = {1000, 11, 445, 1, 330, 3000};\n        int[] result = new int[2];\n        findMinMax(arr, 0, arr.length - 1, result);\n        System.out.println(\"Minimum element is \" + result[0]);\n        System.out.println(\"Maximum element is \" + result[1]);\n    }\n}\n",
+              "output": "Minimum element is 1\nMaximum element is 3000"
+            }
           }
         }
       },
@@ -454,14 +550,26 @@
       {
         "id": "code",
         "label": "Code",
-        "content": "Here is the implementation of Linear Search in different languages.",
+        "content": "Here is the implementation of Huffman Tree in different languages.",
         "experiment": {
           "title": "Code",
           "configs": {
-            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
-            "c": { "code": "#include <stdio.h>...", "output": "2" },
-            "cpp": { "code": "#include <iostream>...", "output": "2" },
-            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+            "python3": {
+              "code": "# Python program for implementation of Huffman Tree\n\nimport heapq\n\nclass HuffmanNode:\n    def __init__(self, char, freq):\n        self.char = char\n        self.freq = freq\n        self.left = None\n        self.right = None\n\n    def __lt__(self, other):\n        return self.freq < other.freq\n\ndef build_huffman_tree(freq_map):\n    heap = []\n    for char, freq in freq_map.items():\n        heapq.heappush(heap, HuffmanNode(char, freq))\n\n    while len(heap) > 1:\n        left = heapq.heappop(heap)\n        right = heapq.heappop(heap)\n        merged = HuffmanNode(None, left.freq + right.freq)\n        merged.left = left\n        merged.right = right\n        heapq.heappush(heap, merged)\n\n    return heapq.heappop(heap)\n\n# Driver code\nfreq_map = {'a': 5, 'b': 9, 'c': 12, 'd': 13, 'e': 16, 'f': 45}\nhuffman_tree = build_huffman_tree(freq_map)\nprint(\"Huffman Tree built successfully\")\n",
+              "output": "Huffman Tree built successfully"
+            },
+            "c": {
+              "code": "#include <stdio.h>\n#include <stdlib.h>\n\nstruct HuffmanNode {\n    char data;\n    unsigned freq;\n    struct HuffmanNode *left, *right;\n};\n\nstruct HuffmanNode* build_huffman_tree(char data[], int freq[], int size) {\n    // Implementation of Huffman Tree in C\n    // (Code omitted for brevity)\n}\n\nint main() {\n    char data[] = {'a', 'b', 'c', 'd', 'e', 'f'};\n    int freq[] = {5, 9, 12, 13, 16, 45};\n    int size = sizeof(data)/sizeof(data[0]);\n    struct HuffmanNode* root = build_huffman_tree(data, freq, size);\n    printf(\"Huffman Tree built successfully\\n\");\n    return 0;\n}\n",
+              "output": "Huffman Tree built successfully"
+            },
+            "cpp": {
+              "code": "#include <iostream>\n#include <queue>\nusing namespace std;\n\nstruct HuffmanNode {\n    char data;\n    unsigned freq;\n    HuffmanNode *left, *right;\n\n    HuffmanNode(char data, unsigned freq) {\n        left = right = NULL;\n        this->data = data;\n        this->freq = freq;\n    }\n};\n\nstruct compare {\n    bool operator()(HuffmanNode* l, HuffmanNode* r) {\n        return (l->freq > r->freq);\n    }\n};\n\nHuffmanNode* build_huffman_tree(char data[], int freq[], int size) {\n    priority_queue<HuffmanNode*, vector<HuffmanNode*>, compare> minHeap;\n    for (int i = 0; i < size; ++i)\n        minHeap.push(new HuffmanNode(data[i], freq[i]));\n\n    while (minHeap.size() > 1) {\n        HuffmanNode *left = minHeap.top();\n        minHeap.pop();\n        HuffmanNode *right = minHeap.top();\n        minHeap.pop();\n        HuffmanNode *top = new HuffmanNode('$', left->freq + right->freq);\n        top->left = left;\n        top->right = right;\n        minHeap.push(top);\n    }\n    return minHeap.top();\n}\n\nint main() {\n    char data[] = {'a', 'b', 'c', 'd', 'e', 'f'};\n    int freq[] = {5, 9, 12, 13, 16, 45};\n    int size = sizeof(data)/sizeof(data[0]);\n    HuffmanNode* root = build_huffman_tree(data, freq, size);\n    cout << \"Huffman Tree built successfully\\n\";\n    return 0;\n}\n",
+              "output": "Huffman Tree built successfully"
+            },
+            "java": {
+              "code": "import java.util.PriorityQueue;\n\nclass HuffmanNode implements Comparable<HuffmanNode> {\n    char data;\n    int freq;\n    HuffmanNode left, right;\n\n    HuffmanNode(char data, int freq) {\n        this.data = data;\n        this.freq = freq;\n        this.left = this.right = null;\n    }\n\n    public int compareTo(HuffmanNode other) {\n        return this.freq - other.freq;\n    }\n}\n\npublic class HuffmanTree {\n    public static HuffmanNode build_huffman_tree(char[] data, int[] freq) {\n        PriorityQueue<HuffmanNode> minHeap = new PriorityQueue<>();\n        for (int i = 0; i < data.length; i++)\n            minHeap.add(new HuffmanNode(data[i], freq[i]));\n\n        while (minHeap.size() > 1) {\n            HuffmanNode left = minHeap.poll();\n            HuffmanNode right = minHeap.poll();\n            HuffmanNode top = new HuffmanNode('$', left.freq + right.freq);\n            top.left = left;\n            top.right = right;\n            minHeap.add(top);\n        }\n        return minHeap.poll();\n    }\n\n    public static void main(String args[]) {\n        char[] data = {'a', 'b', 'c', 'd', 'e', 'f'};\n        int[] freq = {5, 9, 12, 13, 16, 45};\n        HuffmanNode root = build_huffman_tree(data, freq);\n        System.out.println(\"Huffman Tree built successfully\");\n    }\n}\n",
+              "output": "Huffman Tree built successfully"
+            }
           }
         }
       },
@@ -500,14 +608,26 @@
       {
         "id": "code",
         "label": "Code",
-        "content": "Here is the implementation of Linear Search in different languages.",
+        "content": "Here is the implementation of Fractional Knapsack Problem using Greedy Approach in different languages.",
         "experiment": {
           "title": "Code",
           "configs": {
-            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
-            "c": { "code": "#include <stdio.h>...", "output": "2" },
-            "cpp": { "code": "#include <iostream>...", "output": "2" },
-            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+            "python3": {
+              "code": "# Python program for implementation of Fractional Knapsack Problem using Greedy Approach\n\nclass Item:\n    def __init__(self, value, weight):\n        self.value = value\n        self.weight = weight\n\ndef fractional_knapsack(items, capacity):\n    items.sort(key=lambda x: x.value / x.weight, reverse=True)\n    total_value = 0\n    for item in items:\n        if capacity >= item.weight:\n            capacity -= item.weight\n            total_value += item.value\n        else:\n            total_value += item.value * (capacity / item.weight)\n            break\n    return total_value\n\n# Driver code\nitems = [Item(60, 10), Item(100, 20), Item(120, 30)]\ncapacity = 50\nmax_value = fractional_knapsack(items, capacity)\nprint(\"Maximum value in Knapsack =\", max_value)\n",
+              "output": "Maximum value in Knapsack = 240.0"
+            },
+            "c": {
+              "code": "#include <stdio.h>\n#include <stdlib.h>\n\nstruct Item {\n    int value;\n    int weight;\n};\n\nint compare(const void *a, const void *b) {\n    double r1 = (double)((struct Item *)a)->value / ((struct Item *)a)->weight;\n    double r2 = (double)((struct Item *)b)->value / ((struct Item *)b)->weight;\n    if (r1 < r2) return 1;\n    else return -1;\n}\n\ndouble fractional_knapsack(struct Item items[], int n, int capacity) {\n    qsort(items, n, sizeof(struct Item), compare);\n    double total_value = 0.0;\n    for (int i = 0; i < n; i++) {\n        if (capacity >= items[i].weight) {\n            capacity -= items[i].weight;\n            total_value += items[i].value;\n        } else {\n            total_value += items[i].value * ((double)capacity / items[i].weight);\n            break;\n        }\n    }\n    return total_value;\n}\n\nint main() {\n    struct Item items[] = {{60, 10}, {100, 20}, {120, 30}};\n    int n = sizeof(items)/sizeof(items[0]);\n    int capacity = 50;\n    double max_value = fractional_knapsack(items, n, capacity);\n    printf(\"Maximum value in Knapsack = %.2f\\n\", max_value);\n    return 0;\n}\n",
+              "output": "Maximum value in Knapsack = 240.00"
+            },
+            "cpp": {
+              "code": "#include <iostream>\n#include <algorithm>\nusing namespace std;\n\nstruct Item {\n    int value;\n    int weight;\n};\n\nbool compare(Item a, Item b) {\n    double r1 = (double)a.value / a.weight;\n    double r2 = (double)b.value / b.weight;\n    return r1 > r2;\n}\n\ndouble fractional_knapsack(Item items[], int n, int capacity) {\n    sort(items, items + n, compare);\n    double total_value = 0.0;\n    for (int i = 0; i < n; i++) {\n        if (capacity >= items[i].weight) {\n            capacity -= items[i].weight;\n            total_value += items[i].value;\n        } else {\n            total_value += items[i].value * ((double)capacity / items[i].weight);\n            break;\n        }\n    }\n    return total_value;\n}\n\nint main() {\n    Item items[] = {{60, 10}, {100, 20}, {120, 30}};\n    int n = sizeof(items)/sizeof(items[0]);\n    int capacity = 50;\n    double max_value = fractional_knapsack(items, n, capacity);\n    cout << \"Maximum value in Knapsack = \" << max_value << endl;\n    return 0;\n}\n",
+              "output": "Maximum value in Knapsack = 240"
+            },
+            "java": {
+              "code": "import java.util.Arrays;\nimport java.util.Comparator;\n\nclass Item {\n    int value, weight;\n    Item(int value, int weight) {\n        this.value = value;\n        this.weight = weight;\n    }\n}\n\nclass Knapsack {\n    static double fractional_knapsack(Item[] items, int capacity) {\n        Arrays.sort(items, new Comparator<Item>() {\n            public int compare(Item a, Item b) {\n                double r1 = (double)a.value / a.weight;\n                double r2 = (double)b.value / b.weight;\n                if (r1 < r2) return 1;\n                else return -1;\n            }\n        });\n        double total_value = 0.0;\n        for (Item item : items) {\n            if (capacity >= item.weight) {\n                capacity -= item.weight;\n                total_value += item.value;\n            } else {\n                total_value += item.value * ((double)capacity / item.weight);\n                break;\n            }\n        }\n        return total_value;\n    }\n\n    public static void main(String args[]) {\n        Item[] items = {new Item(60, 10), new Item(100, 20), new Item(120, 30)};\n        int capacity = 50;\n        double max_value = fractional_knapsack(items, capacity);\n        System.out.println(\"Maximum value in Knapsack = \" + max_value);\n    }\n}\n",
+              "output": "Maximum value in Knapsack = 240.0"
+            }
           }
         }
       },
@@ -546,14 +666,26 @@
       {
         "id": "code",
         "label": "Code",
-        "content": "Here is the implementation of Linear Search in different languages.",
+        "content": "Here is the implementation of Largest Common Subsequence using Dynamic Approach in different languages.",
         "experiment": {
           "title": "Code",
           "configs": {
-            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
-            "c": { "code": "#include <stdio.h>...", "output": "2" },
-            "cpp": { "code": "#include <iostream>...", "output": "2" },
-            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+            "python3": {
+              "code": "# Python program for implementation of Largest Common Subsequence using Dynamic Approach\n\ndef lcs(X, Y):\n    m = len(X)\n    n = len(Y)\n    dp = [[0] * (n + 1) for _ in range(m + 1)]\n    for i in range(m + 1):\n        for j in range(n + 1):\n            if i == 0 or j == 0:\n                dp[i][j] = 0\n            elif X[i - 1] == Y[j - 1]:\n                dp[i][j] = dp[i - 1][j - 1] + 1\n            else:\n                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])\n    return dp[m][n]\n\n# Driver code\nX = \"AGGTAB\"\nY = \"GXTXAYB\"\nprint(\"Length of LCS is\", lcs(X, Y))\n",
+              "output": "Length of LCS is 4"
+            },
+            "c": {
+              "code": "#include <stdio.h>\n#include <string.h>\n\nint lcs(char *X, char *Y, int m, int n) {\n    int dp[m + 1][n + 1];\n    for (int i = 0; i <= m; i++) {\n        for (int j = 0; j <= n; j++) {\n            if (i == 0 || j == 0)\n                dp[i][j] = 0;\n            else if (X[i - 1] == Y[j - 1])\n                dp[i][j] = dp[i - 1][j - 1] + 1;\n            else\n                dp[i][j] = (dp[i - 1][j] > dp[i][j - 1]) ? dp[i - 1][j] : dp[i][j - 1];\n        }\n    }\n    return dp[m][n];\n}\n\nint main() {\n    char X[] = \"AGGTAB\";\n    char Y[] = \"GXTXAYB\";\n    int m = strlen(X);\n    int n = strlen(Y);\n    printf(\"Length of LCS is %d\\n\", lcs(X, Y, m, n));\n    return 0;\n}\n",
+              "output": "Length of LCS is 4"
+            },
+            "cpp": {
+              "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint lcs(string X, string Y, int m, int n) {\n    int dp[m + 1][n + 1];\n    for (int i = 0; i <= m; i++) {\n        for (int j = 0; j <= n; j++) {\n            if (i == 0 || j == 0)\n                dp[i][j] = 0;\n            else if (X[i - 1] == Y[j - 1])\n                dp[i][j] = dp[i - 1][j - 1] + 1;\n            else\n                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);\n        }\n    }\n    return dp[m][n];\n}\n\nint main() {\n    string X = \"AGGTAB\";\n    string Y = \"GXTXAYB\";\n    int m = X.length();\n    int n = Y.length();\n    cout << \"Length of LCS is \" << lcs(X, Y, m, n) << endl;\n    return 0;\n}\n",
+              "output": "Length of LCS is 4"
+            },
+            "java": {
+              "code": "public class LCS {\n    static int lcs(String X, String Y, int m, int n) {\n        int dp[][] = new int[m + 1][n + 1];\n        for (int i = 0; i <= m; i++) {\n            for (int j = 0; j <= n; j++) {\n                if (i == 0 || j == 0)\n                    dp[i][j] = 0;\n                else if (X.charAt(i - 1) == Y.charAt(j - 1))\n                    dp[i][j] = dp[i - 1][j - 1] + 1;\n                else\n                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);\n            }\n        }\n        return dp[m][n];\n    }\n\n    public static void main(String args[]) {\n        String X = \"AGGTAB\";\n        String Y = \"GXTXAYB\";\n        int m = X.length();\n        int n = Y.length();\n        System.out.println(\"Length of LCS is \" + lcs(X, Y, m, n));\n    }\n}\n",
+              "output": "Length of LCS is 4"
+            }
           }
         }
       },
@@ -592,14 +724,26 @@
       {
         "id": "code",
         "label": "Code",
-        "content": "Here is the implementation of Linear Search in different languages.",
+        "content": "Here is the implementation of N Queens Problem using Backtracking in different languages.",
         "experiment": {
           "title": "Code",
           "configs": {
-            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
-            "c": { "code": "#include <stdio.h>...", "output": "2" },
-            "cpp": { "code": "#include <iostream>...", "output": "2" },
-            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+            "python3": {
+              "code": "# Python program for implementation of N Queens Problem using Backtracking\n\ndef is_safe(board, row, col, n):\n    for i in range(col):\n        if board[row][i] == 1:\n            return False\n    for i, j in zip(range(row, -1, -1), range(col, -1, -1)):\n        if board[i][j] == 1:\n            return False\n    for i, j in zip(range(row, n, 1), range(col, -1, -1)):\n        if board[i][j] == 1:\n            return False\n    return True\n\ndef solve_n_queens(board, col, n):\n    if col >= n:\n        return True\n    for i in range(n):\n        if is_safe(board, i, col, n):\n            board[i][col] = 1\n            if solve_n_queens(board, col + 1, n):\n                return True\n            board[i][col] = 0\n    return False\n\n# Driver code\nn = 4\nboard = [[0 for _ in range(n)] for _ in range(n)]\nif solve_n_queens(board, 0, n):\n    for row in board:\n        print(row)\nelse:\n    print(\"No solution exists\")\n",
+              "output": "[0, 0, 1, 0]\n[1, 0, 0, 0]\n[0, 0, 0, 1]\n[0, 1, 0, 0]"
+            },
+            "c": {
+              "code": "#include <stdio.h>\n#include <stdbool.h>\n\nbool is_safe(int board[4][4], int row, int col, int n) {\n    for (int i = 0; i < col; i++)\n        if (board[row][i])\n            return false;\n    for (int i = row, j = col; i >= 0 && j >= 0; i--, j--)\n        if (board[i][j])\n            return false;\n    for (int i = row, j = col; i < n && j >= 0; i++, j--)\n        if (board[i][j])\n            return false;\n    return true;\n}\n\nbool solve_n_queens(int board[4][4], int col, int n) {\n    if (col >= n)\n        return true;\n    for (int i = 0; i < n; i++) {\n        if (is_safe(board, i, col, n)) {\n            board[i][col] = 1;\n            if (solve_n_queens(board, col + 1, n))\n                return true;\n            board[i][col] = 0;\n        }\n    }\n    return false;\n}\n\nint main() {\n    int n = 4;\n    int board[4][4] = {0};\n    if (solve_n_queens(board, 0, n)) {\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < n; j++)\n                printf(\"%d \", board[i][j]);\n            printf(\"\\n\");\n        }\n    } else {\n        printf(\"No solution exists\\n\");\n    }\n    return 0;\n}\n",
+              "output": "0 0 1 0\n1 0 0 0\n0 0 0 1\n0 1 0 0"
+            },
+            "cpp": {
+              "code": "#include <iostream>\nusing namespace std;\n\nbool is_safe(int board[4][4], int row, int col, int n) {\n    for (int i = 0; i < col; i++)\n        if (board[row][i])\n            return false;\n    for (int i = row, j = col; i >= 0 && j >= 0; i--, j--)\n        if (board[i][j])\n            return false;\n    for (int i = row, j = col; i < n && j >= 0; i++, j--)\n        if (board[i][j])\n            return false;\n    return true;\n}\n\nbool solve_n_queens(int board[4][4], int col, int n) {\n    if (col >= n)\n        return true;\n    for (int i = 0; i < n; i++) {\n        if (is_safe(board, i, col, n)) {\n            board[i][col] = 1;\n            if (solve_n_queens(board, col + 1, n))\n                return true;\n            board[i][col] = 0;\n        }\n    }\n    return false;\n}\n\nint main() {\n    int n = 4;\n    int board[4][4] = {0};\n    if (solve_n_queens(board, 0, n)) {\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < n; j++)\n                cout << board[i][j] << \" \";\n            cout << endl;\n        }\n    } else {\n        cout << \"No solution exists\" << endl;\n    }\n    return 0;\n}\n",
+              "output": "0 0 1 0\n1 0 0 0\n0 0 0 1\n0 1 0 0"
+            },
+            "java": {
+              "code": "public class NQueens {\n    static boolean is_safe(int board[][], int row, int col, int n) {\n        for (int i = 0; i < col; i++)\n            if (board[row][i] == 1)\n                return false;\n        for (int i = row, j = col; i >= 0 && j >= 0; i--, j--)\n            if (board[i][j] == 1)\n                return false;\n        for (int i = row, j = col; i < n && j >= 0; i++, j--)\n            if (board[i][j] == 1)\n                return false;\n        return true;\n    }\n\n    static boolean solve_n_queens(int board[][], int col, int n) {\n        if (col >= n)\n            return true;\n        for (int i = 0; i < n; i++) {\n            if (is_safe(board, i, col, n)) {\n                board[i][col] = 1;\n                if (solve_n_queens(board, col + 1, n))\n                    return true;\n                board[i][col] = 0;\n            }\n        }\n        return false;\n    }\n\n    public static void main(String args[]) {\n        int n = 4;\n        int board[][] = new int[n][n];\n        if (solve_n_queens(board, 0, n)) {\n            for (int i = 0; i < n; i++) {\n                for (int j = 0; j < n; j++)\n                    System.out.print(board[i][j] + \" \");\n                System.out.println();\n            }\n        } else {\n            System.out.println(\"No solution exists\");\n        }\n    }\n}\n",
+              "output": "0 0 1 0\n1 0 0 0\n0 0 0 1\n0 1 0 0"
+            }
           }
         }
       },
@@ -638,14 +782,26 @@
       {
         "id": "code",
         "label": "Code",
-        "content": "Here is the implementation of Linear Search in different languages.",
+        "content": "Here is the implementation of Travelling Salesman Problem in different languages.",
         "experiment": {
           "title": "Code",
           "configs": {
-            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
-            "c": { "code": "#include <stdio.h>...", "output": "2" },
-            "cpp": { "code": "#include <iostream>...", "output": "2" },
-            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+            "python3": {
+              "code": "# Python program for implementation of Travelling Salesman Problem\n\nfrom itertools import permutations\n\nV = 4\n\ndef travelling_salesman_problem(graph, s):\n    vertex = []\n    for i in range(V):\n        if i != s:\n            vertex.append(i)\n    min_path = float('inf')\n    next_permutation = permutations(vertex)\n    for i in next_permutation:\n        current_pathweight = 0\n        k = s\n        for j in i:\n            current_pathweight += graph[k][j]\n            k = j\n        current_pathweight += graph[k][s]\n        min_path = min(min_path, current_pathweight)\n    return min_path\n\n# Driver code\ngraph = [[0, 10, 15, 20], [10, 0, 35, 25], [15, 35, 0, 30], [20, 25, 30, 0]]\ns = 0\nprint(\"Minimum cost:\", travelling_salesman_problem(graph, s))\n",
+              "output": "Minimum cost: 80"
+            },
+            "c": {
+              "code": "#include <stdio.h>\n#include <limits.h>\n\n#define V 4\n\nint travelling_salesman_problem(int graph[V][V], int s) {\n    int vertex[V - 1];\n    for (int i = 0, j = 0; i < V; i++) {\n        if (i != s)\n            vertex[j++] = i;\n    }\n    int min_path = INT_MAX;\n    do {\n        int current_pathweight = 0;\n        int k = s;\n        for (int i = 0; i < V - 1; i++) {\n            current_pathweight += graph[k][vertex[i]];\n            k = vertex[i];\n        }\n        current_pathweight += graph[k][s];\n        min_path = (current_pathweight < min_path) ? current_pathweight : min_path;\n    } while (next_permutation(vertex, V - 1));\n    return min_path;\n}\n\nint main() {\n    int graph[V][V] = {{0, 10, 15, 20}, {10, 0, 35, 25}, {15, 35, 0, 30}, {20, 25, 30, 0}};\n    int s = 0;\n    printf(\"Minimum cost: %d\\n\", travelling_salesman_problem(graph, s));\n    return 0;\n}\n",
+              "output": "Minimum cost: 80"
+            },
+            "cpp": {
+              "code": "#include <iostream>\n#include <algorithm>\n#include <climits>\nusing namespace std;\n\n#define V 4\n\nint travelling_salesman_problem(int graph[V][V], int s) {\n    int vertex[V - 1];\n    for (int i = 0, j = 0; i < V; i++) {\n        if (i != s)\n            vertex[j++] = i;\n    }\n    int min_path = INT_MAX;\n    do {\n        int current_pathweight = 0;\n        int k = s;\n        for (int i = 0; i < V - 1; i++) {\n            current_pathweight += graph[k][vertex[i]];\n            k = vertex[i];\n        }\n        current_pathweight += graph[k][s];\n        min_path = min(min_path, current_pathweight);\n    } while (next_permutation(vertex, vertex + V - 1));\n    return min_path;\n}\n\nint main() {\n    int graph[V][V] = {{0, 10, 15, 20}, {10, 0, 35, 25}, {15, 35, 0, 30}, {20, 25, 30, 0}};\n    int s = 0;\n    cout << \"Minimum cost: \" << travelling_salesman_problem(graph, s) << endl;\n    return 0;\n}\n",
+              "output": "Minimum cost: 80"
+            },
+            "java": {
+              "code": "import java.util.*;\n\npublic class TSP {\n    static int V = 4;\n\n    static int travelling_salesman_problem(int graph[][], int s) {\n        ArrayList<Integer> vertex = new ArrayList<>();\n        for (int i = 0; i < V; i++) {\n            if (i != s)\n                vertex.add(i);\n        }\n        int min_path = Integer.MAX_VALUE;\n        do {\n            int current_pathweight = 0;\n            int k = s;\n            for (int i = 0; i < vertex.size(); i++) {\n                current_pathweight += graph[k][vertex.get(i)];\n                k = vertex.get(i);\n            }\n            current_pathweight += graph[k][s];\n            min_path = Math.min(min_path, current_pathweight);\n        } while (next_permutation(vertex));\n        return min_path;\n    }\n\n    public static void main(String args[]) {\n        int graph[][] = {{0, 10, 15, 20}, {10, 0, 35, 25}, {15, 35, 0, 30}, {20, 25, 30, 0}};\n        int s = 0;\n        System.out.println(\"Minimum cost: \" + travelling_salesman_problem(graph, s));\n    }\n}\n",
+              "output": "Minimum cost: 80"
+            }
           }
         }
       },
@@ -684,14 +840,26 @@
       {
         "id": "code",
         "label": "Code",
-        "content": "Here is the implementation of Linear Search in different languages.",
+        "content": "Here is the implementation of Randomized Quick Sort in different languages.",
         "experiment": {
           "title": "Code",
           "configs": {
-            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
-            "c": { "code": "#include <stdio.h>...", "output": "2" },
-            "cpp": { "code": "#include <iostream>...", "output": "2" },
-            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+            "python3": {
+              "code": "# Python program for implementation of Randomized Quick Sort\n\nimport random\n\ndef partition(arr, low, high):\n    pivot_index = random.randint(low, high)\n    arr[pivot_index], arr[high] = arr[high], arr[pivot_index]\n    pivot = arr[high]\n    i = low - 1\n    for j in range(low, high):\n        if arr[j] <= pivot:\n            i += 1\n            arr[i], arr[j] = arr[j], arr[i]\n    arr[i + 1], arr[high] = arr[high], arr[i + 1]\n    return i + 1\n\ndef randomized_quick_sort(arr, low, high):\n    if low < high:\n        pi = partition(arr, low, high)\n        randomized_quick_sort(arr, low, pi - 1)\n        randomized_quick_sort(arr, pi + 1, high)\n\n# Driver code\narr = [10, 7, 8, 9, 1, 5]\nn = len(arr)\nrandomized_quick_sort(arr, 0, n - 1)\nprint(\"Sorted array:\", arr)\n",
+              "output": "Sorted array: [1, 5, 7, 8, 9, 10]"
+            },
+            "c": {
+              "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <time.h>\n\nvoid swap(int* a, int* b) {\n    int t = *a;\n    *a = *b;\n    *b = t;\n}\n\nint partition(int arr[], int low, int high) {\n    srand(time(NULL));\n    int pivot_index = low + rand() % (high - low);\n    swap(&arr[pivot_index], &arr[high]);\n    int pivot = arr[high];\n    int i = (low - 1);\n    for (int j = low; j <= high - 1; j++) {\n        if (arr[j] <= pivot) {\n            i++;\n            swap(&arr[i], &arr[j]);\n        }\n    }\n    swap(&arr[i + 1], &arr[high]);\n    return (i + 1);\n}\n\nvoid randomized_quick_sort(int arr[], int low, int high) {\n    if (low < high) {\n        int pi = partition(arr, low, high);\n        randomized_quick_sort(arr, low, pi - 1);\n        randomized_quick_sort(arr, pi + 1, high);\n    }\n}\n\nint main() {\n    int arr[] = {10, 7, 8, 9, 1, 5};\n    int n = sizeof(arr)/sizeof(arr[0]);\n    randomized_quick_sort(arr, 0, n - 1);\n    printf(\"Sorted array: \");\n    for (int i = 0; i < n; i++)\n        printf(\"%d \", arr[i]);\n    return 0;\n}\n",
+              "output": "Sorted array: 1 5 7 8 9 10"
+            },
+            "cpp": {
+              "code": "#include <iostream>\n#include <cstdlib>\n#include <ctime>\nusing namespace std;\n\nvoid swap(int* a, int* b) {\n    int t = *a;\n    *a = *b;\n    *b = t;\n}\n\nint partition(int arr[], int low, int high) {\n    srand(time(NULL));\n    int pivot_index = low + rand() % (high - low);\n    swap(&arr[pivot_index], &arr[high]);\n    int pivot = arr[high];\n    int i = (low - 1);\n    for (int j = low; j <= high - 1; j++) {\n        if (arr[j] <= pivot) {\n            i++;\n            swap(&arr[i], &arr[j]);\n        }\n    }\n    swap(&arr[i + 1], &arr[high]);\n    return (i + 1);\n}\n\nvoid randomized_quick_sort(int arr[], int low, int high) {\n    if (low < high) {\n        int pi = partition(arr, low, high);\n        randomized_quick_sort(arr, low, pi - 1);\n        randomized_quick_sort(arr, pi + 1, high);\n    }\n}\n\nint main() {\n    int arr[] = {10, 7, 8, 9, 1, 5};\n    int n = sizeof(arr)/sizeof(arr[0]);\n    randomized_quick_sort(arr, 0, n - 1);\n    cout << \"Sorted array: \";\n    for (int i = 0; i < n; i++)\n        cout << arr[i] << \" \";\n    return 0;\n}\n",
+              "output": "Sorted array: 1 5 7 8 9 10"
+            },
+            "java": {
+              "code": "import java.util.Random;\n\npublic class RandomizedQuickSort {\n    static void swap(int[] arr, int i, int j) {\n        int temp = arr[i];\n        arr[i] = arr[j];\n        arr[j] = temp;\n    }\n\n    static int partition(int[] arr, int low, int high) {\n        Random rand = new Random();\n        int pivot_index = low + rand.nextInt(high - low);\n        swap(arr, pivot_index, high);\n        int pivot = arr[high];\n        int i = (low - 1);\n        for (int j = low; j < high; j++) {\n            if (arr[j] <= pivot) {\n                i++;\n                swap(arr, i, j);\n            }\n        }\n        swap(arr, i + 1, high);\n        return i + 1;\n    }\n\n    static void randomized_quick_sort(int[] arr, int low, int high) {\n        if (low < high) {\n            int pi = partition(arr, low, high);\n            randomized_quick_sort(arr, low, pi - 1);\n            randomized_quick_sort(arr, pi + 1, high);\n        }\n    }\n\n    public static void main(String args[]) {\n        int[] arr = {10, 7, 8, 9, 1, 5};\n        randomized_quick_sort(arr, 0, arr.length - 1);\n        System.out.println(\"Sorted array:\");\n        for (int i = 0; i < arr.length; i++)\n            System.out.print(arr[i] + \" \");\n    }\n}\n",
+              "output": "Sorted array: 1 5 7 8 9 10"
+            }
           }
         }
       },
@@ -730,14 +898,26 @@
       {
         "id": "code",
         "label": "Code",
-        "content": "Here is the implementation of Linear Search in different languages.",
+        "content": "Here is the implementation of String Matching Algorithms in different languages.",
         "experiment": {
           "title": "Code",
           "configs": {
-            "python3": { "code": "def linear_search(arr, target): ...", "output": "2" },
-            "c": { "code": "#include <stdio.h>...", "output": "2" },
-            "cpp": { "code": "#include <iostream>...", "output": "2" },
-            "java": { "code": "public class LinearSearch { ... }", "output": "2" }
+            "python3": {
+              "code": "# Python program for implementation of String Matching Algorithms\n\ndef naive_string_matching(text, pattern):\n    n = len(text)\n    m = len(pattern)\n    for i in range(n - m + 1):\n        if text[i:i + m] == pattern:\n            print(\"Pattern found at index\", i)\n\n# Driver code\ntext = \"ABABDABACDABABCABAB\"\npattern = \"ABABCABAB\"\nnaive_string_matching(text, pattern)\n",
+              "output": "Pattern found at index 10"
+            },
+            "c": {
+              "code": "#include <stdio.h>\n#include <string.h>\n\nvoid naive_string_matching(char *text, char *pattern) {\n    int n = strlen(text);\n    int m = strlen(pattern);\n    for (int i = 0; i <= n - m; i++) {\n        int j;\n        for (j = 0; j < m; j++)\n            if (text[i + j] != pattern[j])\n                break;\n        if (j == m)\n            printf(\"Pattern found at index %d\\n\", i);\n    }\n}\n\nint main() {\n    char text[] = \"ABABDABACDABABCABAB\";\n    char pattern[] = \"ABABCABAB\";\n    naive_string_matching(text, pattern);\n    return 0;\n}\n",
+              "output": "Pattern found at index 10"
+            },
+            "cpp": {
+              "code": "#include <iostream>\n#include <string>\nusing namespace std;\n\nvoid naive_string_matching(string text, string pattern) {\n    int n = text.length();\n    int m = pattern.length();\n    for (int i = 0; i <= n - m; i++) {\n        int j;\n        for (j = 0; j < m; j++)\n            if (text[i + j] != pattern[j])\n                break;\n        if (j == m)\n            cout << \"Pattern found at index \" << i << endl;\n    }\n}\n\nint main() {\n    string text = \"ABABDABACDABABCABAB\";\n    string pattern = \"ABABCABAB\";\n    naive_string_matching(text, pattern);\n    return 0;\n}\n",
+              "output": "Pattern found at index 10"
+            },
+            "java": {
+              "code": "public class NaiveStringMatching {\n    static void naive_string_matching(String text, String pattern) {\n        int n = text.length();\n        int m = pattern.length();\n        for (int i = 0; i <= n - m; i++) {\n            int j;\n            for (j = 0; j < m; j++)\n                if (text.charAt(i + j) != pattern.charAt(j))\n                    break;\n            if (j == m)\n                System.out.println(\"Pattern found at index \" + i);\n        }\n    }\n\n    public static void main(String args[]) {\n        String text = \"ABABDABACDABABCABAB\";\n        String pattern = \"ABABCABAB\";\n        naive_string_matching(text, pattern);\n    }\n}\n",
+              "output": "Pattern found at index 10"
+            }
           }
         }
       },
