@@ -264,7 +264,7 @@ const HuffmanCodingVisualization = () => {
     if (!node) return null;
 
     return (
-      <div className="flex flex-col items-center">
+      <div className="flex f-full w-full flex-col items-center">
         <div className="flex flex-col items-center">
           <span className="text-sm font-bold">Level {node.level}</span>
           <div className={`p-2 m-1 border rounded-md text-center bg-primary text-primary-content`}>

@@ -39,25 +39,27 @@ const QuickSort = () => {
   };
 
   const partition = async (arr, low, high) => {
-    const pivot = arr[high];
-    setHighlights({ pivot: high, swap: [], sorted: highlights.sorted });
-    let i = low - 1;
+    const pivot = arr[low]; // Pivot is always the first element
+    setHighlights({ pivot: low, swap: [], sorted: highlights.sorted });
+    let i = low + 1; // Start right after pivot
 
-    for (let j = low; j < high; j++) {
+    for (let j = low + 1; j <= high; j++) {
       if (arr[j] < pivot) {
-        i++;
         [arr[i], arr[j]] = [arr[j], arr[i]];
-        setHighlights({ pivot: high, swap: [i, j], sorted: highlights.sorted });
+        setHighlights({ pivot: low, swap: [i, j], sorted: highlights.sorted });
         setArray([...arr]);
         await delay(speed);
+        i++;
       }
     }
-    [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
-    setHighlights({ pivot: high, swap: [i + 1, high], sorted: highlights.sorted });
+
+    // Move pivot to correct position
+    [arr[low], arr[i - 1]] = [arr[i - 1], arr[low]];
+    setHighlights({ pivot: i - 1, swap: [low, i - 1], sorted: highlights.sorted });
     setArray([...arr]);
     await delay(speed);
 
-    return i + 1;
+    return i - 1; // Return new pivot position
   };
 
   const handleSort = async () => {
@@ -72,7 +74,7 @@ const QuickSort = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
+    <div className="flex flex-col items-center justify-center h-full w-full bg-gray-900 text-white">
       <h1 className="text-3xl font-bold mb-6">QuickSort Visualizer</h1>
 
       {/* Speed Controller */}

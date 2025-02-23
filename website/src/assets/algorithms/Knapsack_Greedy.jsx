@@ -53,7 +53,7 @@ const KnapsackVisualization = () => {
   };
 
   return (
-    <div className="p-6 bg-base-200 min-h-screen flex flex-col items-center animate-fadeIn">
+    <div className="p-6 bg-base-200 h-full w-full flex flex-col items-center animate-fadeIn">
       <h1 className="text-4xl font-bold mb-6 text-center text-primary">Knapsack Visualization (Greedy)</h1>
 
       <div className="card w-full max-w-4xl bg-base-100 shadow-xl mb-6">

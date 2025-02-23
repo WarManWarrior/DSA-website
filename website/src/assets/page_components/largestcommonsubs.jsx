@@ -40,10 +40,9 @@ const Largestcommonsubs = () => {
               {section.id === "video" && <VideoLecture videoUrl={section.videoUrl} />}
               {section.id === "algorithm" && <Algorithm content={section.content} />}
               {section.id === "working" && (
-                <>
-                  <Working content={section.content} />
+                <div className="w-full h-full flex justify-center items-center">
                   <LCSVisualizer />
-                </>
+                </div>
               )}
               {section.id === "code" && <CodeEditor experiment={experiment} />}
               {section.id === "analysis" && <Analysis content={section.content} />}

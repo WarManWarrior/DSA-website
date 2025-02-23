@@ -180,7 +180,7 @@ const StringMatchingVisualizer = () => {
   };
 
   return (
-    <div className="p-6 space-y-6 bg-gradient-to-br from-purple-200 to-blue-100 min-h-screen">
+    <div className="p-6 space-y-6 bg-gradient-to-br from-purple-200 to-blue-100 h-full w-full">
       <h1 className="text-4xl font-bold text-center text-gray-800">String Matching Visualizer</h1>
 
       <div className="space-y-4">

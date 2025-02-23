@@ -72,7 +72,7 @@ const NQueens = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center h-full w-full bg-gray-100">
       <h1 className="text-3xl font-bold mb-4 text-gray-800">N-Queens Problem Visualizer</h1>
       <div className="mb-4">
         <label className="mr-2">Board Size:</label>

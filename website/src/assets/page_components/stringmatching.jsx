@@ -40,10 +40,11 @@ const Stringmatching = () => {
               {section.id === "video" && <VideoLecture videoUrl={section.videoUrl} />}
               {section.id === "algorithm" && <Algorithm content={section.content} />}
               {section.id === "working" && (
-                <>
-                  <Working content={section.content} />
-                  <StringMatchingVisualizer />
-                </>
+                <div className="w-full h-full max-h-screen flex flex-col justify-start items-center overflow-y-auto p-4">
+                  <div className="w-full max-w-4xl h-auto flex flex-col items-center">
+                    <StringMatchingVisualizer />
+                  </div>
+                </div>
               )}
               {section.id === "code" && <CodeEditor experiment={experiment} />}
               {section.id === "analysis" && <Analysis content={section.content} />}

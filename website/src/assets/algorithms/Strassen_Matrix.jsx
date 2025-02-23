@@ -61,19 +61,31 @@ const StrassenMatrixVisualization = () => {
     ];
   };
 
+  const handleMatrixChange = (matrixSetter, row, col, value) => {
+    matrixSetter(prevMatrix => {
+      const newMatrix = prevMatrix.map(rowArray => [...rowArray]);
+      newMatrix[row][col] = Number(value);
+      return newMatrix;
+    });
+  };
+
   return (
-    <div className="p-6 bg-gray-900 min-h-screen flex flex-col items-center text-white">
-      <h1 className="text-3xl font-bold mb-4">Strassen Matrix Multiplication</h1>
+    <div className="w-full h-full flex flex-col justify-center items-center bg-gray-900 text-white p-6">
+      <h1 className="text-3xl font-bold mb-4 text-center">Strassen Matrix Multiplication</h1>
+      
+      {/* Input Matrices */}
       <div className="flex gap-6">
-        <MatrixDisplay title="Matrix A" matrix={matrixA} />
-        <MatrixDisplay title="Matrix B" matrix={matrixB} />
+        <MatrixInput title="Matrix A" matrix={matrixA} setMatrix={setMatrixA} handleMatrixChange={handleMatrixChange} />
+        <MatrixInput title="Matrix B" matrix={matrixB} setMatrix={setMatrixB} handleMatrixChange={handleMatrixChange} />
       </div>
 
-      <div className="mt-8 bg-gray-800 p-6 rounded-lg shadow-lg">
-        <h3 className="text-lg font-semibold mb-4">{steps[step]?.message}</h3>
+      {/* Steps Display */}
+      <div className="mt-8 bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-2xl">
+        <h3 className="text-lg font-semibold mb-4 text-center">{steps[step]?.message}</h3>
         <MatrixDisplay matrix={steps[step]?.value || [[]]} />
       </div>
 
+      {/* Control Buttons */}
       <div className="mt-6 flex gap-4">
         <button onClick={() => setStep(Math.max(step - 1, 0))} className="bg-blue-500 px-4 py-2 rounded-lg">Previous</button>
         <button onClick={() => setIsPlaying(!isPlaying)} className="bg-green-500 px-4 py-2 rounded-lg">{isPlaying ? "Pause" : "Play"}</button>
@@ -83,18 +95,34 @@ const StrassenMatrixVisualization = () => {
   );
 };
 
-const MatrixDisplay = ({ title, matrix }) => (
+const MatrixInput = ({ title, matrix, setMatrix, handleMatrixChange }) => (
   <div className="bg-gray-700 p-4 rounded-lg shadow-lg">
-    {title && <h2 className="text-xl font-semibold mb-2">{title}</h2>}
+    {title && <h2 className="text-xl font-semibold mb-2 text-center">{title}</h2>}
     <div className="grid grid-cols-4 gap-2">
       {matrix.map((row, rowIndex) =>
         row.map((val, colIndex) => (
-          <div key={`${rowIndex}-${colIndex}`} className="w-12 h-12 flex items-center justify-center bg-indigo-500 text-white rounded-lg">
-            {val}
-          </div>
+          <input
+            key={`${rowIndex}-${colIndex}`}
+            type="number"
+            value={val}
+            onChange={(e) => handleMatrixChange(setMatrix, rowIndex, colIndex, e.target.value)}
+            className="w-12 h-12 text-center bg-indigo-500 text-white rounded-lg border border-gray-400 focus:ring-2 focus:ring-indigo-300 outline-none"
+          />
         ))
       )}
     </div>
+  </div>
+);
+
+const MatrixDisplay = ({ matrix }) => (
+  <div className="grid grid-cols-4 gap-2">
+    {matrix.map((row, rowIndex) =>
+      row.map((val, colIndex) => (
+        <div key={`${rowIndex}-${colIndex}`} className="w-12 h-12 flex items-center justify-center bg-indigo-500 text-white rounded-lg">
+          {val}
+        </div>
+      ))
+    )}
   </div>
 );
 

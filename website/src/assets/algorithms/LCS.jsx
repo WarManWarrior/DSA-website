@@ -54,7 +54,7 @@ const LCSVisualizer = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-5">
+    <div className="f-full w-full bg-gray-100 p-5">
       <div className="max-w-4xl mx-auto bg-white shadow-lg p-6 rounded-md">
         <h1 className="text-2xl font-bold text-center mb-4">LCS Visualizer</h1>
         <div className="flex gap-4 mb-6">

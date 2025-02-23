@@ -60,7 +60,7 @@ const BinarySearchVisualization = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-base-200">
+    <div className="flex flex-col items-center justify-center h-full w-full bg-base-200">
       <h1 className="text-2xl font-bold mb-4">Binary Search Visualization</h1>
 
       <div className="flex space-x-2 items-center mb-6">

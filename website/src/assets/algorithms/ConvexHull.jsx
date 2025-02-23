@@ -107,7 +107,7 @@ const ConvexHullVisualizer = () => {
   }, [points, leftHull, rightHull, animationIndex]);
 
   return (
-    <div className="flex flex-col items-center mt-10">
+    <div className="flex h-full w-full flex-col items-center mt-10">
       <h1 className="text-3xl font-bold text-yellow-400 mb-5">Convex Hull Visualizer</h1>
       <canvas ref={canvasRef} onClick={addPoint} width="500" height="500" className="border border-gray-300" />
       <div className="flex space-x-4 mt-5">

@@ -59,7 +59,7 @@ const RandomizedQuickSort = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-6 bg-gray-900 min-h-screen text-white">
+    <div className="flex flex-col items-center justify-center p-6 bg-gray-900 h-full w-full text-white">
       <h1 className="text-4xl font-bold text-yellow-400 mb-6">
         Randomized Quick Sort Visualization
       </h1>

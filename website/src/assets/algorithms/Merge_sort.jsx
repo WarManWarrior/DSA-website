@@ -107,7 +107,7 @@ const MergeSortVisualizer = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
+    <div className="flex flex-col items-center justify-center h-full w-full bg-gray-900 text-white">
       <h1 className="text-4xl font-bold text-blue-400 mb-8">Merge Sort Visualizer</h1>
       <div className="flex flex-wrap gap-4 justify-center mb-8">
         <button

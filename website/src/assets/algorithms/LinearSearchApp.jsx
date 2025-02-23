@@ -54,7 +54,7 @@ const LinearSearchApp = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
+    <div className="h-full w-full bg-gray-100 flex flex-col items-center justify-center">
       <p className="text-4xl font-bold text-center mb-6">Linear Search</p>
 
       <div
