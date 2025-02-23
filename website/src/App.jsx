@@ -60,6 +60,7 @@ function App() {
           <Route path="/dynamic-programming/lcs" element={<Largestcommonsubs />} />
           <Route path="/dynamic-programming/lcs" element={<Largestcommonsubs />} />
           <Route path="/dynamic-programming/sma" element={<Stringmatching />} />
+          <Route path="/backtracking/n-queens" element={<Nqueen />} />
         </Routes>
       </Router>
     </div>

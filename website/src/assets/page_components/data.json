@@ -12,7 +12,7 @@
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Insertion Sort in depth.",
-        "videoUrl": "https://youtu.be/hcfsrhh2zRc"
+        "videoUrl": "https://www.youtube.com/embed/hcfsrhh2zRc"
       },
       {
         "id": "algorithm",
@@ -58,7 +58,7 @@
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Binary Search in depth.",
-        "videoUrl": "https://youtu.be/hcfsrhh2zRc"
+        "videoUrl": "https://www.youtube.com/embed/hcfsrhh2zRc"
       },
       {
         "id": "algorithm",
@@ -104,7 +104,7 @@
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://youtu.be/OCfDaT_GyfM"
+        "videoUrl": "https://www.youtube.com/embed/OCfDaT_GyfM"
       },
       {
         "id": "algorithm",
@@ -150,7 +150,7 @@
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://youtu.be/LrV_LPR8avI"
+        "videoUrl": "https://www.youtube.com/embed/LrV_LPR8avI"
       },
       {
         "id": "algorithm",
@@ -196,7 +196,7 @@
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://youtu.be/zWydudNfLJg"
+        "videoUrl": "https://www.youtube.com/embed/zWydudNfLJg"
       },
       {
         "id": "algorithm",
@@ -242,7 +242,7 @@
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://youtu.be/ZqiqJlG9rRI"
+        "videoUrl": "https://www.youtube.com/embed/ZqiqJlG9rRI"
       },
       {
         "id": "algorithm",
@@ -275,7 +275,7 @@
       }
     ]
   },
-  "Strassen’s_Matrix_Multiplication": {
+  "Strassens_Matrix_Multiplication": {
     "title": "Strassen Matrix Multiplication",
     "sections": [
       {
@@ -288,7 +288,7 @@
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://youtu.be/QI0AiVP0hww"
+        "videoUrl": "https://www.youtube.com/embed/QI0AiVP0hww"
       },
       {
         "id": "algorithm",
@@ -334,7 +334,7 @@
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://youtu.be/lCllz_e4GOQ"
+        "videoUrl": "https://www.youtube.com/embed/lCllz_e4GOQ"
       },
       {
         "id": "algorithm",
@@ -380,7 +380,7 @@
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://youtu.be/7hZLCzbbY30"
+        "videoUrl": "https://www.youtube.com/embed/7hZLCzbbY30"
       },
       {
         "id": "algorithm",
@@ -426,7 +426,7 @@
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://youtu.be/L0MDzEhJvEo"
+        "videoUrl": "https://www.youtube.com/embed/L0MDzEhJvEo"
       },
       {
         "id": "algorithm",
@@ -472,7 +472,7 @@
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://youtu.be/dEmlqSvchJs"
+        "videoUrl": "https://www.youtube.com/embed/dEmlqSvchJs"
       },
       {
         "id": "algorithm",
@@ -518,7 +518,7 @@
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://youtu.be/_nWtZFRRCLE"
+        "videoUrl": "https://www.youtube.com/embed/_nWtZFRRCLE"
       },
       {
         "id": "algorithm",
@@ -564,7 +564,7 @@
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://youtu.be/7zNKVfDWPs8"
+        "videoUrl": "https://www.youtube.com/embed/7zNKVfDWPs8"
       },
       {
         "id": "algorithm",
@@ -610,7 +610,7 @@
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://youtu.be/cY4HiiFHO1o?si=xNNK4gzFpGgvm-Wx"
+        "videoUrl": "https://www.youtube.com/embed/cY4HiiFHO1o?si=xNNK4gzFpGgvm-Wx"
       },
       {
         "id": "algorithm",
@@ -656,7 +656,7 @@
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://youtu.be/aFswaBnWKLk?si=FoCCZNnvbcfNXI6C"
+        "videoUrl": "https://www.youtube.com/embed/aFswaBnWKLk?si=FoCCZNnvbcfNXI6C"
       },
       {
         "id": "algorithm",
@@ -702,7 +702,7 @@
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://youtu.be/V5-7GzOfADQ?si=UQdDCIVa24rNqF_-"
+        "videoUrl": "https://www.youtube.com/embed/V5-7GzOfADQ?si=UQdDCIVa24rNqF_-"
       },
       {
         "id": "algorithm",
