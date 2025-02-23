@@ -14,6 +14,7 @@ const ExperimentsPage = () => {
       subcategories: [
         { name: 'Insertion Sort', path: '/sorting/insertion-sort' },
         { name: 'Bubble Sort', path: '/sorting/bubble-sort' },
+        { name: 'Randomized Quick Sort', path: '/sorting/randomized-quick-sort' },
       ],
     },
     {
@@ -44,8 +45,8 @@ const ExperimentsPage = () => {
       subcategories: [
         { name: 'Huffman Tree', path: '/greedy/huffman-tree' },
         { name: 'Fractional Knapsack Problem', path: '/greedy/fractional-knapsack' },
-        { name: "Prim's Algorithm", path: '/greedy/prims-algorithm' },
-        { name: "Kruskal's Algorithm", path: '/greedy/kruskals-algorithm' },
+        { name: "Travelling Salesman Problem", path: '/greedy/salesman-problem' },
+        
       ],
     },
     {
@@ -54,6 +55,7 @@ const ExperimentsPage = () => {
       description: 'Breaking problems into subproblems, solving each once, and storing solutions for future use to ensure an optimal solution.',
       subcategories: [
         { name: 'Largest Common Subsequence', path: '/dynamic-programming/lcs' },
+        { name: 'String Matching Algorithms', path: '/dynamic-programming/sma' },
       ],
     },
     {
