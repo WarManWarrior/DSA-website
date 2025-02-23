@@ -44,7 +44,7 @@ const Insertionsort = () => {
                   <Insertion_Sort />
                 </div>
               )}
-              {section.id === "code" && <CodeEditor experiment={experiment} />}
+              {section.id === "code" && <CodeEditor experiment={experiment}/>}
               {section.id === "analysis" && <Analysis content={section.content} />}
             </Section>
           ))}

@@ -1,6 +1,6 @@
 import React from "react";
 
-const VideoLecture = ({ heading = "Video Lecture", content = "", videoUrl }) => {
+const VideoLecture = ({ heading = "", content = "", videoUrl }) => {
   const parseContent = (text) => {
     // Replace **text** with <strong>text</strong>
     return text.split("\n").map((line, index) => (
@@ -20,7 +20,7 @@ const VideoLecture = ({ heading = "Video Lecture", content = "", videoUrl }) => 
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 h-full w-full">
       {/* Heading */}
       {heading && <h2 className="text-2xl font-bold text-gray-800 mb-4">{heading}</h2>}
       
@@ -29,7 +29,7 @@ const VideoLecture = ({ heading = "Video Lecture", content = "", videoUrl }) => 
 
       {/* Render Video */}
       {videoUrl ? (
-        <div className="mt-4 aspect-w-16 aspect-h-9 w-full max-w-4xl">
+        <div className="mt-4 aspect-w-16 aspect-h-9 w-full h-full">
           <iframe
             src={videoUrl}
             title={heading}
