@@ -405,7 +405,7 @@ const TravellingSalesmanProblem = () => {
       <h1 className="text-2xl font-bold mb-4">Travelling Salesman Visualizer</h1>
       <div className="flex flex-col items-center space-y-4">
         <select
-          className="border rounded px-4 py-2"
+          className="border rounded px-4 py-2 text-white"
           value={selectedAlgorithm}
           onChange={(e) => setSelectedAlgorithm(e.target.value)}
         >

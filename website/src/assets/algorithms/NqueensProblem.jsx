@@ -82,7 +82,7 @@ const NQueens = () => {
           max="20"
           value={N}
           onChange={(e) => setN(Number(e.target.value))}
-          className="border border-gray-400 p-1 rounded"
+          className="border border-gray-400 p-1 rounded text-white"
         />
       </div>
       <p className="mb-2">Solutions Found: {solutions.length}</p>

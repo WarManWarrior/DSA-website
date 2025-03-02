@@ -70,7 +70,7 @@ const BubbleSortVisualizer = () => {
       </div>
 
       <div className="mb-6">
-        <label className="mr-4">Animation Speed:</label>
+        <label className="mr-4 text-teal-50">Animation Speed:</label>
         <input
           type="range"
           min="100"
@@ -102,19 +102,19 @@ const BubbleSortVisualizer = () => {
       </div>
 
       <div className="mt-6">
-        <h2 className="text-xl font-semibold mb-4">Legend</h2>
+        <h2 className="text-xl font-semibold mb-4 text-teal-50">Legend</h2>
         <div className="flex flex-col space-y-2 text-left">
           <div className="flex items-center">
             <div className="w-6 h-6 bg-yellow-500 mr-2"></div>
-            <span>Current Element</span>
+            <span className="text-teal-50">Current Element</span>
           </div>
           <div className="flex items-center">
             <div className="w-6 h-6 bg-purple-500 mr-2"></div>
-            <span>Element Being Compared</span>
+            <span className="text-teal-50">Element Being Compared</span>
           </div>
           <div className="flex items-center">
             <div className="w-6 h-6 bg-accent mr-2"></div>
-            <span>Default State</span>
+            <span className="text-teal-50">Default State</span>
           </div>
         </div>
       </div>

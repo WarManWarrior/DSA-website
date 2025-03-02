@@ -190,7 +190,7 @@ const StringMatchingVisualizer = () => {
             type="text"
             value={text}
             onChange={(e) => setText(e.target.value)}
-            className="border border-gray-400 p-2 rounded-lg focus:ring-2 focus:ring-purple-500"
+            className="border border-gray-400 p-2 rounded-lg focus:ring-2 focus:ring-purple-500 text-white"
             disabled={running}
           />
         </div>
@@ -201,7 +201,7 @@ const StringMatchingVisualizer = () => {
             type="text"
             value={pattern}
             onChange={(e) => setPattern(e.target.value)}
-            className="border border-gray-400 p-2 rounded-lg focus:ring-2 focus:ring-purple-500"
+            className="border border-gray-400 p-2 rounded-lg focus:ring-2 focus:ring-purple-500 text-white"
             disabled={running}
           />
         </div>
@@ -211,7 +211,7 @@ const StringMatchingVisualizer = () => {
           <select
             value={algorithm}
             onChange={(e) => setAlgorithm(e.target.value)}
-            className="border border-gray-400 p-2 rounded-lg focus:ring-2 focus:ring-purple-500"
+            className="border border-gray-400 p-2 rounded-lg focus:ring-2 focus:ring-purple-500 text-white"
             disabled={running}
           >
             <option value="Naive">Naive</option>
