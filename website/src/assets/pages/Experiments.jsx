@@ -115,7 +115,7 @@ const ExperimentsPage = () => {
               <ul className="list-none">
                 {experiment.subcategories.map((sub, subIndex) => (
                   <li key={subIndex} className="cursor-pointer mt-2">
-                    <Link to={sub.path} className="text-l bg-yellow-300 p-2 rounded-xl hover:bg-yellow-500 block text-center">
+                    <Link to={sub.path} className={`${darkMode ? 'bg-gray-900 text-black' : 'bg-gray-100 text-black'} text-l bg-yellow-300 p-2 rounded-xl hover:bg-yellow-500 block text-center`}>
                       {sub.name}
                     </Link>
                   </li>

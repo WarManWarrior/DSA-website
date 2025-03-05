@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const LCSVisualizer = () => {
   const [string1, setString1] = useState("");
@@ -8,6 +8,11 @@ const LCSVisualizer = () => {
   const [animationSpeed, setAnimationSpeed] = useState(500);
   const [isRunning, setIsRunning] = useState(false);
   const [lcs, setLcs] = useState("");
+  const animationSpeedRef = useRef(animationSpeed);
+
+  useEffect(() => {
+    animationSpeedRef.current = animationSpeed;
+  }, [animationSpeed]);
 
   const calculateLCS = async () => {
     setIsRunning(true);
@@ -20,7 +25,7 @@ const LCSVisualizer = () => {
     for (let i = 1; i <= m; i++) {
       for (let j = 1; j <= n; j++) {
         setCurrentCell({ i, j });
-        await new Promise((resolve) => setTimeout(resolve, animationSpeed));
+        await new Promise((resolve) => setTimeout(resolve, animationSpeedRef.current));
 
         if (string1[i - 1] === string2[j - 1]) {
           dp[i][j] = dp[i - 1][j - 1] + 1;
@@ -63,7 +68,7 @@ const LCSVisualizer = () => {
             value={string1}
             onChange={(e) => setString1(e.target.value)}
             placeholder="Enter String 1"
-            className="border rounded-md px-3 py-2 w-full"
+            className="border rounded-md px-3 py-2 w-full text-white"
             disabled={isRunning}
           />
           <input
@@ -71,7 +76,7 @@ const LCSVisualizer = () => {
             value={string2}
             onChange={(e) => setString2(e.target.value)}
             placeholder="Enter String 2"
-            className="border rounded-md px-3 py-2 w-full"
+            className="border rounded-md px-3 py-2 w-full text-white"
             disabled={isRunning}
           />
           <button
@@ -93,9 +98,8 @@ const LCSVisualizer = () => {
             max="1000"
             step="100"
             value={animationSpeed}
-            onChange={(e) => setAnimationSpeed(e.target.value)}
+            onChange={(e) => setAnimationSpeed(Number(e.target.value))}
             className="w-full"
-            disabled={isRunning}
           />
         </div>
 
@@ -133,7 +137,7 @@ const LCSVisualizer = () => {
         {lcs && (
           <div className="mt-4">
             <h2 className="text-lg font-medium">
-              Longest Common Subsequence:{" "}
+              Longest Common Subsequence: {" "}
               <span className="text-blue-600 font-bold">{lcs}</span>
             </h2>
           </div>

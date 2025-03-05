@@ -61,26 +61,26 @@ const BinarySearchVisualization = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-full w-full bg-base-200">
-      <h1 className="text-2xl font-bold mb-4">Binary Search Visualization</h1>
+      <h1 className="text-2xl font-bold mb-4 text-white">Binary Search Visualization</h1>
 
       <div className="flex space-x-2 items-center mb-6">
         <input
           type="number"
           value={target}
           onChange={(e) => setTarget(Number(e.target.value))}
-          className="input input-bordered input-primary w-20"
+          className="input input-bordered input-primary w-20 text-white"
           placeholder="Target"
         />
-        <button onClick={binarySearch} className="btn btn-primary">
+        <button onClick={binarySearch} className="btn btn-primary text-white">
           Start Search
         </button>
-        <button onClick={resetVisualization} className="btn btn-secondary">
+        <button onClick={resetVisualization} className="btn btn-secondary text-white">
           Reset
         </button>
       </div>
 
       <div className="flex flex-col items-center mb-4">
-        <label className="mb-2 font-semibold">Animation Speed</label>
+        <label className="mb-2 font-semibold text-white">Animation Speed</label>
         <input
           type="range"
           min="1"
@@ -131,19 +131,19 @@ const BinarySearchVisualization = () => {
       </div>
 
       <div className="mt-6">
-        <h2 className="text-lg font-semibold mb-4">Legend</h2>
+        <h2 className="text-lg font-semibold mb-4 text-white">Legend</h2>
         <div className="flex flex-col space-y-2 text-left">
           <div className="flex items-center">
             <div className="w-6 h-6 bg-yellow-500 mr-2"></div>
-            <span>Current Element</span>
+            <span className="text-white">Current Element</span>
           </div>
           <div className="flex items-center">
             <div className="w-6 h-6 bg-purple-500 mr-2"></div>
-            <span>Boundary Elements (Low or High)</span>
+            <span className="text-white">Boundary Elements (Low or High)</span>
           </div>
           <div className="flex items-center">
             <div className="w-6 h-6 bg-blue-500 mr-2"></div>
-            <span>Default State</span>
+            <span className="text-white">Default State</span>
           </div>
         </div>
       </div>

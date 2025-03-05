@@ -292,15 +292,15 @@ const HuffmanCodingVisualization = () => {
           value={input}
           onChange={handleInputChange}
           placeholder="Type something..."
-          className="input input-bordered input-primary w-full"
+          className="input input-bordered input-primary w-full text-white"
         />
       </div>
 
       <div className="flex flex-col space-y-4 lg:space-x-4">
         {frequencyTable.length > 0 && (
           <div ref={chartRef} className="flex-1 overflow-x-auto">
-            <h2 className="text-xl font-semibold text-center text-secondary">Frequency Table</h2>
-            <table className="table table-zebra w-full">
+            <h2 className="text-xl font-semibold text-center text-secondary ">Frequency Table</h2>
+            <table className="table table-zebra w-full text-primary">
               <thead>
                 <tr>
                   <th>Character</th>

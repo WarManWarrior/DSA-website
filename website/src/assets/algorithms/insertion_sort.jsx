@@ -80,7 +80,7 @@ const InsertionSortVisualizer = () => {
         </button>
       </div>
       <div className="mb-6">
-        <label className="mr-4">Animation Speed:</label>
+        <label className="mr-4 text-white">Animation Speed:</label>
         <input
           type="range"
           min="100"
@@ -93,17 +93,16 @@ const InsertionSortVisualizer = () => {
       </div>
       <div className="flex space-x-2 items-end relative">
         {array.map((value, index) => (
-          <div
-            key={index}
-            className={`
-              w-10 rounded-md transition-all transform duration-500
-              ${index === currentIndex ? 'bg-yellow-500 scale-105' : 'bg-accent'} // Yellow - Current key element
-              ${index === currentCompare ? 'bg-purple-500' : ''} // Purple - Currently compared element
-              ${activeIndices.includes(index) && index !== currentIndex && index !== currentCompare ? '' : ''}
-            `}
-            style={{ height: `${value * 3}px` }}
-          >
-            <span className="block text-center text-xs text-white">{value}</span>
+          <div key={index} className="flex flex-col items-center">
+            <div
+              className={`
+                w-10 rounded-md transition-all transform duration-500
+                ${index === currentIndex ? 'bg-yellow-500 scale-105' : 'bg-accent'}
+                ${index === currentCompare ? 'bg-purple-500' : ''}
+              `}
+              style={{ height: `${value * 3}px` }}
+            ></div>
+            <span className="block text-center text-xs text-white mt-1">{value}</span>
           </div>
         ))}
       </div>

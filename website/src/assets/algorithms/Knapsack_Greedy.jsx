@@ -58,7 +58,7 @@ const KnapsackVisualization = () => {
 
       <div className="card w-full max-w-4xl bg-base-100 shadow-xl mb-6">
         <div className="card-body">
-          <h2 className="card-title">Input Items</h2>
+          <h2 className="card-title text-white">Input Items</h2>
           <div className="overflow-x-auto">
             <table className="table w-full">
               <thead>
@@ -72,13 +72,13 @@ const KnapsackVisualization = () => {
               <tbody>
                 {items.map((item, index) => (
                   <tr key={item.id}>
-                    <td>Item {item.id}</td>
+                    <td className="text-white">Item {item.id}</td>
                     <td>
                       <input
                         type="number"
                         value={item.weight}
                         onChange={(e) => handleItemChange(index, "weight", parseFloat(e.target.value) || 0)}
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full text-white"
                       />
                     </td>
                     <td>
@@ -86,7 +86,7 @@ const KnapsackVisualization = () => {
                         type="number"
                         value={item.value}
                         onChange={(e) => handleItemChange(index, "value", parseFloat(e.target.value) || 0)}
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full text-white"
                       />
                     </td>
                     <td>
@@ -109,13 +109,13 @@ const KnapsackVisualization = () => {
           </div>
           <div className="mt-4">
             <label className="label">
-              <span className="label-text">Knapsack Capacity:</span>
+              <span className="label-text ">Knapsack Capacity:</span>
             </label>
             <input
               type="number"
               value={capacity}
               onChange={(e) => setCapacity(Number(e.target.value))}
-              className="input input-bordered w-full"
+              className="input input-bordered w-full text-white"
             />
           </div>
           <div className="mt-4">
@@ -128,7 +128,7 @@ const KnapsackVisualization = () => {
 
       <div className="card w-full max-w-4xl bg-base-100 shadow-xl mb-6 animate-fadeInSlow">
         <div className="card-body">
-          <h2 className="card-title">Profit by Weight Chart</h2>
+          <h2 className="card-title text-white">Profit by Weight Chart</h2>
           <div className="flex justify-around items-end h-48">
             {items.map((item) => (
               <div
@@ -149,7 +149,7 @@ const KnapsackVisualization = () => {
 
       <div className="card w-full max-w-4xl bg-base-100 shadow-xl mb-6 animate-fadeInSlow">
         <div className="card-body">
-          <h2 className="card-title">Results</h2>
+          <h2 className="card-title text-white">Results</h2>
           {result.selected.length > 0 ? (
             <div>
               <table className="table w-full">
@@ -163,7 +163,7 @@ const KnapsackVisualization = () => {
                 </thead>
                 <tbody>
                   {result.selected.map((item, index) => (
-                    <tr key={index} className="hover">
+                    <tr key={index} className="hover text-white">
                       <td>Item {item.id}</td>
                       <td>{item.weight}</td>
                       <td>{item.value}</td>
@@ -173,9 +173,9 @@ const KnapsackVisualization = () => {
                 </tbody>
               </table>
               <div className="mt-4">
-                <h3 className="text-xl font-bold">Total Value: {result.totalValue.toFixed(2)}</h3>
+                <h3 className="text-xl font-bold text-white">Total Value: {result.totalValue.toFixed(2)}</h3>
               </div>
-              <div className="mt-4">
+              <div className="mt-4 text-white">
                 <h3 className="text-lg font-semibold">Calculations:</h3>
                 <ul className="list-disc list-inside">
                   {result.calculations.map((calc, index) => (
