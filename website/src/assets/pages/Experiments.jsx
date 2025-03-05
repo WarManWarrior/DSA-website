@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 const ExperimentsPage = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const experiments = [
     {
@@ -46,7 +45,7 @@ const ExperimentsPage = () => {
         { name: 'Huffman Tree', path: '/greedy/huffman-tree' },
         { name: 'Fractional Knapsack Problem', path: '/greedy/fractional-knapsack' },
         { name: "Travelling Salesman Problem", path: '/greedy/salesman-problem' },
-        
+
       ],
     },
     {
@@ -67,27 +66,16 @@ const ExperimentsPage = () => {
       ],
     },
   ];
-  
+
 
   return (
     <div className={`${darkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-black'} min-h-screen flex flex-col`}>
       {/* Sidebar */}
-      <div className={`fixed top-0 left-0 h-full bg-blue-700 text-white w-64 transition-transform duration-300 z-20 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-        <button onClick={() => setSidebarOpen(false)} className="absolute top-4 right-4 bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500">
-          Close
-        </button>
-        <ul className="mt-16 space-y-4 p-6">
-          <li><Link to="/" className="hover:bg-blue-600 p-2 rounded">Home</Link></li>
-          <li className="hover:bg-blue-600 p-2 rounded">About</li>
-          <li className="hover:bg-blue-600 p-2 rounded">Contact Us</li>
-        </ul>
-      </div>
+      
 
       {/* Navbar */}
       <nav className="flex justify-between items-center p-6 bg-blue-900 text-white">
-        <button onClick={() => setSidebarOpen(!sidebarOpen)} className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500">
-          Menu
-        </button>
+        <Link to="/" className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500">Home</Link>
         <h1 className="text-xl font-bold">SRM Institute of Science and Technology</h1>
         <button onClick={() => setDarkMode(!darkMode)} className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500">
           {darkMode ? 'Light Mode' : 'Dark Mode'}
@@ -103,9 +91,8 @@ const ExperimentsPage = () => {
               key={index}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
-              className={`relative p-6 rounded-lg transition-transform duration-300 shadow-lg flex flex-col items-center justify-center ${
-                hoveredCard === index ? 'transform scale-105' : ''
-              } ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}
+              className={`relative p-6 rounded-lg transition-transform duration-300 shadow-lg flex flex-col items-center justify-center ${hoveredCard === index ? 'transform scale-105' : ''
+                } ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}
             >
               <div className="absolute top-3 left-3 bg-blue-700 text-white text-xl font-bold px-4 py-2 rounded-full">
                 {String(experiment.id).padStart(2, '0')}

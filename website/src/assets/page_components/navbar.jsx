@@ -11,11 +11,18 @@ function Navbar() {
             href="#"
             className="mr-4 block cursor-pointer py-1.5 text-base text-slate-800 font-semibold"
           >
-            <img
-              src="https://d23qowwaqkh3fj.cloudfront.net/wp-content/uploads/2022/01/srm-logo-white.svg.gzip"
-              alt=""
-              className="w-32"
-            />
+            <div className="flex items-center gap-2">
+              <img
+                src="https://d23qowwaqkh3fj.cloudfront.net/wp-content/uploads/2022/01/srm-logo-white.svg.gzip"
+                alt=""
+                className="w-32"
+              />
+              <img
+                src="/images/cintel.png"
+                alt=""
+                className="w-32"
+              />
+            </div>
           </a>
 
           <div id="menu" className="hidden lg:block">

@@ -6,7 +6,7 @@ const Navbar = () => {
       <img
         src="https://d23qowwaqkh3fj.cloudfront.net/wp-content/uploads/2022/01/srm-logo-white.svg.gzip"
         alt="SRM Logo"
-        className="h-12 w-12 mr-4"
+        className="h-12 mr-4"
       />
       <div>
         <h1 className="text-xl font-bold">SRM Institute of Science and Technology</h1>

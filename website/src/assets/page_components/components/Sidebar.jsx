@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = ({ open, toggleSidebar, sections }) => {
+  const navigate = useNavigate();
+
   return (
     <div
-      className={`${
-        open ? "w-72" : "w-20"
-      } bg-gray-800 h-screen p-5 pt-8 fixed top-0 left-0 transition-all duration-300`}
+      className={`${open ? "w-72" : "w-20"} bg-gray-800 h-screen p-5 pt-8 fixed top-0 left-0 transition-all duration-300`}
     >
       {/* Sidebar Toggle Button */}
       <motion.button
@@ -54,6 +55,22 @@ const Sidebar = ({ open, toggleSidebar, sections }) => {
           </li>
         ))}
       </ul>
+
+      {/* Additional Buttons */}
+      <div className="mt-6 space-y-2">
+        <button
+          onClick={() => navigate("/")}
+          className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition-all flex items-center justify-center"
+        >
+          {open ? "Home" : <img src="/img/home.png" alt="Feature 1" className="w-6 h-6" />}
+        </button>
+        <button
+          onClick={() => navigate("/explist")}
+          className="w-full bg-yellow-300 text-white py-2 rounded-md hover:bg-red-600 transition-all flex items-center justify-center"
+        >
+          {open ? "List of Experiments" : <img src="/img/list.png" alt="Feature 2" className="w-6 h-6" />}
+        </button>
+      </div>
     </div>
   );
 };
