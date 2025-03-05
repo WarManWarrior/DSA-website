@@ -17,6 +17,7 @@
     "@material-tailwind/react": "^2.1.10",
     "@monaco-editor/react": "^4.6.0",
     "@mui/icons-material": "^6.4.4",
+    "aos": "^2.3.4",
     "axios": "^1.7.9",
     "babel-standalone": "^6.26.0",
     "express": "^4.21.2",

@@ -18,6 +18,7 @@ import Stringmatching from "./assets/page_components/stringmatching";
 import Randomizedquicksort from "./assets/page_components/randomizedquicksort";
 import Travellingsalesman from "./assets/page_components/travellingsalesman";
 import LargestSubarraySum from "./assets/algorithms/largestsubarray";
+import AboutUs from "./assets/pages/about";
 
 
 
@@ -29,7 +30,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/introduction" element={<LargestSubarraySum/>} />
+          <Route path="/introduction" element={<AboutUs/>} />
           <Route path="/explist" element={<ExperimentsPage/>} />
           <Route path="/sorting/insertion-sort" element={<Insertionsort />} />
           <Route path="/sorting/bubble-sort" element={<Bubblesort />} />
