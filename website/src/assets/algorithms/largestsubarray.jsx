@@ -1,95 +1,81 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Button, Card, CardBody } from "daisyui";
 import { motion } from "framer-motion";
 
-const LargestSubarraySum = () => {
-  const [inputValue, setInputValue] = useState("2,-1,3,-4,5,-2,8,-6,3");
-  const [array, setArray] = useState([2, -1, 3, -4, 5, -2, 8, -6, 3]);
-  const [maxSubarray, setMaxSubarray] = useState([]);
-  const [maxSum, setMaxSum] = useState(0);
-  const [steps, setSteps] = useState([]);
+const LargestSubarrayVisualizer = () => {
+  const [arr, setArr] = useState([-2, 1, -3, 4, -1, 2, 1, -5, 4]);
+  const [subarray, setSubarray] = useState([]);
+  const [maxSum, setMaxSum] = useState(null);
+  
+  const findMaxCrossingSubarray = (nums, left, mid, right) => {
+    let leftSum = -Infinity, rightSum = -Infinity;
+    let sum = 0, maxLeft = mid, maxRight = mid + 1;
+    let tempLeft = [], tempRight = [];
 
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-    setArray(e.target.value.split(",").map(Number));
-  };
-
-  const generateRandomArray = () => {
-    const randomArray = Array.from({ length: 10 }, () => Math.floor(Math.random() * 21) - 10);
-    setInputValue(randomArray.join(","));
-    setArray(randomArray);
-  };
-
-  const findMaxSubarray = () => {
-    let maxSum = -Infinity, currentSum = 0;
-    let start = 0, end = 0, tempStart = 0;
-    let stepLogs = [];
-    
-    for (let i = 0; i < array.length; i++) {
-      currentSum += array[i];
-      stepLogs.push(`Adding ${array[i]}, current sum: ${currentSum}`);
-      
-      if (currentSum > maxSum) {
-        maxSum = currentSum;
-        start = tempStart;
-        end = i;
-        stepLogs.push(`New max subarray found from index ${start} to ${end}, sum: ${maxSum}`);
-      }
-      
-      if (currentSum < 0) {
-        currentSum = 0;
-        tempStart = i + 1;
-        stepLogs.push(`Resetting sum at index ${i}, next start at ${tempStart}`);
+    for (let i = mid; i >= left; i--) {
+      sum += nums[i];
+      tempLeft.unshift(nums[i]);
+      if (sum > leftSum) {
+        leftSum = sum;
+        maxLeft = i;
       }
     }
-    setMaxSubarray(array.slice(start, end + 1));
-    setMaxSum(maxSum);
-    setSteps(stepLogs);
+    sum = 0;
+    for (let j = mid + 1; j <= right; j++) {
+      sum += nums[j];
+      tempRight.push(nums[j]);
+      if (sum > rightSum) {
+        rightSum = sum;
+        maxRight = j;
+      }
+    }
+    return { sum: leftSum + rightSum, range: [maxLeft, maxRight] };
+  };
+
+  const findMaxSubarray = (nums, left, right) => {
+    if (left === right) return { sum: nums[left], range: [left, right] };
+    
+    const mid = Math.floor((left + right) / 2);
+    const leftSub = findMaxSubarray(nums, left, mid);
+    const rightSub = findMaxSubarray(nums, mid + 1, right);
+    const crossSub = findMaxCrossingSubarray(nums, left, mid, right);
+
+    if (leftSub.sum >= rightSub.sum && leftSub.sum >= crossSub.sum) {
+      return leftSub;
+    } else if (rightSub.sum >= leftSub.sum && rightSub.sum >= crossSub.sum) {
+      return rightSub;
+    } else {
+      return crossSub;
+    }
+  };
+
+  const visualizeSubarray = () => {
+    const result = findMaxSubarray(arr, 0, arr.length - 1);
+    setSubarray(arr.slice(result.range[0], result.range[1] + 1));
+    setMaxSum(result.sum);
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-full w-full bg-gray-900 p-6">
-      <h2 className="text-xl font-bold text-white mb-4">Largest Subarray Sum</h2>
-      <input
-        type="text"
-        value={inputValue}
-        onChange={handleInputChange}
-        className="mb-4 p-2 rounded-lg border-2 border-gray-300 text-white"
-        placeholder="Enter numbers separated by commas"
-      />
-      <div className="flex gap-2 mb-4">
-        {array.map((num, index) => (
-          <motion.div
-            key={index}
-            className={`p-4 rounded-lg text-white font-semibold text-lg shadow-lg transition-all ${
-              maxSubarray.includes(num) ? "bg-green-500 scale-110" : "bg-blue-500"
-            }`}
-            layout
-          >
-            {num}
-          </motion.div>
-        ))}
-      </div>
-      <div className="flex gap-4 mb-4">
-        <button onClick={findMaxSubarray} className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-700 transition">
-          Find Max Subarray
-        </button>
-        <button onClick={generateRandomArray} className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-700 transition">
-          Generate Random Array
-        </button>
-      </div>
-      <div className="text-white text-left mb-4">
-        <h3 className="font-bold">Max Subarray Sum: {maxSum}</h3>
-      </div>
-      <div className="text-white text-left">
-        <h3 className="font-bold mb-2">Steps:</h3>
-        <ul className="list-disc pl-5">
-          {steps.map((step, index) => (
-            <li key={index}>{step}</li>
+    <div className="flex flex-col items-center p-6 gap-4">
+      <h1 className="text-2xl font-bold text-primary">Largest Subarray Sum Visualization</h1>
+      <Card className="w-96 shadow-xl">
+        <CardBody className="flex flex-wrap gap-2 justify-center">
+          {arr.map((num, idx) => (
+            <motion.div
+              key={idx}
+              className={`p-2 w-10 text-center rounded-md ${subarray.includes(num) ? "bg-green-500 text-white" : "bg-gray-300"}`}
+              whileHover={{ scale: 1.2 }}>
+              {num}
+            </motion.div>
           ))}
-        </ul>
-      </div>
+        </CardBody>
+      </Card>
+      <Button className="btn-primary" onClick={visualizeSubarray}>Find Largest Subarray</Button>
+      {maxSum !== null && (
+        <div className="text-lg font-semibold">Max Sum: {maxSum}</div>
+      )}
     </div>
   );
 };
 
-export default LargestSubarraySum;
+export default LargestSubarrayVisualizer;
