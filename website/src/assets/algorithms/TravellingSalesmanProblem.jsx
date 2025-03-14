@@ -13,6 +13,11 @@ const TravellingSalesmanProblem = () => {
   };
 
   const handleCanvasClick = (e) => {
+    if (cities.length >= 9) {
+      alert("Maximum number of cities (9) reached!");
+      return;
+    }
+
     const rect = e.target.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -20,6 +25,11 @@ const TravellingSalesmanProblem = () => {
   };
 
   const runAlgorithm = () => {
+    if (cities.length < 1 || cities.length > 9) {
+      alert("Please add between 1 and 9 cities!");
+      return;
+    }
+
     switch (selectedAlgorithm) {
       case "Depth First Search":
         depthFirstSearch();
