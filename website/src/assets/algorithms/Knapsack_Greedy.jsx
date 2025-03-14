@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 const KnapsackVisualization = () => {
   const [items, setItems] = useState([
     { id: 1, weight: 2, value: 20 },
@@ -10,6 +9,7 @@ const KnapsackVisualization = () => {
   ]);
   const [capacity, setCapacity] = useState(10);
   const [result, setResult] = useState({ selected: [], totalValue: 0, calculations: [] });
+  const [error, setError] = useState("");
 
   const handleItemChange = (index, field, value) => {
     const updatedItems = [...items];
@@ -26,7 +26,26 @@ const KnapsackVisualization = () => {
     setItems(updatedItems);
   };
 
+  const validateInputs = () => {
+    for (let item of items) {
+      if (isNaN(item.weight) || isNaN(item.value) || item.weight < 0 || item.value < 0) {
+        setError("Weight and value must be non-negative numbers.");
+        return false;
+      }
+    }
+    if (isNaN(capacity) || capacity < 0) {
+      setError("Capacity must be a non-negative number.");
+      return false;
+    }
+    setError("");
+    return true;
+  };
+
   const calculateKnapsack = () => {
+    if (!validateInputs()) {
+      return;
+    }
+
     let sortedItems = [...items].sort((a, b) => b.value / b.weight - a.value / a.weight);
     let remainingCapacity = capacity;
     let selectedItems = [];
@@ -55,6 +74,8 @@ const KnapsackVisualization = () => {
   return (
     <div className="p-6 bg-base-200 h-full w-full flex flex-col items-center animate-fadeIn">
       <h1 className="text-4xl font-bold mb-6 text-center text-primary">Knapsack Visualization (Greedy)</h1>
+
+      {error && <div className="alert alert-error mb-4">{error}</div>}
 
       <div className="card w-full max-w-4xl bg-base-100 shadow-xl mb-6">
         <div className="card-body">
