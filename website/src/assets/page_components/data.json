@@ -767,7 +767,7 @@
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://www.youtube.com/embed/cY4HiiFHO1o?si=xNNK4gzFpGgvm-Wx"
+        "videoUrl": ""
       },
       {
         "id": "algorithm",
@@ -825,7 +825,7 @@
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://www.youtube.com/embed/aFswaBnWKLk?si=FoCCZNnvbcfNXI6C"
+        "videoUrl": ""
       },
       {
         "id": "algorithm",
@@ -883,7 +883,7 @@
         "id": "video",
         "label": "Video Lecture",
         "content": "Watch this video to understand Linear Search in depth.",
-        "videoUrl": "https://www.youtube.com/embed/V5-7GzOfADQ?si=UQdDCIVa24rNqF_-"
+        "videoUrl": ""
       },
       {
         "id": "algorithm",
