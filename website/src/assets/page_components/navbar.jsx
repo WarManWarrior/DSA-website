@@ -27,36 +27,18 @@ function Navbar() {
 
           <div id="menu" className="hidden lg:block">
             <ul className="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+              
               <li className="flex items-center p-1 text-lg gap-x-2 text-white hover:text-yellow-400">
-                <a href="#" className="flex items-center">
-                  Introduction
-                </a>
-              </li>
-              <li className="flex items-center p-1 text-lg gap-x-2 text-white hover:text-yellow-400">
-                <a href="#" className="flex items-center">
-                  Objective
-                </a>
-              </li>
-              <li className="flex items-center p-1 text-lg gap-x-2 text-white hover:text-yellow-400">
-                <a href="#" className="flex items-center">
-                  Target Audience
-                </a>
-              </li>
-              <li className="flex items-center p-1 text-lg gap-x-2 text-white hover:text-yellow-400">
-                <a href="#" className="flex items-center">
+                <a href="/explist" className="flex items-center">
                   List of Experiments
                 </a>
               </li>
               <li className="flex items-center p-1 text-lg gap-x-2 text-white hover:text-yellow-400">
-                <a href="#" className="flex items-center">
-                  Demo Code
+                <a href="/introduction" className="flex items-center">
+                  About Us
                 </a>
               </li>
-              <li className="flex items-center p-1 text-lg gap-x-2 text-white hover:text-yellow-400">
-                <a href="#" className="flex items-center">
-                  Practice Code
-                </a>
-              </li>
+              
             </ul>
           </div>
           <button
