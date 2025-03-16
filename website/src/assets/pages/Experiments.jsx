@@ -11,10 +11,10 @@ const ExperimentsPage = () => {
   }, []);
 
   const navLinks = [
-    { label: 'Course Material', path: '/' },
-    { label: 'Student Portal', path: '/portal' },
-    { label: 'Resources', path: '/resources' },
-    { label: 'Faculty', path: '/faculty' },
+    { label: 'Home', path: '/' },
+    { label: 'About Us', path: '/introduction' },
+    { label: 'Resources', path: 'https://www.youtube.com/@ulaganathansakthi2280/featured' },
+    { label: 'eLab', path: 'https://dld.srmist.edu.in/' },
   ];
 
   const experiments = [
@@ -156,10 +156,10 @@ const ExperimentsPage = () => {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center space-y-4 mb-16">
-          <h1 className={`text-4xl font-bold gradient-text
-            ${mounted ? 'animate-fade-in opacity-100' : 'opacity-0'}`}>
-            Laboratory Experiments
-          </h1>
+        <h1 className="text-4xl font-bold gradient-text opacity-100 text-black">
+          Laboratory Experiments
+        </h1>
+
           <p className="text-slate-600 max-w-2xl mx-auto">
             Explore our comprehensive collection of computer science algorithms and data structures through interactive experiments and visualizations.
           </p>
