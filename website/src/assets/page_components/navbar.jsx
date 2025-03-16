@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link, BrowserRouter} from 'react-router-dom';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,14 +30,10 @@ function Navbar() {
             <ul className="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
               
               <li className="flex items-center p-1 text-lg gap-x-2 text-white hover:text-yellow-400">
-                <a href="/explist" className="flex items-center">
-                  List of Experiments
-                </a>
+              <Link to="/introduction" className="flex items-center">About Us</Link>
               </li>
               <li className="flex items-center p-1 text-lg gap-x-2 text-white hover:text-yellow-400">
-                <a href="/introduction" className="flex items-center">
-                  About Us
-                </a>
+              <Link to="/explist" className="flex items-center">List of Experiments</Link>
               </li>
               
             </ul>
@@ -78,27 +75,7 @@ function Navbar() {
             </li>
             <li>
               <a href="#" className="">
-                Objective
-              </a>
-            </li>
-            <li>
-              <a href="#" className="">
-                Target Audience
-              </a>
-            </li>
-            <li>
-              <a href="#" className="">
                 List of Experiments
-              </a>
-            </li>
-            <li>
-              <a href="#" className="">
-                Demo Code
-              </a>
-            </li>
-            <li>
-              <a href="#" className="">
-                Practice Code
               </a>
             </li>
           </ul>
