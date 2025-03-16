@@ -1,6 +1,6 @@
 import React from "react";
 
-const Algorithm = ({ heading = "Algorithm", content = "" }) => {
+const Algorithm = ({ heading = "", content = "" }) => {
   const parseContent = (text) => {
     // Split text by new lines
     return text.split("\n").map((line, index) => (
